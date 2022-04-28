@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
+import { EditaServicoComponent } from './edita-servico/edita-servico.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroUsuarioComponent,
     FooterComponent,
     HomeComponent,
-    CadastroServicoComponent
+    CadastroServicoComponent,
+    ConsultaServicoComponent,
+    EditaServicoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+<div class="container mt-5">
+    <h3>Editar Serviço</h3>
+    <label>Id</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="servico.id" />
+    <label>Nome do Serviço</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="servico.nome" />
+    <label>Descrição</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="servico.descricao" />
+    <label>Preço R$</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="servico.preco" />
+    <label>Tempo</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="servico.tempo" />
+    <label>Status</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="servico.status" />
+    <button class="btn btn-outline-success mt-1" (click)="efetivarAlteracao()">Gravar</button>
+</div>
+<div class="container mt-2">
+    <span style="color: green;">{{ msg }}</span>
+</div>
