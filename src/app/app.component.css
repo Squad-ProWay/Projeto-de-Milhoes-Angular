@@ -1,0 +1,49 @@
+/**************************FONTE************************/
+
+@import url('https://fonts.googleapis.com/css2? family= Castoro & family= Roboto+Condensed:wght@300 & display=swap');
+
+/************************* CORES ***********************/
+
+:root  {
+    --mainBranco: #fff !important;
+    --preto: black;
+    --cinzaclaro: silver;
+    --cinza: grey;
+    --verde: green;
+    --color1: #387CA6 !important;
+    --color2: #36769A;
+    --color3: #2C5F73;
+    --color4: #63A5BF;
+    --color5: #8FC4D9;
+}
+
+.navbar {
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.navbar-light .navbar-brand {
+    color: #387CA6;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #8FC4D9;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #387CA6;
+}
+
+.navbar-light .navbar-nav:hover .nav-link.active {
+    color: #8FC4D9;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #387CA6 !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #8FC4D9 !important;
+}
+
+/***********************FOOTER************************/
