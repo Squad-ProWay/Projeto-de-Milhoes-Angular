@@ -9,6 +9,8 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

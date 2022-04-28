@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServicosService } from '../servicos.service';
 
 @Component({
   selector: 'app-cadastro-servico',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroServicoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serviceServico: ServicosService) { }
 
+  gravar(dados: any){
+    this.serviceServico.gravar(dados).subscribe(x => window.location.reload())
+ }
   ngOnInit(): void {
   }
 
