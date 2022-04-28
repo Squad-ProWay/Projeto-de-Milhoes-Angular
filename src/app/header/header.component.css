@@ -2,7 +2,7 @@
 
 .header-wraper {
     position: relative;
-    background: url(../assets/images/bg.jpg) no-repeat;
+    background: url(../../assets/images/bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
