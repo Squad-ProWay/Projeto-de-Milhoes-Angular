@@ -1,0 +1,12 @@
+{
+  "servicos": [
+    {
+      "nome": "Corte de Cabelo",
+      "descricao": "Cabelo feminino",
+      "preco": "50.00",
+      "tempo": "50 min",
+      "status": "ativo",
+      "id": 1
+    }
+  ]
+}
