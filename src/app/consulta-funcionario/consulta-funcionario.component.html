@@ -20,11 +20,12 @@
           <tr *ngFor="let func of funcionario">
             <td> {{ func.id }}</td>
             <td> {{ func.nome }}</td>
-            <td> {{ func.descricao }}</td>
-            <td> {{ func.preco }}</td>
-            <td> {{ func.tempo }}</td>
-            <td> {{ func.status }}</td>
-            <td> <a [routerLink]="['/servicos',func.id]"><i class="material-icons">mode_edit</i></a></td>
+            <td> {{ func.telefone }}</td>
+            <td> {{ func.cpf }}</td>
+            <td> {{ func.email }}</td>
+            <td> {{ func.servico }}</td>
+            <td> {{ func.descicao }}</td>
+            <td> <a [routerLink]="['/funcionario',func.id]"><i class="material-icons">mode_edit</i></a></td>
             <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
                 (click)="excluir(func.id)">delete</i></td>
           </tr>

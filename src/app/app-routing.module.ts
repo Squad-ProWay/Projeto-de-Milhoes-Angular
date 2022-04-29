@@ -4,6 +4,7 @@ import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-fu
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
 import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-funcionario.component';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
+import { EditaFuncionarioComponent } from './edita-funcionario/edita-funcionario.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -42,6 +43,12 @@ const routes: Routes = [
     path:'cadfuncionario',
     component: CadastroFuncionarioComponent
   },
+
+  {
+
+    path:'funcionario/:idfuncionario',
+    component: EditaFuncionarioComponent
+  }
 
 ];
 

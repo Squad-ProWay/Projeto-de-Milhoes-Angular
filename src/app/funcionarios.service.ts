@@ -19,7 +19,7 @@ export class FuncionariosService {
   }
 
   getOne(idservico: number) {
-    return this.http.get(`http://localhost:3000/funcionarios${idservico}`)
+    return this.http.get(`http://localhost:3000/funcionarios/${idservico}`)
   }
 
   alterar(dados: any) {
