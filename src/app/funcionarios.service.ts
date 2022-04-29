@@ -23,7 +23,7 @@ export class FuncionariosService {
   }
 
   alterar(dados: any) {
-    let url = `http://localhost:3000/funcionarios${dados.id}`
+    let url = `http://localhost:3000/funcionarios/${dados.id}`
     return this.http.put(url, dados)
   }
 

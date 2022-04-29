@@ -23,6 +23,11 @@ export class EditaFuncionarioComponent implements OnInit {
 
   efetivarAlteracao() {
     this.serviceFuncionario.alterar(this.funcionario).subscribe(x => this.msg = 'Funcionário alterado com sucesso')
+    
+    setTimeout(() => {
+      window.history.back();
+      
+    }, 5000);
   }
 
 
