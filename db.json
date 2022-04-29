@@ -1,5 +1,4 @@
 {
-
   "servicos": [
     {
       "nome": "Aplicação de unhas",
@@ -25,4 +24,25 @@
       "status": "ativo",
       "id": 4
     }
+  ],
+  "funcionarios": [
+    {
+      "nome": "luara ",
+      "telefone": "71981854618",
+      "cpf": "85645445666",
+      "email": "luis@gmail.com",
+      "status": "pintor",
+      "descricao": "zdfsdff",
+      "id": 2
+    },
+    {
+      "nome": "luara ",
+      "telefone": "71981854618",
+      "cpf": "85645445666",
+      "email": "luagesteira@gmail.com",
+      "status": "pintor",
+      "descricao": "weqweqwe eqwewqeqweqw qwwqe",
+      "id": 3
+    }
   ]
+}
