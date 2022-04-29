@@ -33,8 +33,8 @@
       </ul>
     </div>
   </div>
-  <a *ngIf="userLogado.email" class="btn btn-logout btn-outline-primary m-2" (click)="logout()">Logout</a>
-  <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
+  <button *ngIf="userLogado.email" style="font-size:7px" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
+  <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
 </nav>
 
 <!--ROUTER-->
