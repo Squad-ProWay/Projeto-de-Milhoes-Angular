@@ -1,57 +1,62 @@
 /*******************HEADER*********************/
 
 .header-wraper {
-    position: relative;
-    background: url(../../assets/images/bg.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-  }
-  
-  .main-info {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 1;
-  }
-  
+  position: relative;
+  background: url(../../assets/images/bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.main-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.main-info h1 {
+  color: var(--branco);
+}
+
+@media(max-width: 768px) {
   .main-info h1 {
-    color: var(--branco);
-    text-transform: uppercase;
+    font-size: 1.7rem !important;
   }
-  
-  @media(max-width: 768px) {
-    .main-info h1 {
-      font-size: 1.7rem !important;
-    }
-    .typed-text {
-      font-size: 1.3rem !important;
-    }
+
+  .typed-text {
+    font-size: 1.3rem !important;
   }
-  
-  .btn-reserv {
-    border: 1px solid white;
-    background-color: rgba(128, 128, 128, 0.61);
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 5px !important;
-    cursor: pointer;
-    padding: 0.625rem 0.75rem 0.75rem 0.75rem;
-    color: white;
-    margin: 2rem;
-  }
-  
-  .btn-reserv:hover {
-    text-decoration: none;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    transition: .2s ease-in-out;
-  }
+}
+
+.btn-reserv {
+  border: 1px solid white;
+  background-color: rgba(128, 128, 128, 0.61);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px !important;
+  cursor: pointer;
+  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
+  color: white;
+  margin: 2rem;
+}
+
+.btn-reserv:hover {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  transition: .2s ease-in-out;
+}
+
+#titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 62px;
+}
