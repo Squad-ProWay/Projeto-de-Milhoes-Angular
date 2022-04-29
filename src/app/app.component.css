@@ -4,17 +4,17 @@
 
 /************************* CORES ***********************/
 
-:root  {
-    --mainBranco: #fff !important;
-    --preto: black;
-    --cinzaclaro: silver;
-    --cinza: grey;
-    --verde: green;
-    --color1: #387CA6 !important;
-    --color2: #36769A;
-    --color3: #2C5F73;
-    --color4: #63A5BF;
-    --color5: #8FC4D9;
+:root {
+  --mainBranco: #fff !important;
+  --preto: black;
+  --cinzaclaro: silver;
+  --cinza: grey;
+  --verde: green;
+  --color1: #387CA6 !important;
+  --color2: #36769A;
+  --color3: #2C5F73;
+  --color4: #63A5BF;
+  --color5: #8FC4D9;
 }
 
 .navbar {
@@ -23,27 +23,27 @@
 }
 
 .navbar-light .navbar-brand {
-    color: #387CA6;
+  color: #e9ecef;
 }
 
 .navbar-light .navbar-brand:hover {
-    color: #8FC4D9;
+  color: #cff4fc;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-    color: #387CA6;
+  color: #e9ecef;
 }
 
 .navbar-light .navbar-nav:hover .nav-link.active {
-    color: #8FC4D9;
+  color: #cff4fc;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #387CA6 !important;
+  color: #e9ecef !important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: #8FC4D9 !important;
+  color: #cff4fc !important;
 }
 
 /***********************FOOTER************************/
