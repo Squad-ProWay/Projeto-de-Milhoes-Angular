@@ -17,12 +17,12 @@
           <a routerLink="servicos" class="nav-link active" aria-current="page">Serviços</a>
         </li>
         <li class="nav-item">
-          <a routerLink="login" class="nav-link active" aria-current="page">Login</a>
+          <a *ngIf="!userLogado.email" routerLink="login" class="nav-link active" aria-current="page" href="index.html">Login</a>
         </li>
         <li class="nav-item dropdown">
-          <a class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Menu
+          <a *ngIf="userLogado.perfil=='ADM'" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a routerLink="cadservico" class="dropdown-item">Cadastro Serviços</a></li>
@@ -33,6 +33,8 @@
       </ul>
     </div>
   </div>
+  <button *ngIf="userLogado.email" style="font-size:7px" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
+  <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
 </nav>
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroUsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serviceUsuario: UsuarioService) { }
+
+  msg: string = ""
+
+  salvar(dados: any){
+    dados.perfil = "USUARIO"
+    this.serviceUsuario.gravar(dados).subscribe(x => window.location.reload())
+ }
 
   ngOnInit(): void {
   }

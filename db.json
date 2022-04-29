@@ -44,5 +44,31 @@
       "descricao": "weqweqwe eqwewqeqweqw qwwqe",
       "id": 3
     }
+  ],
+  "usuarios": [
+    {
+      "nome": "Ana Brandão",
+      "email": "ana@gmail.com",
+      "cpf": "123.456.789-09",
+      "senha": "123",
+      "perfil": "ADM",
+      "id": 1
+    },
+    {
+      "nome": "Paty Brandão",
+      "email": "paty@gmail.com",
+      "cpf": "100.200.300-40",
+      "senha": "123",
+      "perfil": "USUARIO",
+      "id": 2
+    },
+    {
+      "nome": "Paula Brandão",
+      "email": "paula@gmail.com",
+      "cpf": "123.123.123-23",
+      "senha": "1234",
+      "perfil": "USUARIO",
+      "id": 3
+    }
   ]
 }

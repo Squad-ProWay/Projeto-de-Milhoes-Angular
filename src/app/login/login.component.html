@@ -1,15 +1,15 @@
 <div class="container w-25">
   <div class="bg-light p-5 rounded-3">
-    <form>
+    <form #f="ngForm" (ngSubmit)="fazerLogin(f.value)" >
       <h1 class="mb-3 text-center">Login</h1>
       <div class="mb-3">
         <label for="inputEmail" class="form-label fs-5">Email</label>
-        <input type="email" class="form-control" id="inputEmail" placeholder="nome@exemplo.com">
+        <input type="email" class="form-control" id="inputEmail" ngModel name="email" placeholder="Email para login">
         <div class="form-text">Nós não iremos compartilhar seu e-mail com ninguém.</div>
       </div>
       <div class="mb-3">
         <label for="inputSenha" class="form-label fs-5">Senha</label>
-        <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
+        <input type="password" class="form-control" id="inputSenha" ngModel name="senha" placeholder="Senha">
       </div>
 
       <div class="mt-4">
@@ -19,4 +19,9 @@
       <p class="mt-5 mb-3 text-muted text-center">© 2022</p>
     </form>
   </div>
+  <div class="container mt-3 text-center">
+    <a routerLink="/cadusuario">Não possui conta? Clique aqui!</a>
+  </div>
+  <p>{{ usuarioConectado.nome }}</p>
 </div>
+<router-outlet></router-outlet>

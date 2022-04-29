@@ -46,4 +46,19 @@
   color: #cff4fc !important;
 }
 
-/***********************FOOTER************************/
+button {
+    padding: 0;
+    border: 0;
+    color: white;
+    background-color: #212529;
+}
+
+.lbl-bemvindo {
+    font-size: small;
+    text-transform: none;
+}
+
+label {
+    width: 250px;
+    padding-right: 5px;
+}
