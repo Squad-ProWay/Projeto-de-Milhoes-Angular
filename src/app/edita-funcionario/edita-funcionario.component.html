@@ -1,20 +1,35 @@
-<div class="container mt-5 mb-5">
-    <h3>Editar Serviço</h3>
+<div class="container mt-5 mb-5" >
+    <form #f="ngForm">
+        <h3>Editar Serviço</h3>
     <label>Id</label>
     <a class="form-control mt-2" type="text" [(ngModel)]="funcionario.id" >{{funcionario.id}} </a>
     <label>Nome do Funcionário </label>
-    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.nome" />
+    <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="funcionario.nome" required/>
+    <div class="lbl-invalid" *ngIf="fnome.invalid">
+        *Informe o nome do funcionário
+      </div>
     <label>Telefone</label>
-    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.telefone " />
+    <input #ftelefone="ngModel" name="telefone" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="funcionario.telefone " required />
+    <div class="lbl-invalid" *ngIf="ftelefone.invalid">
+        *Informe o telefone
+      </div>
     <label>CPF</label>
-    <input class="form-control mt-2" type="number" [(ngModel)]="funcionario.cpf" />
+    <input #fcpf="ngModel" name="cpf" ngDefaultControl pattern="[0-9]+$" class="form-control mt-2" type="number" [(ngModel)]="funcionario.cpf" required />
+    <div class="lbl-invalid" *ngIf="fcpf.invalid">*Informe o CPF e verifique se tem 11 dígitos.</div>
     <label>Email</label>
-    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.email" />
+    <input #femail="ngModel" name="email" ngDefaultControl  class="form-control mt-2" type="email" [(ngModel)]="funcionario.email" required/><div class="lbl-invalid" *ngIf="femail.invalid">*Informe o email</div>
     <label>Servico</label>
-    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.servico" />
+    <input  #fservico="ngModel" name="servico" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="funcionario.servico" />
     <label>Descrição</label>
-    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.descricao " />
-    <button class="btn btn-outline-success mt-1" (click)="efetivarAlteracao()">Gravar</button>
+    <input #fdescricao="ngModel" name="descricao" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="funcionario.descricao " required/>
+    
+    <div class="container mt-3">
+        <div ><button  class="btn btn-outline-success mt-1 m-1" type="submit" [disabled]="f.invalid" (click)="efetivarAlteracao()">Gravar</button>
+            <button  routerLink="/consultaFuncionario" class="btn btn-danger mt-1 m-1" > Voltar </button></div>
+       
+       
+    </div>
+</form>
 </div>
 <div class="container mt-2">
     <span style="color: green;">{{ msg }}</span>
