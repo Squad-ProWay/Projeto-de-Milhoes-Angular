@@ -1,0 +1,29 @@
+<div class="container mt-5 mb-3">
+    <table class="table">
+        <thead class="bg-success">
+          <tr>
+            <th>Id</th>
+            <th>Nome do Serviço</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Tempo de execução</th>
+            <th>Status</th>
+            <th>Edição</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let serv of servicos">
+            <td> {{ serv.id }}</td>
+            <td> {{ serv.nome }}</td>
+            <td> {{ serv.descricao }}</td>
+            <td> {{ serv.preco }}</td>
+            <td> {{ serv.tempo }}</td>
+            <td> {{ serv.status }}</td>
+            <td> <a [routerLink]="['/servicos',serv.id]"><i class="material-icons">mode_edit</i></a></td>
+            <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
+                (click)="excluir(serv.id)">delete</i></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
