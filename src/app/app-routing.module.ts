@@ -45,7 +45,6 @@ const routes: Routes = [
   },
 
   {
-
     path:'funcionario/:idfuncionario',
     component: EditaFuncionarioComponent
   }
