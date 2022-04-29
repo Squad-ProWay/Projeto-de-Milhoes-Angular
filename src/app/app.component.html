@@ -11,9 +11,6 @@
           <a routerLink="home" class="nav-link active" aria-current="page" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a routerLink="cadservico" class="nav-link active" aria-current="page" href="index.html">Serviços</a>
-        </li>
-        <li class="nav-item">
           <a routerLink="" class="nav-link active" aria-current="page" href="index.html">Agendamentos</a>
         </li>
         <li class="nav-item">
@@ -22,6 +19,17 @@
         <li class="nav-item">
           <a routerLink="login" class="nav-link active" aria-current="page" href="index.html">Login</a>
         </li>
+        <li class="nav-item dropdown">
+          <a class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Menu
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a routerLink="cadservico" class="dropdown-item">Serviços</a></li>
+              <li><a routerLink="cadfuncionario" class="dropdown-item" >Funcionários</a></li>
+              <li><a routerLink="cadusuario" class="dropdown-item" >Clientes</a></li>
+          </ul>
+      </li>
       </ul>
     </div>
   </div>

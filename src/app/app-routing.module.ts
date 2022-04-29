@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-funcionario.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-funcionario.component';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
 import { EditaFuncionarioComponent } from './edita-funcionario/edita-funcionario.component';
@@ -43,11 +44,14 @@ const routes: Routes = [
     path:'cadfuncionario',
     component: CadastroFuncionarioComponent
   },
-
   {
     path:'funcionario/:idfuncionario',
     component: EditaFuncionarioComponent
-  }
+  },
+  {
+    path:'cadusuario',
+    component: CadastroUsuarioComponent
+  },
 
 ];
 
