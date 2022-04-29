@@ -17,10 +17,10 @@
           <a routerLink="" class="nav-link active" aria-current="page" href="index.html">Contato</a>
         </li>
         <li class="nav-item">
-          <a routerLink="login" class="nav-link active" aria-current="page" href="index.html">Login</a>
+          <a *ngIf="!userLogado.email" routerLink="login" class="nav-link active" aria-current="page" href="index.html">Login</a>
         </li>
         <li class="nav-item dropdown">
-          <a class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+          <a *ngIf="userLogado.perfil=='ADM'" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Menu
           </a>
@@ -33,6 +33,8 @@
       </ul>
     </div>
   </div>
+  <a *ngIf="userLogado.email" class="btn btn-logout btn-outline-primary m-2" (click)="logout()">Logout</a>
+  <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
 </nav>
 
 <!--ROUTER-->

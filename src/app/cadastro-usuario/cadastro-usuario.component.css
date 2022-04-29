@@ -1,5 +1,8 @@
 .container {
-    margin-top: 10rem;
-    width: 20rem;
-    height: 40rem;
+    width: 22rem;
+    margin-top: 60px;
+}
+
+.lbl-invalid {
+    color: red;
 }
