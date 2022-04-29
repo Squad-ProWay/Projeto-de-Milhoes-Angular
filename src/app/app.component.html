@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse navcolor" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a routerLink="home" class="nav-link active" aria-current="page" href="index.html">Home</a>
+          <a routerLink="sobre" class="nav-link active" aria-current="page">Sobre</a>
         </li>
         <li class="nav-item">
-          <a routerLink="" class="nav-link active" aria-current="page" href="index.html">Agendamentos</a>
+          <a routerLink="cadhorario" class="nav-link active" aria-current="page">Agendamentos</a>
         </li>
         <li class="nav-item">
-          <a routerLink="" class="nav-link active" aria-current="page" href="index.html">Contato</a>
+          <a routerLink="servicos" class="nav-link active" aria-current="page">Serviços</a>
         </li>
         <li class="nav-item">
           <a *ngIf="!userLogado.email" routerLink="login" class="nav-link active" aria-current="page" href="index.html">Login</a>
@@ -25,17 +25,20 @@
               Menu
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a routerLink="cadservico" class="dropdown-item">Serviços</a></li>
-              <li><a routerLink="cadfuncionario" class="dropdown-item" >Funcionários</a></li>
-              <li><a routerLink="cadusuario" class="dropdown-item" >Clientes</a></li>
+            <li><a routerLink="cadservico" class="dropdown-item">Cadastro Serviços</a></li>
+            <li><a routerLink="cadfuncionario" class="dropdown-item">Cadastro Funcionários</a></li>
+            <li><a routerLink="cadusuario" class="dropdown-item">Cadastro Clientes</a></li>
           </ul>
-      </li>
+        </li>
       </ul>
     </div>
   </div>
   <button *ngIf="userLogado.email" style="font-size:7px" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
   <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
 </nav>
+
+
+
 
 <!--ROUTER-->
 <router-outlet></router-outlet>

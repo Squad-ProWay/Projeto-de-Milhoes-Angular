@@ -61,6 +61,14 @@
       "senha": "123",
       "perfil": "USUARIO",
       "id": 2
+    },
+    {
+      "nome": "Paula Brandão",
+      "email": "paula@gmail.com",
+      "cpf": "123.123.123-23",
+      "senha": "1234",
+      "perfil": "USUARIO",
+      "id": 3
     }
   ]
 }

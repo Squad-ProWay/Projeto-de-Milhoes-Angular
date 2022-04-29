@@ -1,0 +1,8 @@
+.location {
+  position: relative;
+  background: url(../../assets/images/location.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  height: 60vh;
+}
