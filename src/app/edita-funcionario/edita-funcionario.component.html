@@ -1,0 +1,21 @@
+<div class="container mt-5 mb-5">
+    <h3>Editar Serviço</h3>
+    <label>Id</label>
+    <a class="form-control mt-2" type="text" [(ngModel)]="funcionario.id" >{{funcionario.id}} </a>
+    <label>Nome do Funcionário </label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.nome" />
+    <label>Telefone</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.telefone " />
+    <label>CPF</label>
+    <input class="form-control mt-2" type="number" [(ngModel)]="funcionario.cpf" />
+    <label>Email</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.email" />
+    <label>Servico</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.servico" />
+    <label>Descrição</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="funcionario.descricao " />
+    <button class="btn btn-outline-success mt-1" (click)="efetivarAlteracao()">Gravar</button>
+</div>
+<div class="container mt-2">
+    <span style="color: green;">{{ msg }}</span>
+</div>

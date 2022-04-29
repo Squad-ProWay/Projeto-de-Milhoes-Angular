@@ -23,6 +23,11 @@ export class EditaServicoComponent implements OnInit {
 
   efetivarAlteracao() {
     this.serviceServico.alterar(this.servico).subscribe(x => this.msg = 'Serviço alterado com sucesso')
+ 
+    setTimeout(() => {
+      window.history.back();
+      
+    }, 5000);
   }
 
 }

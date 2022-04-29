@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
+import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-funcionario.component';
+import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-funcionario.component';
+import { EditaFuncionarioComponent } from './edita-funcionario/edita-funcionario.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { EditaServicoComponent } from './edita-servico/edita-servico.component';
     HomeComponent,
     CadastroServicoComponent,
     ConsultaServicoComponent,
-    EditaServicoComponent
+    EditaServicoComponent,
+    CadastroFuncionarioComponent,
+    ConsultaFuncionarioComponent,
+    EditaFuncionarioComponent
   ],
   imports: [
     BrowserModule,
