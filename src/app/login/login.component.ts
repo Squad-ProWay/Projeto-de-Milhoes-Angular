@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     this.serviceUsuario.getAll().subscribe(x => {
       this.usuarios = x
       this.verificarLogin(dados.email, dados.senha, this.usuarios)
+      window.location.href = "/#"
     })
   }
 
