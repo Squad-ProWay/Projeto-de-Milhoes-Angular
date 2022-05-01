@@ -16,18 +16,23 @@
   --color4: #63A5BF;
   --color5: #8FC4D9;
 }
-
+.container{
+  font-family: 'Poppins', sans-serif;
+}
 .navbar {
   z-index: 2;
   text-transform: uppercase;
 }
 
 .navbar-light .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: large;
   color: #e9ecef;
 }
 
 .navbar-light .navbar-brand:hover {
-  color: #cff4fc;
+  color: yellow;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
@@ -35,7 +40,7 @@
 }
 
 .navbar-light .navbar-nav:hover .nav-link.active {
-  color: #cff4fc;
+  color: yellow;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -43,22 +48,30 @@
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #cff4fc !important;
+  color: yellow !important;
 }
 
 button {
-    padding: 0;
-    border: 0;
-    color: white;
-    background-color: #212529;
+  padding: 0;
+  border: 0;
+  color: white;
+  background-color: #212529;
 }
 
 .lbl-bemvindo {
-    font-size: small;
-    text-transform: none;
+  font-size: small;
+  text-transform: none;
 }
 
 label {
-    width: 250px;
-    padding-right: 5px;
+  width: 250px;
+  padding-right: 5px;
+}
+
+#btn-logout:hover {
+  color: yellow;
+}
+.dropdown-menu > li > a:hover {
+  background-image: none;
+  background-color: yellow;
 }

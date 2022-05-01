@@ -1,0 +1,17 @@
+h6 {
+  font-family: 'Playfair Display', serif;
+  font-size: larger;
+  font-weight:400;
+}
+
+.container {
+  font-family: 'Poppins', sans-serif;
+}
+
+#copyright{
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+}
+.link-footer:hover{
+  color: yellow;
+}

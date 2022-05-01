@@ -46,6 +46,7 @@
   padding: 0.625rem 0.75rem 0.75rem 0.75rem;
   color: white;
   margin: 2rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-reserv:hover {
@@ -54,9 +55,10 @@
   color: black;
   border-radius: 5px;
   transition: .2s ease-in-out;
+  font-family: 'Poppins', sans-serif;
 }
 
 #titulo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif !important;
   font-size: 62px;
 }
