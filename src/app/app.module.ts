@@ -20,6 +20,7 @@ import { CadastroHorarioComponent } from './cadastro-horario/cadastro-horario.co
 import { InfoServicosComponent } from './info-servicos/info-servicos.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
