@@ -70,5 +70,8 @@
       "perfil": "USUARIO",
       "id": 3
     }
+  ],
+  "horarios":[
+    "idhorario"
   ]
 }

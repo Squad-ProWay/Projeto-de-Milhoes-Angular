@@ -2,29 +2,37 @@
   <div class="row">
     <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
       <div class="col-12">
-        <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Formulário Agendamento</h3>
+        <h3 class="fw-normal fs-4 text-uppercase mb-4">Formulário de Agendamento</h3>
       </div>
-      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+      <form #form="ngForm" (ngSubmit)="gravar(form.value)">
         <div class="row g-3">
           <div class="col-12">
-            <input type="text" class="form-control" ngModel name="nomeCompleto" required minlength="1"
+            <input #nome="ngModel" type="text" class="form-control shadow-none" ngModel name="nomeCompleto" required
+              minlength="1" oninput="this.value = this.value.toUpperCase()" pattern=".*\s.*"(keypress)="omitirCharEspecial($event)"
               placeholder="Nome Completo">
+            <div class="lbl-invalid text-danger" *ngIf="nome.invalid && (nome.dirty || nome.touched)">*Informe
+              o nome completo</div>
           </div>
           <div class="col-md-6">
-            <input type="tel" class="form-control" ngModel name="telefone" required minlength="9"
-              placeholder="Número de telefone">
+            <input #tel="ngModel" type="tel" class="form-control shadow-none" ngModel name="telefone" required
+              minlength="9" placeholder="Número de telefone">
+              <div class="lbl-invalid text-danger" *ngIf="nome.invalid && (nome.dirty || nome.touched)">*Informe
+               número de telefone válido: (xx) xxxx-xxxx</div>
           </div>
           <div class="col-md-6">
-            <input type="email" class="form-control" ngModel name="email" required email placeholder="Email">
+            <input #email="ngModel" type="email" class="form-control shadow-none" ngModel name="email" required email
+              placeholder="Email">
           </div>
           <div class="col-md-6">
-            <input type="date" class="form-control" ngModel name="data" required placeholder="Data">
+            <input #data="ngModel" type="date" class="form-control shadow-none" ngModel name="data" required
+              placeholder="Data">
           </div>
           <div class="col-md-6">
-            <input type="time" class="form-control" ngModel name="horario" required placeholder="Horário">
+            <input #horario="ngModel" type="time" class="form-control shadow-none" ngModel name="horario" required
+              placeholder="Horário">
           </div>
           <div class="col-12">
-            <select class="form-select" ngModel name="procedimento" required>
+            <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
               <option selected="">Selecione o Procedimento</option>
               <option value="1">#</option>
               <option value="2">#</option>
@@ -32,11 +40,12 @@
             </select>
           </div>
           <div class="col-12">
-            <textarea class="form-control" placeholder="Observação"></textarea>
+            <textarea #obs="ngModel" class="form-control shadow-none" ngModel placeholder="Observação"></textarea>
           </div>
           <div class="col-12 mt-5">
-            <button type="submit" class="btn btn-primary float-end" [disabled]="!authForm.valid">Marcar Horário</button>
-            <button type="button" class="btn btn-outline-secondary float-end me-2">Cancelar</button>
+            <button type="submit" class="btn btn-warning float-end shadow-none" [disabled]="!form.valid">Marcar
+              Horário</button>
+            <button type="button" class="btn btn-outline-secondary float-end me-2 shadow-none">Cancelar</button>
           </div>
         </div>
       </form>

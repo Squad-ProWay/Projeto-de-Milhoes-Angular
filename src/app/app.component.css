@@ -16,39 +16,41 @@
   --color4: #63A5BF;
   --color5: #8FC4D9;
 }
-.container{
+
+.container {
   font-family: 'Poppins', sans-serif;
 }
+
 .navbar {
   z-index: 2;
   text-transform: uppercase;
 }
 
-.navbar-light .navbar-brand {
+.navbar-dark .navbar-brand {
   font-family: 'Playfair Display', serif;
   font-weight: 500;
   font-size: large;
   color: #e9ecef;
 }
 
-.navbar-light .navbar-brand:hover {
-  color: yellow;
+.navbar-dark .navbar-brand:hover {
+  color: #ffc107;
 }
 
-.navbar-light .navbar-nav .nav-link.active {
+.navbar-dark .navbar-nav .nav-link.active {
   color: #e9ecef;
 }
 
-.navbar-light .navbar-nav:hover .nav-link.active {
-  color: yellow;
+.navbar-dark .navbar-nav:hover .nav-link.active {
+  color: #ffc107;
 }
 
-.navbar-light .navbar-nav .nav-link {
+.navbar-dark .navbar-nav .nav-link {
   color: #e9ecef !important;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-  color: yellow !important;
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffc107 !important;
 }
 
 button {
@@ -69,9 +71,10 @@ label {
 }
 
 #btn-logout:hover {
-  color: yellow;
+  color: #ffc107;
 }
-.dropdown-menu > li > a:hover {
+
+.dropdown-menu>li>a:hover {
   background-image: none;
-  background-color: yellow;
+  background-color: #ffc107;
 }
