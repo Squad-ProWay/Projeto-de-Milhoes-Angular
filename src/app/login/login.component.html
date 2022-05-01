@@ -1,27 +1,37 @@
-<div class="container w-25">
-  <div class="bg-light p-5 rounded-3">
-    <form #f="ngForm" (ngSubmit)="fazerLogin(f.value)" >
-      <h1 class="mb-3 text-center">Login</h1>
-      <div class="mb-3">
-        <label for="inputEmail" class="form-label fs-5">Email</label>
-        <input type="email" class="form-control" id="inputEmail" ngModel name="email" placeholder="Email para login">
-        <div class="form-text">Nós não iremos compartilhar seu e-mail com ninguém.</div>
+<div class="container mt-5 pt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+      <div class="col-12">
+        <h3 class="mb-4">Cadastro de Usuário</h3>
       </div>
-      <div class="mb-3">
-        <label for="inputSenha" class="form-label fs-5">Senha</label>
-        <input type="password" class="form-control" id="inputSenha" ngModel name="senha" placeholder="Senha">
-      </div>
+      <form #f="ngForm" (ngSubmit)="fazerLogin(f.value)">
+        <div class="form-group mb-3">
+          <label for="inputEmail">Email</label>
+          <input #femail="ngModel" type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            id="inputEmail" ngModel name="email" placeholder="Email para login" required>
+          <div class="form-text">Nós não iremos compartilhar seu e-mail com ninguém.</div>
+          <div class="text-danger" *ngIf="femail.invalid && (femail.dirty || femail.touched)">*Informe um
+            email válido</div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="inputSenha">Senha</label>
+          <input type="password" class="form-control" id="inputSenha" ngModel name="senha" placeholder="Senha" required>
+        </div>
 
-      <div class="mt-4">
-        <hr>
-        <button type="submit" class="btn btn-primary w-100">Login</button>
-      </div>
-      <p class="mt-5 mb-3 text-muted text-center">© 2022</p>
-    </form>
+        <div class="mt-4 text-center">
+          <hr>
+          <button [disabled]="f.invalid" type="submit" class="btn btn-warning w-100">Login</button>
+          <div class="container mt-3 text-center">
+            <a routerLink="/cadusuario">Não possui conta? Clique aqui!</a>
+          </div>
+        </div>
+        <p class="my-3 text-muted text-center">© 2022</p>
+      </form>
+    </div>
+
+    <p class="text-center">{{ usuarioConectado.nome }}</p>
   </div>
-  <div class="container mt-3 text-center">
-    <a routerLink="/cadusuario">Não possui conta? Clique aqui!</a>
-  </div>
-  <p>{{ usuarioConectado.nome }}</p>
 </div>
+
+
 <router-outlet></router-outlet>
