@@ -1,40 +1,47 @@
-<div class="container w-45">
-    <div class="text-center">
-        <h2>Cadastro de Usuário</h2>
-    </div>
-    <form #f="ngForm" (ngSubmit)="salvar(f.value)">
+<div class="container mt-5 pt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+      <div class="col-12">
+        <h3 class="mb-4">Cadastro de Usuário</h3>
+      </div>
+      <form #f="ngForm" (ngSubmit)="salvar(f.value)">
+        <div class="form-group mb-3">
+          <label>Nome Completo</label>
+          <input #fnome="ngModel" type="text" class="form-control" ngModel name='nome' placeholder="Informe seu nome"
+            required>
+        </div>
+        <div class="text-danger" *ngIf="fnome.invalid&& (fnome.dirty || fnome.touched)">*Informe nome</div>
+        <div class="form-group mb-3">
+          <label>Email</label>
+          <input #femail="ngModel" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control"
+            ngModel name="email" placeholder="Informe seu email (ex: nome@email.com)" required />
+          <div class="text-danger" *ngIf="femail.invalid && (femail.dirty || femail.touched)">*Informe um
+            email válido</div>
+        </div>
+
         <div class="mb-3">
-            <label class="form-label">Nome Completo</label>
-            <input #fnome="ngModel" type="text" class="form-control" ngModel name='nome'
-                placeholder="Informe seu nome" required>
-            <div class="lbl-invalid" *ngIf="fnome.invalid">*Informe nome</div>
+          <label class="form-label">CPF</label>
+          <input #femail="ngModel" type="text" class="form-control" ngModel name='cpf'
+            placeholder="(ex: 000.000.000-00)" required>
+          <div class="text-danger" *ngIf="femail.invalid">*Informe CPF</div>
         </div>
         <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input #femail="ngModel" type="email" class="form-control" ngModel name='email'
-                placeholder="Informe seu email (ex: nome@email.com)" required>
-            <div class="lbl-invalid" *ngIf="femail.invalid">*Informe email</div>
+          <label class="form-label">Senha</label>
+          <input #fsenha="ngModel" type="password" class="form-control" ngModel name="senha"
+            placeholder="Informe a senha" required>
+          <div class="text-danger" *ngIf="fsenha.invalid">*Informe senha</div>
         </div>
-        <div class="mb-3">
-            <label class="form-label">CPF</label>
-            <input #femail="ngModel" type="text" class="form-control" ngModel name='cpf'
-                placeholder="(ex: 000.000.000-00)" required>
-            <div class="lbl-invalid" *ngIf="femail.invalid">*Informe CPF</div>
+        <div class="d-flex justify-content-between text-center my-4">
+          <button type="reset" class="btn btn-outline-secondary ">Cancelar</button>
+          <button [disabled]="f.invalid" type="submit" class="btn btn-warning">Cadastrar</button>
         </div>
-        <div class="mb-3">
-            <label class="form-label">Senha</label>
-            <input #fsenha="ngModel" type="password" class="form-control" ngModel name="senha"
-                placeholder="Informe a senha" required>
-            <div class="lbl-invalid" *ngIf="fsenha.invalid">*Informe senha</div>
-        </div>
-        <div class="container text-center m-1">
-            <button [disabled]="f.invalid" type="submit" class="btn btn-outline-success">Cadastrar</button>
-            <button type="reset" class="btn btn-outline-danger ">Cancelar</button>
-        </div>
-    </form>
-    <div class="text-center">
+      </form>
+      <div class="text-center mt-4">
         <a routerLink="/login">Faça login aqui!</a>
+      </div>
+      <label>{{msg}}</label>
     </div>
-    <label>{{msg}}</label>
+  </div>
 </div>
+
 <router-outlet></router-outlet>
