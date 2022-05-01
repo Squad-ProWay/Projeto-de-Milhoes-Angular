@@ -1,43 +1,45 @@
 <div class="container mt-5 pt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
-            <div class="col-12">
-                <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Formulário Agendamento</h3>
-            </div>
-            <form action="">
-                <div class="row g-3">
-                    <div class="col-12">
-                        <input type="text" class="form-control" placeholder="Nome Completo">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="tel" class="form-control" placeholder="Número de telefone">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="date" class="form-control" placeholder="Data">
-                    </div>
-                    <div class="col-md-6">
-                        <input type="time" class="form-control" placeholder="Horário">
-                    </div>
-                    <div class="col-12">
-                        <select class="form-select">
-                            <option selected="">Selecione o Procedimento</option>
-                            <option value="1">#</option>
-                            <option value="2">#</option>
-                            <option value="3">#</option>
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <textarea class="form-control" placeholder="Observação"></textarea>
-                    </div>
-                    <div class="col-12 mt-5">                        
-                        <button type="submit" class="btn btn-primary float-end">Marcar Horário</button>
-                        <button type="button" class="btn btn-outline-secondary float-end me-2">Cancelar</button>
-                    </div>
-                </div>
-            </form>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+      <div class="col-12">
+        <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Formulário Agendamento</h3>
+      </div>
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+        <div class="row g-3">
+          <div class="col-12">
+            <input type="text" class="form-control" ngModel name="nomeCompleto" required minlength="1"
+              placeholder="Nome Completo">
+          </div>
+          <div class="col-md-6">
+            <input type="tel" class="form-control" ngModel name="telefone" required minlength="9"
+              placeholder="Número de telefone">
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" ngModel name="email" required email placeholder="Email">
+          </div>
+          <div class="col-md-6">
+            <input type="date" class="form-control" ngModel name="data" required placeholder="Data">
+          </div>
+          <div class="col-md-6">
+            <input type="time" class="form-control" ngModel name="horario" required placeholder="Horário">
+          </div>
+          <div class="col-12">
+            <select class="form-select" ngModel name="procedimento" required>
+              <option selected="">Selecione o Procedimento</option>
+              <option value="1">#</option>
+              <option value="2">#</option>
+              <option value="3">#</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <textarea class="form-control" placeholder="Observação"></textarea>
+          </div>
+          <div class="col-12 mt-5">
+            <button type="submit" class="btn btn-primary float-end" [disabled]="!authForm.valid">Marcar Horário</button>
+            <button type="button" class="btn btn-outline-secondary float-end me-2">Cancelar</button>
+          </div>
         </div>
+      </form>
     </div>
+  </div>
 </div>

@@ -5,6 +5,7 @@ import { CadastroHorarioComponent } from './cadastro-horario/cadastro-horario.co
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-funcionario.component';
+import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.component';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
 import { EditaFuncionarioComponent } from './edita-funcionario/edita-funcionario.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path:'sobre',
     component: SobreComponent
+  },
+  {
+    path:'consultaHorario',
+    component: ConsultaHorarioComponent
   }
 ];
 

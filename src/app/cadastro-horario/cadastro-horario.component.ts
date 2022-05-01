@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastro-horario',
@@ -9,6 +10,11 @@ export class CadastroHorarioComponent implements OnInit {
 
   constructor() { }
 
+  onSubmit(form: NgForm){
+    console.log(form)
+    form.reset()
+    window.location.href = "/consultaHorario"
+  }
   ngOnInit(): void {
   }
 

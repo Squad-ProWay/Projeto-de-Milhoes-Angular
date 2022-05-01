@@ -19,6 +19,7 @@ import { EditaFuncionarioComponent } from './edita-funcionario/edita-funcionario
 import { CadastroHorarioComponent } from './cadastro-horario/cadastro-horario.component';
 import { InfoServicosComponent } from './info-servicos/info-servicos.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SobreComponent } from './sobre/sobre.component';
     EditaFuncionarioComponent,
     CadastroHorarioComponent,
     InfoServicosComponent,
-    SobreComponent
+    SobreComponent,
+    ConsultaHorarioComponent
   ],
   imports: [
     BrowserModule,
