@@ -1,157 +1,95 @@
-<div class="container p-15 mt-15 m-5">
-  <h3>Cadastro de Funcionário - ADM</h3>
-  <form #f="ngForm" (ngSubmit)="gravar(f.value)">
-    <div class="form-group mb-3">
-      <label>Nome do Funcionário:</label>
-      <input
-        #fnome="ngModel"
-        type="text"
-        class="form-control"
-        ngModel
-        name="nome"
-        placeholder="Digite o nome do funcionário"
-        required
-      />
-    </div>
-    <div class="lbl-invalid" *ngIf="fnome.invalid">
-      *Informe o nome do funcionário
-    </div>
+<div class="container mt-5 pt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+      <div class="col-12">
+        <h3>Cadastro de Funcionário</h3>
+      </div>
+      <form #f="ngForm" (ngSubmit)="gravar(f.value)">
+        <div class="form-group mb-3">
+          <label>Nome do Funcionário:</label>
+          <input #fnome="ngModel" type="text" class="form-control" ngModel name="nome"
+            placeholder="Digite o nome do funcionário" required minlength="5" />
+        </div>
+        <div class="lbl-invalid text-danger" *ngIf="fnome.invalid && (fnome.dirty || fnome.touched)">
+          *Informe o nome completo do funcionário
+        </div>
 
-    <div class="form-group mb-3">
-      <label>Telefone:</label>
-      <input
-        #ftelefone="ngModel"
-        type="text"
-        class="form-control"
-        ngModel
-        name="telefone"
-        placeholder="Digite o telefone"
-        required
-      />
-      <div class="lbl-invalid" *ngIf="ftelefone.invalid">
-        *Informe o telefone
+        <div class="form-group mb-3">
+          <label>Telefone:</label>
+          <input #ftelefone="ngModel" type="text" class="form-control" ngModel name="telefone"
+            placeholder="Digite o telefone" required />
+          <div class="lbl-invalid text-danger" *ngIf="ftelefone.invalid && (ftelefone.dirty || ftelefone.touched)">
+            *Informe o telefone
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label>CPF:</label>
+          <input #fcpf="ngModel" type="text" class="form-control" ngModel minlength="11" name="cpf"
+            placeholder="Digite o CPF" pattern="[0-9]+$" required />
+          <div class="lbl-invalid text-danger" *ngIf="fcpf.invalid && (fcpf.dirty || fcpf.touched)">*Informe o CPF e verifique se tem 11 dígitos.</div>
+        </div>
+        <div class="form-group mb-3">
+          <label>Email:</label>
+          <input #femail="ngModel" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control"
+            ngModel name="email" placeholder="Digite o Email" required />
+          <div class="lbl-invalid text-danger" *ngIf="femail.invalid && (femail.dirty || femail.touched)">*Informe o email</div>
+        </div>
+        <div class="container mb-3">
+          <h4 class="mt-3">Serviço Prestado:</h4>
+          <div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" ngModel name="servico" value="pedmani" checked />
+              <label class="form-check-label" for="radio1">
+                Pedicure/Manicure
+              </label>
+            </div>
+            <div class="form-check" required>
+              <input class="form-check-input" type="radio" ngModel name="servico" value="alongamento" checked />
+              <label class="form-check-label" for="radio2">
+                Alongamento de unhas
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" ngModel name="servico" value="pintor" checked />
+              <label class="form-check-label" for="radio3">
+                Pintura de Cabelos
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" ngModel name="servico" value="corte" checked />
+              <label class="form-check-label" for="radio4"> Corte </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" ngModel name="servico" value="quimica" checked />
+              <label class="form-check-label" for="radio5">
+                Processos Químicos
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label>Descrição</label>
+          <textarea #fdescricao="ngModel" type="textarea" class="form-control" ngModel name="descricao"
+            placeholder="Digite descrição. Ex: No que é especialista e observações relevantes sobre o profissional"
+            required></textarea>
+
+          <div class="lbl-invalid text-danger" *ngIf="fdescricao.invalid && (fdescricao.dirty || fdescricao.touched)">
+            *Informe uma descrição do que o funcionário faz
+          </div>
+        </div>
+        <div class="text-center my-4">
+          <button [disabled]="f.invalid" type="submit" class="btn btn-warning">
+            Cadastrar
+          </button>
+        </div>
+      </form>
+      <div class="text-center my-3">
+        <a routerLink="/consultaFuncionario">Consultar Funcionários</a>
       </div>
     </div>
-    <div class="form-group mb-3">
-      <label>CPF:</label>
-      <input
-        #fcpf="ngModel"
-        type="text"
-        class="form-control"
-        ngModel
-        minlength="11"
-        name="cpf"
-        placeholder="Digite o CPF"
-        pattern="[0-9]+$"
-        required
-      />
-      <div class="lbl-invalid" *ngIf="fcpf.invalid">*Informe o CPF e verifique se tem 11 dígitos.</div>
-    </div>
-    <div class="form-group mb-3">
-      <label>Email:</label>
-      <input
-        #femail="ngModel"
-        type="text"
-        pattern="/^[a-z0-9.]+@[a-z0-9]+\.[a-z](.[a-z]+)?/i"
-        class="form-control"
-        ngModel
-        name="email"
-        placeholder="Digite o Email"
-        required
-      />
-      <div class="lbl-invalid" *ngIf="femail.invalid">*Informe o email</div>
-    </div>
-    <div class="container mb-3">
-      <h4 class="mt-3">Serviço Prestado:</h4>
-      <div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            ngModel
-            name="servico"
-            value="pedmani"
-            checked
-          />
-          <label class="form-check-label" for="radio1">
-            Pedicure/Manicure
-          </label>
-        </div>
-        <div class="form-check" required>
-          <input
-            class="form-check-input"
-            type="radio"
-            ngModel
-            name="servico"
-            value="alongamento"
-            checked
-          />
-          <label class="form-check-label" for="radio2">
-            Alongamento de unhas
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            ngModel
-            name="servico"
-            value="pintor"
-            checked
-          />
-          <label class="form-check-label" for="radio3">
-            Pintura de Cabelos
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            ngModel
-            name="servico"
-            value="corte"
-            checked
-          />
-          <label class="form-check-label" for="radio4"> Corte </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            ngModel
-            name="servico"
-            value="quimica"
-            checked
-          />
-          <label class="form-check-label" for="radio5">
-            Processos Químicos
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group mb-3">
-      <label>Descrição</label>
-      <textarea
-      #fdescricao="ngModel"
-        type="textarea"
-        class="form-control"
-        ngModel
-        name="descricao"
-        placeholder="Digite descrição. Ex: No que é especialista e observações relevantes sobre o profissional"
-        required
-      ></textarea>
-      
-      <div class="lbl-invalid" *ngIf="fdescricao.invalid">
-        *Informe uma descrição do que o funcionário faz
-      </div>
-    </div>
-    <button [disabled]="f.invalid" type="submit" class="btn btn-primary">
-      Cadastrar
-    </button>
-  </form>
-  <div class="container mt-3">
-    <a routerLink="/consultaFuncionario">Consultar Funcionários</a>
   </div>
 </div>
+
+
 
 <router-outlet></router-outlet>
