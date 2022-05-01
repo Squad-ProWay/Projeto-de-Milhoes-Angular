@@ -8,32 +8,34 @@
         <div class="row g-3">
           <div class="col-12">
             <input #nome="ngModel" type="text" class="form-control shadow-none" ngModel name="nomeCompleto" required
-              minlength="1" oninput="this.value = this.value.toUpperCase()" pattern=".*\s.*"(keypress)="omitirCharEspecial($event)"
-              placeholder="Nome Completo">
+              minlength="1" oninput="this.value = this.value.toUpperCase()" pattern=".*\s.*"
+              (keypress)="omitirCharEspecial($event)" placeholder="Nome Completo">
             <div class="lbl-invalid text-danger" *ngIf="nome.invalid && (nome.dirty || nome.touched)">*Informe
               o nome completo</div>
           </div>
           <div class="col-md-6">
             <input #tel="ngModel" type="tel" class="form-control shadow-none" ngModel name="telefone" required
               minlength="9" placeholder="Número de telefone">
-              <div class="lbl-invalid text-danger" *ngIf="nome.invalid && (tel.dirty || tel.touched)">*Informe
-               número de telefone válido: (xx) xxxx-xxxx</div>
+            <div class="lbl-invalid text-danger" *ngIf="nome.invalid && (tel.dirty || tel.touched)">*Informe
+              número de telefone válido: (xx) xxxx-xxxx</div>
           </div>
           <div class="col-md-6">
             <input #email="ngModel" type="email" class="form-control shadow-none" ngModel name="email" required email
               placeholder="Email">
-              <div class="lbl-invalid text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">*Informe um email</div>
+            <div class="lbl-invalid text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">*Informe um
+              email</div>
           </div>
           <div class="col-md-6">
             <input #data="ngModel" type="date" class="form-control shadow-none" ngModel name="data" required
               placeholder="Data">
-              <div class="lbl-invalid text-danger" *ngIf="data.invalid && (data.dirty || data.touched)">*Informe
-                uma data</div>
+            <div class="lbl-invalid text-danger" *ngIf="data.invalid && (data.dirty || data.touched)">*Informe
+              uma data</div>
           </div>
           <div class="col-md-6">
             <input #horario="ngModel" type="time" class="form-control shadow-none" ngModel name="horario" required
               placeholder="Horário">
-              <div class="lbl-invalid text-danger" *ngIf="horario.invalid && (horario.dirty || horario.touched)">*Informe um horário</div>
+            <div class="lbl-invalid text-danger" *ngIf="horario.invalid && (horario.dirty || horario.touched)">*Informe
+              um horário</div>
           </div>
           <div class="col-12">
             <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
@@ -42,7 +44,9 @@
               <option value="2">#</option>
               <option value="3">#</option>
             </select>
-            <div class="lbl-invalid text-danger" *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a ser realizado no dia</div>
+            <div class="lbl-invalid text-danger"
+              *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
+              ser realizado no dia</div>
           </div>
           <div class="col-12">
             <textarea #obs="ngModel" class="form-control shadow-none" ngModel placeholder="Observação"></textarea>

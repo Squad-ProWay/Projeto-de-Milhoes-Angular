@@ -4,22 +4,22 @@
         <div class="form-group mb-3">
           <label>Nome do Serviço</label>
           <input #fnome="ngModel" type="text" class="form-control" ngModel name="nome" placeholder="Digite o nome do serviço" required>
-          <div class="lbl-invalid" *ngIf="fnome.invalid">*Informe o nome do serviço</div>
+          <div class="lbl-invalid text-danger" *ngIf="fnome.invalid && (fnome.dirty || fnome.touched)">*Informe o nome do serviço</div>
         </div>
         <div class="form-group mb-3">
             <label>Descrição</label>
             <input #fdescricao="ngModel" type="text" class="form-control" ngModel name="descricao" placeholder="Digite descrição" required>
-            <div class="lbl-invalid" *ngIf="fdescricao.invalid">*Informe a descrição</div>
+            <div class="lbl-invalid text-danger" *ngIf="fdescricao.invalid  && (fdescricao.dirty || fdescricao.touched)">*Informe a descrição</div>
           </div>
           <div class="form-group mb-3">
             <label>Preço</label>
             <input #fpreco="ngModel" type="text" class="form-control" ngModel name="preco" placeholder="Digite o preço R$" required>
-            <div class="lbl-invalid" *ngIf="fpreco.invalid">*Informe o valor (ex: 23.70)</div>
+            <div class="lbl-invalid text-danger" *ngIf="fpreco.invalid && (fpreco.dirty || fpreco.touched)">*Informe o valor (ex: 23.70)</div>
           </div>
           <div class="form-group mb-3">
             <label>Tempo estimado</label>
             <input #ftempo="ngModel" type="text" class="form-control" ngModel name="tempo" placeholder="Digite o tempo de execução em minutos" required>
-            <div class="lbl-invalid" *ngIf="ftempo.invalid">*Informe o tempo estimado (ex: 90 min)</div>
+            <div class="lbl-invalid text-danger" *ngIf="ftempo.invalid && (ftempo.dirty || ftempo.touched)">*Informe o tempo estimado (ex: 90 min)</div>
           </div>
           <div class="container mb-3">
               <h4 class="mt-3">Status do serviço</h4>

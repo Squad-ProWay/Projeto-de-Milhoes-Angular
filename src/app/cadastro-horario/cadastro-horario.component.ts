@@ -9,10 +9,12 @@ import { HorarioService } from '../horario.service';
 
 export class CadastroHorarioComponent implements OnInit {
 
-  constructor(private serviceHorario: HorarioService) { }
+  constructor(private serviceHorario: HorarioService) {
+   }
 
-  gravar(form: NgForm){
-    this.serviceHorario.gravar(form).subscribe(x => window.location.href = "/consultaHorario")
+
+  gravar(dados: any){
+    this.serviceHorario.gravar(dados).subscribe(x => window.location.href = "/consultaHorario")
   }
 
   omitirCharEspecial(event: { charCode: any; }){
