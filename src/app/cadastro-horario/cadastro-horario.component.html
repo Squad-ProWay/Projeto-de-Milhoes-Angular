@@ -51,10 +51,11 @@
           <div class="col-12">
             <textarea #obs="ngModel" class="form-control shadow-none" ngModel placeholder="Observação"></textarea>
           </div>
-          <div class="col-12 mt-5">
+          <div class="col-12 mt-5 d-flex  justify-content-between">
+            <button type="button" class="btn btn-outline-secondary float-end me-2 shadow-none">Cancelar</button>
             <button type="submit" class="btn btn-warning float-end shadow-none" [disabled]="!form.valid">Marcar
               Horário</button>
-            <button type="button" class="btn btn-outline-secondary float-end me-2 shadow-none">Cancelar</button>
+
           </div>
         </div>
       </form>
