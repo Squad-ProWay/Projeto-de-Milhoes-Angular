@@ -75,17 +75,14 @@ const routes: Routes = [
     path:'consultaHorario',
     component: ConsultaHorarioComponent
   },
-
   {
     path:'editausuario/:idusuario',
     component: EditaUsuarioComponent
   },
-  
   {
     path:'consultausuario',
     component: ConsultaUsuarioComponent
   }
-  
   
 ];
 
