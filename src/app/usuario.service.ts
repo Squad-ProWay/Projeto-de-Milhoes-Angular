@@ -9,7 +9,7 @@ export class UsuarioService {
   constructor(private http:HttpClient) { }
 
   gravar(dados: any) {
-    let url = 'http://localhost:8081/cadusuario'
+    let url = 'http://localhost:3000/cadusuario'
     return this.http.post(url, dados);
   }
 
