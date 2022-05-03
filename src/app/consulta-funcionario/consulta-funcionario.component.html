@@ -1,39 +1,30 @@
-<div>
-
-
-<div class="container mt-5 mb-3 pd-5 " >
-    <table class="table">
-        <thead class="bg-success mt-18">
-          <tr>
-            <th>Id</th>
-            <th>Nome do Funcionário</th>
-            <th>Telefone</th>
-            <th>CPF</th>
-            <th>Email</th>
-            <th>Serviço</th>
-            <th>Descrição</th>
-            <th>Edição</th>
-            <th>Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let func of funcionario">
-            <td> {{ func.id }}</td>
-            <td> {{ func.nome }}</td>
-            <td> {{ func.telefone }}</td>
-            <td> {{ func.cpf }}</td>
-            <td> {{ func.email }}</td>
-            <td> {{ func.servico }}</td>
-            <td> {{ func.descricao }}</td>
-            <td> <a [routerLink]="['/funcionario',func.id]"><i class="material-icons">mode_edit</i></a></td>
-            <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
-                (click)="excluir(func.id)">delete</i></td>
-          </tr>
-        </tbody>
-      </table>
+<div class="container mt-5 pt-5 mb-3">
+  <table class="table">
+    <thead class="bg-dark text-light">
+      <tr>
+        <th class="fw-normal">Id</th>
+        <th class="fw-normal">Nome do Funcionário</th>
+        <th class="fw-normal">Telefone</th>
+        <th class="fw-normal">CPF</th>
+        <th class="fw-normal">Email</th>
+        <th class="fw-normal">Serviço</th>
+        <th class="fw-normal">Descrição</th>
+        <th class="fw-normal">Edição</th>
+        <th class="fw-normal">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let func of funcionario">
+        <td> {{ func.id }}</td>
+        <td> {{ func.nome }}</td>
+        <td> {{ func.telefone }}</td>
+        <td> {{ func.cpf }}</td>
+        <td> {{ func.email }}</td>
+        <td> {{ func.servico }}</td>
+        <td> {{ func.descricao }}</td>
+        <td> <a [routerLink]="['/funcionario',func.id]"><i class="material-icons icone-editar">mode_edit</i></a></td>
+        <td> <i role="button" class="material-icons" (click)="excluir(func.id)">delete</i></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<<<<<<< Updated upstream
-</div>
-=======
-<router-outlet></router-outlet>
->>>>>>> Stashed changes
