@@ -7,8 +7,10 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-funcionario.component';
 import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.component';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
+import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { EditaFuncionarioComponent } from './edita-funcionario/edita-funcionario.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
+import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { HomeComponent } from './home/home.component';
 import { InfoServicosComponent } from './info-servicos/info-servicos.component';
 import { LoginComponent } from './login/login.component';
@@ -72,7 +74,19 @@ const routes: Routes = [
   {
     path:'consultaHorario',
     component: ConsultaHorarioComponent
+  },
+
+  {
+    path:'editausuario/:idusuario',
+    component: EditaUsuarioComponent
+  },
+  
+  {
+    path:'consultausuario',
+    component: ConsultaUsuarioComponent
   }
+  
+  
 ];
 
 @NgModule({
