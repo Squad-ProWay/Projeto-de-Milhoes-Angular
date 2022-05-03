@@ -1,6 +1,6 @@
 <div class="container mt-5 mb-5" >
     <form #f="ngForm">
-        <h3>Editar Serviço</h3>
+        <h3>Editar Funcionário</h3>
     <label>Id</label>
     <a class="form-control mt-2" type="text" [(ngModel)]="funcionario.id" >{{funcionario.id}} </a>
     <label>Nome do Funcionário </label>
@@ -25,7 +25,7 @@
     
     <div class="container mt-3">
         <div ><button  class="btn btn-outline-success mt-1 m-1" type="submit" [disabled]="f.invalid" (click)="efetivarAlteracao()">Gravar</button>
-            <button  routerLink="/consultaFuncionario" class="btn btn-danger mt-1 m-1" > Voltar </button></div>
+            <button  routerLink="/consultausuario" class="btn btn-danger mt-1 m-1" > Voltar </button></div>
        
        
     </div>

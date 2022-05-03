@@ -21,6 +21,8 @@ import { InfoServicosComponent } from './info-servicos/info-servicos.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
+import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { NgxMaskModule } from 'ngx-mask';
     CadastroHorarioComponent,
     InfoServicosComponent,
     SobreComponent,
-    ConsultaHorarioComponent
+    ConsultaHorarioComponent,
+    EditaUsuarioComponent,
+    ConsultaUsuarioComponent
   ],
   imports: [
     BrowserModule,
