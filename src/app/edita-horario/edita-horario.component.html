@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <h3>Editar Serviço</h3>
+    <form #form="ngForm">
+    <label>Id</label>
+    <input class="form-control mt-2" type="text" [(ngModel)]="horario.id" />
+    <label>Nome</label>
+    <input  #formnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.nome" required>
+    <div class="lbl-invalid" *ngIf="formnome.invalid">
+        *Informe o nome
+    </div>
+    <label>Telefone</label>
+    <input  #formtelefone="ngModel" name="telefone" ngDefaultControl  class="form-control mt-2" type="text" [(ngModel)]="horario.telefone" required/>
+    <div class="lbl-invalid" *ngIf="formtelefone.invalid">
+        *Informe o telefone
+    </div>
+    <label>Email</label>
+    <input #formemail="ngModel" name="email" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.email" required/>
+    <div class="lbl-invalid" *ngIf="formemail.invalid">
+        *Informe o email
+    </div>
+    <label>Data</label>
+    <input #formdata="ngModel" name="data" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.data" required/>
+    <div class="lbl-invalid" *ngIf="formdata.invalid">
+        *Informe a data
+    </div>
+    <label>Horário</label>
+    <input #formhorario="ngModel" name="horario" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.horario" required/>
+    <div class="lbl-invalid" *ngIf="formhorario.invalid">
+        *Informe o horário
+    </div>
+    <label>Procedimento</label>
+    <input #formprocedimento="ngModel" name="procedimento" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.procedimento" required/>
+    <div class="lbl-invalid" *ngIf="formprocedimento.invalid">
+        *Informe o procedimento
+    </div>
+    <label>Observações</label>
+    <input #formobservacao="ngModel" name="observacao" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.observacao" required/>
+    <div class="lbl-invalid" *ngIf="formobservacao.invalid">
+        *Acrescente alguma observação
+    </div>    
+    <button class="btn btn-outline-success mt-1" (click)="efetivarAlteracao()">Gravar</button>
+    </form>
+</div>
+<div class="container mt-2">
+    <span style="color: green;">{{ msg }}</span>
+</div>
+ 

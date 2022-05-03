@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HorarioService } from '../horario.service';
 
 @Component({
   selector: 'app-consulta-horario',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaHorarioComponent implements OnInit {
 
-  constructor() { }
+  msg: string = ""
+  horarios: any;
+
+  constructor(private horarioService: HorarioService) {
+    this.horarioService.getAll().subscribe(x => this.horarios = x)
+   }
+
+  gravar(dados: any){
+     this.horarioService.gravar(dados).subscribe(x => window.location.reload())
+  }
 
   ngOnInit(): void {
+  
+  }
+
+  excluir(id:any) {
+    this.horarioService.excluir(id).subscribe( x=> {window.location.reload()})
   }
 
 }

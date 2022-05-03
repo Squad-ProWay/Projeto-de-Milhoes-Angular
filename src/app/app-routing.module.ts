@@ -9,6 +9,7 @@ import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.co
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { EditaFuncionarioComponent } from './edita-funcionario/edita-funcionario.component';
+import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
 import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { HomeComponent } from './home/home.component';
@@ -82,6 +83,10 @@ const routes: Routes = [
   {
     path:'consultausuario',
     component: ConsultaUsuarioComponent
+  },
+  {
+    path:'horarios/:idhorario',
+    component: EditaHorarioComponent
   }
   
 ];
