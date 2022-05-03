@@ -72,6 +72,24 @@
     }
   ],
   "horarios": [
-    "idhorario"
+    {
+      "nome": "PATRICIA BRANDÃO",
+      "telefone": "(81) 99090-9090",
+      "email": "paty@gmail.com",
+      "data": "2022-05-04",
+      "horario": "14:30",
+      "procedimento": "1",
+      "id": 1
+    },
+    {
+      "nome": "ANA BRANDAO",
+      "telefone": "(81) 99090-9090",
+      "email": "ana@gmail.com",
+      "data": "2022-05-06",
+      "horario": "11:00",
+      "procedimento": "2",
+      "observacao": "Irei chegar 10 minutos adiantada.",
+      "id": 2
+    }
   ]
 }
