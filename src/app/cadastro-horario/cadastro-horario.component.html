@@ -29,11 +29,11 @@
               email</div>
           </div>
           <div class="col-md-6">
-            <input #formdata="ngModel" type="date" class="form-control shadow-none" ngModel name="data" required
+            <input #formdia="ngModel" type="date" class="form-control shadow-none" ngModel name="dia" required
               placeholder="Data">
-            <div class="lbl-invalid text-danger" *ngIf="formdata.invalid && (formdata.dirty || formdata.touched)">
+            <div class="lbl-invalid text-danger" *ngIf="formdia.invalid && (formdia.dirty || formdia.touched)">
               *Informe
-              uma data</div>
+              um dia</div>
           </div>
           <div class="col-md-6">
             <input #formhorario="ngModel" type="time" class="form-control shadow-none" ngModel name="horario" required
