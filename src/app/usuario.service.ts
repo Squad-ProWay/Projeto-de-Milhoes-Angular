@@ -14,18 +14,18 @@ export class UsuarioService {
   }
 
   getAll() {
-    let url = 'http://localhost:3000/usuarios'
+    let url = 'http://localhost:8081/usuarios'
     return this.http.get(url)
   }
 
   alterar(dados: any) {
-    let url = `http://localhost:3000/usuarios/${dados.id}`
+    let url = `http://localhost:8081/usuarios/${dados.id}`
     return this.http.put(url, dados)
   }
   getOne(idusuario: number) {
-    return this.http.get(`http://localhost:3000/usuarios/${idusuario}`)
+    return this.http.get(`http://localhost:8081/usuarios/${idusuario}`)
   }
   excluir(idusuario: number) {
-    return this.http.delete(`http://localhost:3000/usuarios${idusuario}`)
+    return this.http.delete(`http://localhost:8081/usuarios/${idusuario}`)
   }
 }

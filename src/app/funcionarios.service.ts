@@ -18,8 +18,8 @@ export class FuncionariosService {
     return this.http.get(url)
   }
 
-  getOne(idservico: number) {
-    return this.http.get(`http://localhost:3000/funcionarios/${idservico}`)
+  getOne(idfuncionario: number) {
+    return this.http.get(`http://localhost:3000/funcionarios/${idfuncionario}`)
   }
 
   alterar(dados: any) {
@@ -27,7 +27,7 @@ export class FuncionariosService {
     return this.http.put(url, dados)
   }
 
-  excluir(idservico: number) {
-    return this.http.delete(`http://localhost:3000/funcionarios${idservico}`)
+  excluir(idfuncionario: number) {
+    return this.http.delete(`http://localhost:3000/funcionarios${idfuncionario}`)
   }
 }
