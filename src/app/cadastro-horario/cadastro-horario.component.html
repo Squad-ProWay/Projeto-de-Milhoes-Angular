@@ -7,34 +7,39 @@
       <form #form="ngForm" (ngSubmit)="gravar(form.value)">
         <div class="row g-3">
           <div class="col-12">
-            <input #nome="ngModel" type="text" class="form-control shadow-none" ngModel name="nomeCompleto" required
+            <input #formnome="ngModel" type="text" class="form-control shadow-none" ngModel name="nome" required
               minlength="1" oninput="this.value = this.value.toUpperCase()" pattern=".*\s.*"
               (keypress)="omitirCharEspecial($event)" placeholder="Nome Completo">
-            <div class="lbl-invalid text-danger" *ngIf="nome.invalid && (nome.dirty || nome.touched)">*Informe
+            <div class="lbl-invalid text-danger" *ngIf="formnome.invalid && (formnome.dirty || formnome.touched)">
+              *Informe
               o nome completo</div>
           </div>
           <div class="col-md-6">
-            <input #tel="ngModel" type="tel" class="form-control shadow-none" ngModel name="telefone" required
+            <input #formtelefone="ngModel" type="tel" class="form-control shadow-none" ngModel name="telefone" required
               minlength="9" placeholder="Número de telefone">
-            <div class="lbl-invalid text-danger" *ngIf="nome.invalid && (tel.dirty || tel.touched)">*Informe
+            <div class="lbl-invalid text-danger"
+              *ngIf="formtelefone.invalid && (formtelefone.dirty || formtelefone.touched)">*Informe
               número de telefone válido: (xx) xxxx-xxxx</div>
           </div>
           <div class="col-md-6">
-            <input #email="ngModel" type="email" class="form-control shadow-none" ngModel name="email" required email
-              placeholder="Email">
-            <div class="lbl-invalid text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">*Informe um
+            <input #formemail="ngModel" type="email" class="form-control shadow-none" ngModel name="email" required
+              email placeholder="Email">
+            <div class="lbl-invalid text-danger" *ngIf="formemail.invalid && (formemail.dirty || formemail.touched)">
+              *Informe um
               email</div>
           </div>
           <div class="col-md-6">
-            <input #data="ngModel" type="date" class="form-control shadow-none" ngModel name="data" required
+            <input #formdia="ngModel" type="date" class="form-control shadow-none" ngModel name="dia" required
               placeholder="Data">
-            <div class="lbl-invalid text-danger" *ngIf="data.invalid && (data.dirty || data.touched)">*Informe
-              uma data</div>
+            <div class="lbl-invalid text-danger" *ngIf="formdia.invalid && (formdia.dirty || formdia.touched)">
+              *Informe
+              um dia</div>
           </div>
           <div class="col-md-6">
-            <input #horario="ngModel" type="time" class="form-control shadow-none" ngModel name="horario" required
+            <input #formhorario="ngModel" type="time" class="form-control shadow-none" ngModel name="horario" required
               placeholder="Horário">
-            <div class="lbl-invalid text-danger" *ngIf="horario.invalid && (horario.dirty || horario.touched)">*Informe
+            <div class="lbl-invalid text-danger"
+              *ngIf="formhorario.invalid && (formhorario.dirty || formhorario.touched)">*Informe
               um horário</div>
           </div>
           <div class="col-12">
@@ -49,7 +54,8 @@
               ser realizado no dia</div>
           </div>
           <div class="col-12">
-            <textarea #obs="ngModel" class="form-control shadow-none" ngModel placeholder="Observação"></textarea>
+            <textarea #formobservacao="ngModel" class="form-control shadow-none" ngModel name="observacao"
+              placeholder="Observação"></textarea>
           </div>
           <div class="col-12 mt-5 d-flex  justify-content-between">
             <button type="button" class="btn btn-outline-secondary float-end me-2 shadow-none">Cancelar</button>
@@ -59,6 +65,11 @@
           </div>
         </div>
       </form>
+      <div class="text-center mt-3">
+        <a routerLink="/consultaHorario">Consultar agendamentos</a>
+      </div>
     </div>
   </div>
 </div>
+
+<router-outlet></router-outlet>

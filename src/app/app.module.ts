@@ -23,6 +23,7 @@ import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.co
 import { NgxMaskModule } from 'ngx-mask';
 import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
+import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.co
     SobreComponent,
     ConsultaHorarioComponent,
     EditaUsuarioComponent,
-    ConsultaUsuarioComponent
+    ConsultaUsuarioComponent,
+    EditaHorarioComponent
   ],
   imports: [
     BrowserModule,

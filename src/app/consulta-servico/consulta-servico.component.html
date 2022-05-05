@@ -18,7 +18,7 @@
             <td> {{ serv.nome }}</td>
             <td> {{ serv.descricao }}</td>
             <td> {{ serv.preco }}</td>
-            <td> {{ serv.tempo }}</td>
+            <td> {{ serv.duracao }}</td>
             <td> {{ serv.status }}</td>
             <td> <a [routerLink]="['/servicos',serv.id]"><i class="material-icons icone-editar">mode_edit</i></a></td>
             <td> <i role="button" class="material-icons" (click)="excluir(serv.id)">delete</i></td>

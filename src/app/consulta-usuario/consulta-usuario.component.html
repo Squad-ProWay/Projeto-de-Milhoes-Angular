@@ -1,29 +1,25 @@
-<div>
-
-
-    <div class="container mt-5 mb-3 pd-5 " >
-        <table class="table">
-            <thead class="bg-success mt-18">
-              <tr>
-                <th>Id</th>
-                <th>Nome do Cliente</th>
-                <th>CPF</th>
-                <th>Email</th>
-                <th>Edição</th>
-                <th>Excluir</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of usuario">
-                <td> {{ user.id }}</td>
-                <td> {{ user.nome }}</td>
-                <td> {{ user.cpf }}</td>
-                <td> {{ user.email }}</td>
-                <td> <a [routerLink]="['/editausuario',user.id]"><i class="material-icons">mode_edit</i></a></td>
-                <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
-                    (click)="excluir(user.id)">delete</i></td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
-    </div>
+<div class="container mt-5 pt-5 mb-3">
+  <table class="table">
+    <thead class="bg-dark text-light">
+      <tr>
+        <th class="fw-normal">Id</th>
+        <th class="fw-normal">Nome do Cliente</th>
+        <th class="fw-normal">CPF</th>
+        <th class="fw-normal">Email</th>
+        <th class="fw-normal">Edição</th>
+        <th class="fw-normal">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usuario">
+        <td> {{ user.id }}</td>
+        <td> {{ user.nome }}</td>
+        <td> {{ user.cpf }}</td>
+        <td> {{ user.email }}</td>
+        <td> <a [routerLink]="['/editausuario',user.id]"><i class="material-icons">mode_edit</i></a></td>
+        <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
+            (click)="excluir(user.id)">delete</i></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
