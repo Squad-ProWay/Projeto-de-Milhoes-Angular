@@ -28,6 +28,6 @@ export class FuncionariosService {
   }
 
   excluir(idfuncionario: number) {
-    return this.http.delete(`http://localhost:3000/funcionarios${idfuncionario}`)
+    return this.http.delete(`http://localhost:3000/funcionarios/${idfuncionario}`)
   }
 }
