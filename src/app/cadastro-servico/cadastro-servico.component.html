@@ -28,9 +28,9 @@
         </div>
         <div class="form-group mb-3">
           <label>Tempo estimado</label>
-          <input #ftempo="ngModel" type="text" class="form-control" ngModel name="tempo"
+          <input #fduracao="ngModel" type="text" class="form-control" ngModel name="duracao"
             placeholder="Digite o tempo de execução em minutos" required>
-          <div class="lbl-invalid text-danger" *ngIf="ftempo.invalid && (ftempo.dirty || ftempo.touched)">*Informe o
+          <div class="lbl-invalid text-danger" *ngIf="fduracao.invalid && (fduracao.dirty || fduracao.touched)">*Informe o
             tempo estimado (ex: 90 min)</div>
         </div>
         <div class="container mb-3">
