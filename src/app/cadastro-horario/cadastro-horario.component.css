@@ -1,0 +1,46 @@
+@-webkit-keyframes autofill {
+
+  0%,
+  100% {
+    color: #666;
+    background: transparent;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-animation-delay: 1s;
+  /* Safari support - any positive time runs instantly */
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+input:focus {
+  outline: none !important;
+  border-color: #ffc107;
+  box-shadow: 0 0 10px #ffc107;
+}
+
+select:focus {
+  outline: none !important;
+  border-color: #ffc107;
+  box-shadow: 0 0 10px #ffc107;
+}
+
+select>option:checked,
+select>option:hover {
+
+  background-color: #ffc107 !important;
+}
+
+textarea:focus {
+  outline: none !important;
+  border-color: #ffc107;
+  box-shadow: 0 0 10px #ffc107;
+}

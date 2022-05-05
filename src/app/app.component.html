@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">BEAUTYTIME</a>
+    <a class="navbar-brand px-3" href="#">BEAUTYTIME</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,32 +8,42 @@
     <div class="collapse navbar-collapse navcolor" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a routerLink="home" class="nav-link active" aria-current="page" href="index.html">Home</a>
+          <a routerLink="sobre" class="nav-link active" aria-current="page">Sobre</a>
         </li>
         <li class="nav-item">
-          <a routerLink="" class="nav-link active" aria-current="page" href="index.html">Agendamentos</a>
+          <a routerLink="cadhorario" class="nav-link active" aria-current="page">Agendamentos</a>
         </li>
         <li class="nav-item">
-          <a routerLink="" class="nav-link active" aria-current="page" href="index.html">Contato</a>
+          <a routerLink="servicos" class="nav-link active" aria-current="page">Serviços</a>
         </li>
         <li class="nav-item">
-          <a routerLink="login" class="nav-link active" aria-current="page" href="index.html">Login</a>
+          <a *ngIf="!userLogado.email" routerLink="login" class="nav-link active" aria-current="page" href="index.html">Login</a>
         </li>
         <li class="nav-item dropdown">
-          <a class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+          <a *ngIf="userLogado.perfil=='ADM'" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Menu
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a routerLink="cadservico" class="dropdown-item">Serviços</a></li>
-              <li><a routerLink="cadfuncionario" class="dropdown-item" >Funcionários</a></li>
-              <li><a routerLink="cadUsuario" class="dropdown-item" >Clientes</a></li>
+            <li><a routerLink="cadservico" class="dropdown-item">Cadastro Serviços</a></li>
+            <li><a routerLink="cadfuncionario" class="dropdown-item">Cadastro Funcionários</a></li>
+            <li><a routerLink="cadusuario" class="dropdown-item">Cadastro Clientes</a></li>
+            <hr>
+            <li><a routerLink="consultaServico" class="dropdown-item">Consulta Serviços</a></li>
+            <li><a routerLink="consultaFuncionario" class="dropdown-item">Consulta Funcionários</a></li>
+            <li><a routerLink="consultausuario" class="dropdown-item">Consulta Clientes</a></li>
+            <li><a routerLink="consultaHorario" class="dropdown-item">Consulta Agendamentos</a></li>
           </ul>
-      </li>
+        </li>
       </ul>
     </div>
   </div>
+  <button *ngIf="userLogado.email" style="font-size:7px" id="btn-logout" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
+  <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
 </nav>
+
+
+
 
 <!--ROUTER-->
 <router-outlet></router-outlet>

@@ -1,20 +1,19 @@
-/**************************FONTE************************/
 
-@import url('https://fonts.googleapis.com/css2? family= Castoro & family= Roboto+Condensed:wght@300 & display=swap');
+:root {
+  --mainBranco: #fff !important;
+  --preto: black;
+  --cinzaclaro: silver;
+  --cinza: grey;
+  --verde: green;
+  --color1: #387CA6 !important;
+  --color2: #36769A;
+  --color3: #2C5F73;
+  --color4: #63A5BF;
+  --color5: #8FC4D9;
+}
 
-/************************* CORES ***********************/
-
-:root  {
-    --mainBranco: #fff !important;
-    --preto: black;
-    --cinzaclaro: silver;
-    --cinza: grey;
-    --verde: green;
-    --color1: #387CA6 !important;
-    --color2: #36769A;
-    --color3: #2C5F73;
-    --color4: #63A5BF;
-    --color5: #8FC4D9;
+.container {
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar {
@@ -22,28 +21,55 @@
   text-transform: uppercase;
 }
 
-.navbar-light .navbar-brand {
-    color: #387CA6;
+.navbar-dark .navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: large;
+  color: #e9ecef;
 }
 
-.navbar-light .navbar-brand:hover {
-    color: #8FC4D9;
+.navbar-dark .navbar-brand:hover {
+  color: #ffc107;
 }
 
-.navbar-light .navbar-nav .nav-link.active {
-    color: #387CA6;
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #e9ecef;
 }
 
-.navbar-light .navbar-nav:hover .nav-link.active {
-    color: #8FC4D9;
+.navbar-dark .navbar-nav:hover .nav-link.active {
+  color: #ffc107;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: #387CA6 !important;
+.navbar-dark .navbar-nav .nav-link {
+  color: #e9ecef !important;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-    color: #8FC4D9 !important;
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffc107 !important;
 }
 
-/***********************FOOTER************************/
+button {
+  padding: 0;
+  border: 0;
+  color: white;
+  background-color: #212529;
+}
+
+.lbl-bemvindo {
+  font-size: small;
+  text-transform: none;
+}
+
+label {
+  width: 250px;
+  padding-right: 5px;
+}
+
+#btn-logout:hover {
+  color: #ffc107;
+}
+
+.dropdown-menu>li>a:hover {
+  background-image: none;
+  background-color: #ffc107;
+}

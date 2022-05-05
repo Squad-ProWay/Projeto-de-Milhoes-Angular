@@ -1,15 +1,15 @@
-<div class="container mt-5 mb-3">
+<div class="container mt-5 pt-5 mb-3">
     <table class="table">
-        <thead class="bg-success">
+        <thead class="bg-dark text-light">
           <tr>
-            <th>Id</th>
-            <th>Nome do Serviço</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-            <th>Tempo de execução</th>
-            <th>Status</th>
-            <th>Edição</th>
-            <th>Excluir</th>
+            <th class="fw-normal">Id</th>
+            <th class="fw-normal">Nome do Serviço</th>
+            <th class="fw-normal">Descrição</th>
+            <th class="fw-normal">Preço R$</th>
+            <th class="fw-normal">Tempo de execução</th>
+            <th class="fw-normal">Status</th>
+            <th class="fw-normal">Editar</th>
+            <th class="fw-normal">Excluir</th>
           </tr>
         </thead>
         <tbody>
@@ -18,11 +18,10 @@
             <td> {{ serv.nome }}</td>
             <td> {{ serv.descricao }}</td>
             <td> {{ serv.preco }}</td>
-            <td> {{ serv.tempo }}</td>
+            <td> {{ serv.duracao }}</td>
             <td> {{ serv.status }}</td>
-            <td> <a [routerLink]="['/servicos',serv.id]"><i class="material-icons">mode_edit</i></a></td>
-            <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
-                (click)="excluir(serv.id)">delete</i></td>
+            <td> <a [routerLink]="['/servicos',serv.id]"><i class="material-icons icone-editar">mode_edit</i></a></td>
+            <td> <i role="button" class="material-icons" (click)="excluir(serv.id)">delete</i></td>
           </tr>
         </tbody>
       </table>

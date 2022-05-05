@@ -44,5 +44,52 @@
       "descricao": "weqweqwe eqwewqeqweqw qwwqe",
       "id": 3
     }
+  ],
+  "usuarios": [
+    {
+      "nome": "Ana Brandão",
+      "email": "ana@gmail.com",
+      "cpf": 85645445666,
+      "senha": "123",
+      "perfil": "ADM",
+      "id": 1
+    },
+    {
+      "nome": "Paty Brandão",
+      "email": "paty@gmail.com",
+      "cpf": "100.200.300-40",
+      "senha": "123",
+      "perfil": "USUARIO",
+      "id": 2
+    },
+    {
+      "nome": "Paula Brandão",
+      "email": "paula@gmail.com",
+      "cpf": "123.123.123-23",
+      "senha": "1234",
+      "perfil": "USUARIO",
+      "id": 3
+    }
+  ],
+  "horarios": [
+    {
+      "nome": "PATRICIA BRANDÃO",
+      "telefone": "(81) 99090-9090",
+      "email": "paty@gmail.com",
+      "data": "2022-05-04",
+      "horario": "14:30",
+      "procedimento": "1",
+      "id": 1
+    },
+    {
+      "nome": "ANA BRANDAO",
+      "telefone": "(81) 99090-9090",
+      "email": "ana@gmail.com",
+      "data": "2022-05-06",
+      "horario": "11:00",
+      "procedimento": "2",
+      "observacao": "Irei chegar 10 minutos adiantada.",
+      "id": 2
+    }
   ]
 }
