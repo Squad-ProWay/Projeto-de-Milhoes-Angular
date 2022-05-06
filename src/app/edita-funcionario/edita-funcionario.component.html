@@ -16,8 +16,6 @@
     <label>CPF</label>
     <input #fcpf="ngModel" name="cpf" ngDefaultControl pattern="[0-9]+$" class="form-control mt-2" type="number" [(ngModel)]="funcionario.cpf" required />
     <div class="lbl-invalid" *ngIf="fcpf.invalid">*Informe o CPF e verifique se tem 11 dígitos.</div>
-    <label>Email</label>
-    <input #femail="ngModel" name="email" ngDefaultControl  class="form-control mt-2" type="email" [(ngModel)]="funcionario.email" required/><div class="lbl-invalid" *ngIf="femail.invalid">*Informe o email</div>
     <label>Servico</label>
     <input  #fservico="ngModel" name="servico" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="funcionario.servico" />
     <label>Descrição</label>
