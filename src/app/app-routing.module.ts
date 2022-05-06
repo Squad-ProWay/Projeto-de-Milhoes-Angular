@@ -53,7 +53,7 @@ const routes: Routes = [
     component: CadastroFuncionarioComponent
   },
   {
-    path:'funcionario/:idfuncionario',
+    path:'funcionarios/:idfuncionario',
     component: EditaFuncionarioComponent
   },
   {

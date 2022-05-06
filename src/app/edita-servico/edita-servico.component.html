@@ -18,9 +18,9 @@
     <div class="lbl-invalid" *ngIf="fpreco.invalid">
         *Informe o preço
     </div>
-    <label>Tempo</label>
-    <input #ftempo="ngModel" name="tempo" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="servico.tempo" required/>
-    <div class="lbl-invalid" *ngIf="ftempo.invalid">
+    <label>Duração</label>
+    <input #fduracao="ngModel" name="duracao" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="servico.duracao" required/>
+    <div class="lbl-invalid" *ngIf="fduracao.invalid">
         *Informe o tempo
     </div>
     <label>Status</label>

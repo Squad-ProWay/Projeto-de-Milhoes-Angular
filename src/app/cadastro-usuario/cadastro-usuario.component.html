@@ -10,7 +10,7 @@
           <input #fnome="ngModel" type="text" class="form-control" ngModel name='nome' placeholder="Informe seu nome"
             required>
         </div>
-        <div class="text-danger" *ngIf="fnome.invalid&& (fnome.dirty || fnome.touched)">*Informe nome</div>
+        <div class="text-danger" *ngIf="fnome.invalid && (fnome.dirty || fnome.touched)">*Informe nome</div>
         <div class="form-group mb-3">
           <label>Email</label>
           <input #femail="ngModel" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control"
@@ -21,9 +21,9 @@
 
         <div class="mb-3">
           <label class="form-label">CPF</label>
-          <input #femail="ngModel" type="text" class="form-control" ngModel name='cpf'
+          <input #fcpf="ngModel" type="text" class="form-control" ngModel name='cpf'
             placeholder="(ex: 000.000.000-00)" required>
-          <div class="text-danger" *ngIf="femail.invalid">*Informe CPF</div>
+          <div class="text-danger" *ngIf="fcpf.invalid">*Informe CPF</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Senha</label>

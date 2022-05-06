@@ -6,7 +6,6 @@
         <th class="fw-normal">Nome do Funcionário</th>
         <th class="fw-normal">Telefone</th>
         <th class="fw-normal">CPF</th>
-        <th class="fw-normal">Email</th>
         <th class="fw-normal">Serviço</th>
         <th class="fw-normal">Descrição</th>
         <th class="fw-normal">Edição</th>
@@ -19,10 +18,9 @@
         <td> {{ func.nome }}</td>
         <td> {{ func.telefone }}</td>
         <td> {{ func.cpf }}</td>
-        <td> {{ func.email }}</td>
         <td> {{ func.servico }}</td>
         <td> {{ func.descricao }}</td>
-        <td> <a [routerLink]="['/funcionario',func.id]"><i class="material-icons icone-editar">mode_edit</i></a></td>
+        <td> <a [routerLink]="['/funcionarios',func.id]"><i class="material-icons icone-editar">mode_edit</i></a></td>
         <td> <i role="button" class="material-icons" (click)="excluir(func.id)">delete</i></td>
       </tr>
     </tbody>
