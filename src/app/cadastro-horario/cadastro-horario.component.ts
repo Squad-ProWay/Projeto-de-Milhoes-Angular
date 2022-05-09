@@ -19,7 +19,7 @@ export class CadastroHorarioComponent implements OnInit {
 
   gravar(dados: any){
     this.serviceHorario.gravar(dados).subscribe(x => window.location.reload())
- }
+  }
 
   omitirCharEspecial(event: { charCode: any; }){
     var k;  
