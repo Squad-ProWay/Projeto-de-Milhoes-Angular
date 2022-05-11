@@ -9,25 +9,25 @@ export class FuncionariosService {
   constructor(private http: HttpClient) { }
 
   gravar(dados: any) {
-    let url = 'http://localhost:8081/funcionarios'
+    let url = 'https://app-beautydb.herokuapp.com/funcionarios'
     return this.http.post(url, dados);
   }
 
   getAll() {
-    let url = 'http://localhost:8081/funcionarios'
+    let url = 'https://app-beautydb.herokuapp.com/funcionarios'
     return this.http.get(url)
   }
 
   getOne(idfuncionario: number) {
-    return this.http.get(`http://localhost:8081/funcionarios/${idfuncionario}`)
+    return this.http.get(`https://app-beautydb.herokuapp.com/funcionarios/${idfuncionario}`)
   }
 
   alterar(dados: any) {
-    let url = `http://localhost:8081/funcionarios/${dados.id}`
+    let url = `https://app-beautydb.herokuapp.com/funcionarios/${dados.id}`
     return this.http.put(url, dados)
   }
 
   excluir(idfuncionario: number) {
-    return this.http.delete(`http://localhost:8081/funcionarios/${idfuncionario}`)
+    return this.http.delete(`https://app-beautydb.herokuapp.com/funcionarios${idfuncionario}`)
   }
 }
