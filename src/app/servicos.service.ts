@@ -9,26 +9,26 @@ export class ServicosService {
   constructor(private http: HttpClient) { }
 
   gravar(dados: any) {
-    let url = 'http://localhost:8081/servicos'
+    let url = 'https://app-beautydb.herokuapp.com/servicos'
     return this.http.post(url, dados);
   }
 
   getAll() {
-    let url = 'http://localhost:8081/servicos'
+    let url = 'https://app-beautydb.herokuapp.com/servicos'
     return this.http.get(url)
   }
 
   getOne(idservico: number) {
-    return this.http.get(`http://localhost:8081/servicos/${idservico}`)
+    return this.http.get(`https://app-beautydb.herokuapp.com/servicos/${idservico}`)
   }
 
   alterar(dados: any) {
-    let url = `http://localhost:8081/servicos/${dados.id}`
+    let url = `https://app-beautydb.herokuapp.com/servicos/${dados.id}`
     return this.http.put(url, dados)
   }
 
   excluir(idservico: number) {
-    return this.http.delete(`http://localhost:8081/servicos/${idservico}`)
+    return this.http.delete(`https://app-beautydb.herokuapp.com/servicos/${idservico}`)
   }
 
 }

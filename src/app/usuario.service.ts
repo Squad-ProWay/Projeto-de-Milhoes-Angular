@@ -9,23 +9,23 @@ export class UsuarioService {
   constructor(private http:HttpClient) { }
 
   gravar(dados: any) {
-    let url = 'http://localhost:8081/usuarios'
+    let url = 'https://app-beautydb.herokuapp.com/usuarios'
     return this.http.post(url, dados);
   }
 
   getAll() {
-    let url = 'http://localhost:8081/usuarios'
+    let url = 'https://app-beautydb.herokuapp.com/usuarios'
     return this.http.get(url)
   }
 
   alterar(dados: any) {
-    let url = `http://localhost:8081/usuarios/${dados.id}`
+    let url = `https://app-beautydb.herokuapp.com/usuarios/${dados.id}`
     return this.http.put(url, dados)
   }
   getOne(idusuario: number) {
-    return this.http.get(`http://localhost:8081/usuarios/${idusuario}`)
+    return this.http.get(`https://app-beautydb.herokuapp.com/usuarios/${idusuario}`)
   }
   excluir(idusuario: number) {
-    return this.http.delete(`http://localhost:8081/usuarios/${idusuario}`)
+    return this.http.delete(`https://app-beautydb.herokuapp.com/usuarios/${idusuario}`)
   }
 }
