@@ -13,7 +13,7 @@ export class ConsultaHorarioComponent implements OnInit {
 
   constructor(private horarioService: HorarioService) {
     this.horarioService.getAll().subscribe(x => this.horarios = x)
-   }
+  }
 
   gravar(dados: any){
      this.horarioService.gravar(dados).subscribe(x => window.location.reload())
