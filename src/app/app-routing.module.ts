@@ -67,7 +67,7 @@ const routes: Routes = [
   {
     path:'cadhorario',
     component: CadastroHorarioComponent,
-    canActivate: [AuthAdmService]
+    canActivate: [AuthLoginService, AuthAdmService]
   },
   {
     path:'cadusuario',

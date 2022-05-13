@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'projetoCap';
 
   userLogado: any = {}
+  
   pegarPerfilUsuarioConectado(){
     let user: (string | null) = localStorage.getItem("userConectado")
     if(user != null){
@@ -18,6 +19,7 @@ export class AppComponent {
   }
   constructor(){
     this.pegarPerfilUsuarioConectado();
+    console.log(this.userLogado)
   }
 
   logout(){
