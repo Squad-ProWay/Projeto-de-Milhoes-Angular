@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
+import { DecodeTokenService } from '../decode-token.service';
 import { UsuarioService } from '../usuario.service';
 
 @Component({
@@ -8,7 +10,25 @@ import { UsuarioService } from '../usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private serviceUsuario: UsuarioService) { }
+  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService) { }
+
+  logar(form: any) {
+    this.auth.logar(form.email, form.senha).subscribe(
+      token => {
+        localStorage.setItem('token', JSON.stringify(token))
+        window.location.href = "/#"
+      }
+
+    )
+  }
+
+  verToken() {
+    let usuario = this.decodeToken.decodeTokenJWT()
+    console.log(usuario);
+    
+  }
+
+  /* constructor(private serviceUsuario: UsuarioService) { }
 
   usuarios: any = []
 
@@ -49,7 +69,7 @@ export class LoginComponent implements OnInit {
   
   gravarDadosLocalStorage () {
     localStorage.setItem("userConectado", JSON.stringify(this.usuarioConectado))
-  }
+  }*/
 
   ngOnInit(): void {
   }

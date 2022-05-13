@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthAdmService } from './auth-adm.service';
+import { AuthLoginService } from './auth-login.service';
 import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-funcionario.component';
 import { CadastroHorarioComponent } from './cadastro-horario/cadastro-horario.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
@@ -34,31 +36,38 @@ const routes: Routes = [
   },
   {
     path:'cadservico',
-    component: CadastroServicoComponent
+    component: CadastroServicoComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'consultaServico',
-    component: ConsultaServicoComponent
+    component: ConsultaServicoComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'servicos/:idservico',
-    component: EditaServicoComponent
+    component: EditaServicoComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'consultaFuncionario',
-    component: ConsultaFuncionarioComponent
+    component: ConsultaFuncionarioComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'cadfuncionario',
-    component: CadastroFuncionarioComponent
+    component: CadastroFuncionarioComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'funcionarios/:idfuncionario',
-    component: EditaFuncionarioComponent
+    component: EditaFuncionarioComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'cadhorario',
-    component: CadastroHorarioComponent
+    component: CadastroHorarioComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'cadusuario',
@@ -66,7 +75,8 @@ const routes: Routes = [
   },
   {
     path:'servicos',
-    component: InfoServicosComponent
+    component: InfoServicosComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'sobre',
@@ -74,19 +84,23 @@ const routes: Routes = [
   },
   {
     path:'consultaHorario',
-    component: ConsultaHorarioComponent
+    component: ConsultaHorarioComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'editausuario/:idusuario',
-    component: EditaUsuarioComponent
+    component: EditaUsuarioComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'consultausuario',
-    component: ConsultaUsuarioComponent
+    component: ConsultaUsuarioComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'horarios/:idhorario',
-    component: EditaHorarioComponent
+    component: EditaHorarioComponent,
+    canActivate: [AuthLoginService]
   }
   
 ];
