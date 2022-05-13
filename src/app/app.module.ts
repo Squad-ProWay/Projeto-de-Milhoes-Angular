@@ -24,6 +24,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
+import { PageErrorComponent } from './page-error/page-error.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
     ConsultaHorarioComponent,
     EditaUsuarioComponent,
     ConsultaUsuarioComponent,
-    EditaHorarioComponent
+    EditaHorarioComponent,
+    PageErrorComponent
   ],
   imports: [
     BrowserModule,
