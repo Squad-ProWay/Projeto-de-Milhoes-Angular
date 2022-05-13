@@ -67,7 +67,7 @@ const routes: Routes = [
   {
     path:'cadhorario',
     component: CadastroHorarioComponent,
-    canActivate: [AuthAdmService]
+    canActivate: [AuthLoginService, AuthAdmService]
   },
   {
     path:'cadusuario',
@@ -75,8 +75,7 @@ const routes: Routes = [
   },
   {
     path:'servicos',
-    component: InfoServicosComponent,
-    canActivate: [AuthAdmService]
+    component: InfoServicosComponent
   },
   {
     path:'sobre',
