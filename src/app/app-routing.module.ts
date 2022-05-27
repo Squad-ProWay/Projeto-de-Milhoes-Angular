@@ -75,8 +75,7 @@ const routes: Routes = [
   },
   {
     path:'servicos',
-    component: InfoServicosComponent,
-    canActivate: [AuthAdmService]
+    component: InfoServicosComponent
   },
   {
     path:'sobre',
