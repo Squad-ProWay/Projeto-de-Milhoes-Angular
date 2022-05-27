@@ -12,7 +12,8 @@ export class CadastroServicoComponent implements OnInit {
 
   gravar(dados: any){
     this.serviceServico.gravar(dados).subscribe(x => window.location.reload())
- }
+  }
+  
   ngOnInit(): void {
   }
 
