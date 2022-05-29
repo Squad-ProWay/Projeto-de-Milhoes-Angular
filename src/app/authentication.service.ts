@@ -5,8 +5,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthenticationService {
+  
+  
+  
+  constructor(private http: HttpClient) {
 
-  constructor(private http: HttpClient) { }
+   }
+
 
   logar(email: string, senha: string) {
     return this.http.post('https://app-beautydb.herokuapp.com/usuarios/login', {
@@ -14,4 +19,12 @@ export class AuthenticationService {
       senha: senha
     })
   }
+
+  
+
+  logout () {
+    localStorage.removeItem("userConectado")
+    window.location.reload()
+  }
+  
 }

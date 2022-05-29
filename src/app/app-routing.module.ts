@@ -6,6 +6,7 @@ import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-fu
 import { CadastroHorarioComponent } from './cadastro-horario/cadastro-horario.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
 import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-funcionario.component';
 import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.component';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
@@ -95,6 +96,10 @@ const routes: Routes = [
     path:'consultausuario',
     component: ConsultaUsuarioComponent,
     canActivate: [AuthAdmService]
+  },
+  {
+    path:'consultacliente',
+    component: ClienteConsultaComponent
   },
   {
     path:'horarios/:idhorario',
