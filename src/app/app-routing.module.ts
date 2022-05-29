@@ -6,7 +6,9 @@ import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-fu
 import { CadastroHorarioComponent } from './cadastro-horario/cadastro-horario.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
 import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
+import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
 import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-funcionario.component';
 import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.component';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
@@ -103,8 +105,17 @@ const routes: Routes = [
     canActivate: [AuthAdmService]
   },
   {
+    path:'cadastrocliente',
+    component: ClienteCadastroComponent
+  },
+  {
     path:'consultacliente',
     component: ClienteConsultaComponent
+  },
+  {
+    path:'editacliente/:idcliente',
+    component: ClienteEditaComponent,
+    canActivate: [AuthAdmService]
   },
   {
     path:'horarios/:idhorario',
