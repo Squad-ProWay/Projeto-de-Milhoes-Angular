@@ -3,7 +3,7 @@
       <thead class="bg-dark text-light">
         <tr>
           <th class="fw-normal">Id</th>
-          <th class="fw-normal">Nome do Cliente</th>
+          <th class="fw-normal">Cliente</th>
           <th class="fw-normal">CPF</th>
           <th class="fw-normal">Endereço</th>
           <th class="fw-normal">Cidade</th>
@@ -24,7 +24,7 @@
           <td> {{ cli.estado }}</td>
           <td> {{ cli.cep }}</td>
           <td> {{ cli.email }}</td>
-          <td> <a [routerLink]="['/editausuario',cli.id]"><i class="material-icons">mode_edit</i></a></td>
+          <td> <a [routerLink]="['/editacliente',cli.id]"><i class="material-icons">mode_edit</i></a></td>
           <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
               (click)="excluir(cli.id)">delete</i></td>
             </tr>

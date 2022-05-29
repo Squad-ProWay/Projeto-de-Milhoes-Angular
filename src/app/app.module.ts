@@ -26,6 +26,8 @@ import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.co
 import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
 import { PageErrorComponent } from './page-error/page-error.component';
 import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
+import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
+import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.co
     ConsultaUsuarioComponent,
     EditaHorarioComponent,
     PageErrorComponent,
-    ClienteConsultaComponent
+    ClienteConsultaComponent,
+    ClienteEditaComponent,
+    ClienteCadastroComponent
     
   ],
   imports: [
