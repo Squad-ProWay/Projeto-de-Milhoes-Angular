@@ -22,4 +22,10 @@ export class AuthLoginService {
    let token = this.decodeToken.decodeTokenJWT()
    return token != ''
  }
+
+ ehUsuarioComum(){
+  let token =  JSON.stringify(this.decodeToken.decodeTokenJWT())
+  let ob = JSON.parse(token)
+  return ob.perfil == "USUARIO"
+}
 }

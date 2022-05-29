@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthAdmService } from './auth-adm.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent {
       this.userLogado = user
     }  
   }
-  constructor(){
+  constructor( private AuthAdmService: AuthAdmService ){
     this.pegarPerfilUsuarioConectado();
     console.log(this.userLogado)
   }
