@@ -13,7 +13,7 @@ export class ConsultaServicoComponent implements OnInit {
 
   constructor(private serviceServico: ServicosService) {
     this.serviceServico.getAll().subscribe(x => this.servicos = x)
-   }
+  }
 
   gravar(dados: any){
      this.serviceServico.gravar(dados).subscribe(x => window.location.reload())

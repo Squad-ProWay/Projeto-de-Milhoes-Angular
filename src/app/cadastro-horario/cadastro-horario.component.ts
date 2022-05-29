@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HorarioService } from '../horario.service';
+import { ServicosService } from '../servicos.service';
 @Component({
   selector: 'app-cadastro-horario',
   templateUrl: './cadastro-horario.component.html',
@@ -8,18 +9,20 @@ import { HorarioService } from '../horario.service';
 })
 
 export class CadastroHorarioComponent implements OnInit {
+  
+  servicos:any = []
 
-  constructor(private serviceHorario: HorarioService) {
-   }
-
-
+  constructor(private serviceHorario: HorarioService, private serviceServico: ServicosService) {
+    this.serviceServico.getAll().subscribe(x => this.servicos = x)
+  }
+ 
   /*gravar(dados: any){
     this.serviceHorario.gravar(dados).subscribe(x => window.location.href = "/consultaHorario")
   }*/
 
   gravar(dados: any){
     this.serviceHorario.gravar(dados).subscribe(x => window.location.reload())
- }
+  }
 
   omitirCharEspecial(event: { charCode: any; }){
     var k;  

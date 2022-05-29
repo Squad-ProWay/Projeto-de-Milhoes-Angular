@@ -29,11 +29,11 @@
               email</div>
           </div>
           <div class="col-md-6">
-            <input #formdata="ngModel" type="date" class="form-control shadow-none" ngModel name="data" required
+            <input #formdia="ngModel" type="date" class="form-control shadow-none" ngModel name="dia" required
               placeholder="Data">
-            <div class="lbl-invalid text-danger" *ngIf="formdata.invalid && (formdata.dirty || formdata.touched)">
+            <div class="lbl-invalid text-danger" *ngIf="formdia.invalid && (formdia.dirty || formdia.touched)">
               *Informe
-              uma data</div>
+              um dia</div>
           </div>
           <div class="col-md-6">
             <input #formhorario="ngModel" type="time" class="form-control shadow-none" ngModel name="horario" required
@@ -45,9 +45,7 @@
           <div class="col-12">
             <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
               <option selected="">Selecione o Procedimento</option>
-              <option value="1">#</option>
-              <option value="2">#</option>
-              <option value="3">#</option>
+              <option *ngFor="let servico of servicos, let i = index" value="{{servico.nome}}">{{servico.nome}}</option>
             </select>
             <div class="lbl-invalid text-danger"
               *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
@@ -65,9 +63,6 @@
           </div>
         </div>
       </form>
-      <div class="text-center mt-3">
-        <a routerLink="/consultaHorario">Consultar agendamentos</a>
-      </div>
     </div>
   </div>
 </div>
