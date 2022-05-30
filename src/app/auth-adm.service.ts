@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DecodeTokenService } from './decode-token.service';
@@ -7,9 +7,12 @@ import { DecodeTokenService } from './decode-token.service';
   providedIn: 'root'
 })
 export class AuthAdmService {
+  userLogado: any = {}
+
 
   constructor(private decodeToken: DecodeTokenService,
-    private router: Router) { }
+    private router: Router) { this.pegarPerfilUsuarioConectado();
+    }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): 
      boolean | Observable<boolean> {
@@ -36,4 +39,18 @@ export class AuthAdmService {
     let ob = JSON.parse(token)
     return ob.perfil == "ADM"
   }
+
+  pegarPerfilUsuarioConectado(){
+    let user: (string | null) = localStorage.getItem("userConectado")
+    if(user != null){
+      user = JSON.parse(user)
+      this.userLogado = user
+    }  
+  }
+
+  logout(){
+    localStorage.removeItem("userConectado")
+    window.location.reload()
+  }
+  
 }

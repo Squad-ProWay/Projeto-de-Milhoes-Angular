@@ -9,7 +9,18 @@ import { DecodeTokenService } from '../decode-token.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService) { }
+  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService) { }
+
+  usuarios: any = []
+
+  usuarioConectado = {
+    id:0,
+    nome: '',
+    email: '',
+    cpf: '',
+    senha: '',
+    perfil: ''
+  }
 
   logar(form: any) {
     this.auth.logar(form.email, form.senha).subscribe(
@@ -25,19 +36,6 @@ export class LoginComponent implements OnInit {
     let usuario = this.decodeToken.decodeTokenJWT()
     console.log(usuario);
     
-  }
-
-  /* constructor(private serviceUsuario: UsuarioService) { }
-
-  usuarios: any = []
-
-  usuarioConectado = {
-    id:0,
-    nome: '',
-    email: '',
-    cpf: '',
-    senha: '',
-    perfil: ''
   }
 
   fazerLogin(dados: any) {
@@ -68,7 +66,7 @@ export class LoginComponent implements OnInit {
   
   gravarDadosLocalStorage () {
     localStorage.setItem("userConectado", JSON.stringify(this.usuarioConectado))
-  }*/
+  }
 
   ngOnInit(): void {
   }
