@@ -48,6 +48,9 @@
       </ul>
     </div>
   </div>
+
+  <button style="font-size:7px" id="btn-logout" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
+  <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
 </nav>
 
 
