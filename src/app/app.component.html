@@ -20,7 +20,7 @@
           <a *ngIf="!userLogado.email" routerLink="login" class="nav-link active" aria-current="page" href="index.html">Login</a>
         </li>
         <li class="nav-item dropdown">
-          <a *ngIf="userLogado.perfil=='ADM'" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+          <a *ngIf="administrador == true" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Menu
           </a>
@@ -39,8 +39,9 @@
       </ul>
     </div>
   </div>
-  <button style="font-size:7px" id="btn-logout" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
-  <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
+  <button *ngIf="usuarioConectado == true" style="font-size:7px" id="btn-logout" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
+  <label *ngIf="usuarioConectado == true" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a)!" }}</label>
+  <label *ngIf="usuarioConectado == false" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo"> </label>
 </nav>
 
 
