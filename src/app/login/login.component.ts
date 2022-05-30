@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { DecodeTokenService } from '../decode-token.service';
-import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-login',

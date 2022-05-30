@@ -9,12 +9,12 @@ import { ServicosService } from '../servicos.service';
 })
 
 export class CadastroHorarioComponent implements OnInit {
+  
   servicos:any = []
 
   constructor(private serviceHorario: HorarioService, private serviceServico: ServicosService) {
     this.serviceServico.getAll().subscribe(x => this.servicos = x)
   }
-
  
   /*gravar(dados: any){
     this.serviceHorario.gravar(dados).subscribe(x => window.location.href = "/consultaHorario")

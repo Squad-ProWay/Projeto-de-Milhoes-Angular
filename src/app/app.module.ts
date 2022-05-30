@@ -25,9 +25,8 @@ import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
 import { PageErrorComponent } from './page-error/page-error.component';
-import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
-import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
-import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
+import { AuthLoginService } from './auth-login.service';
+import { AuthenticationService } from './authentication.service';
 
 @NgModule({
   declarations: [
@@ -50,11 +49,7 @@ import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.co
     EditaUsuarioComponent,
     ConsultaUsuarioComponent,
     EditaHorarioComponent,
-    PageErrorComponent,
-    ClienteConsultaComponent,
-    ClienteEditaComponent,
-    ClienteCadastroComponent
-    
+    PageErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +58,7 @@ import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.co
     HttpClientModule,
     NgxMaskModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,6 +20,7 @@ import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { HomeComponent } from './home/home.component';
 import { InfoServicosComponent } from './info-servicos/info-servicos.component';
 import { LoginComponent } from './login/login.component';
+import { PageErrorComponent } from './page-error/page-error.component';
 import { SobreComponent } from './sobre/sobre.component';
 
 
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:'',
     component: HomeComponent
+  },
+  {
+    path:'erro',
+    component: PageErrorComponent
   },
   {
     path:'cadservico',
@@ -70,7 +75,7 @@ const routes: Routes = [
   {
     path:'cadhorario',
     component: CadastroHorarioComponent,
-    canActivate: [AuthLoginService, AuthAdmService]
+    canActivate: [AuthLoginService]
   },
   {
     path:'cadusuario',

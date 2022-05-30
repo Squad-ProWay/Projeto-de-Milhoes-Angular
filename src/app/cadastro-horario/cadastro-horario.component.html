@@ -44,8 +44,7 @@
           </div>
           <div class="col-12">
             <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
-              <option selected="">Selecione o Procedimento</option>
-              <option *ngFor="let servico of servicos, let i = index" value="{{servico.nome}}">{{servico.nome}}</option>
+              <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
             </select>
             <div class="lbl-invalid text-danger"
               *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
@@ -63,9 +62,6 @@
           </div>
         </div>
       </form>
-      <div class="text-center mt-3">
-        <a routerLink="/consultaHorario">Consultar agendamentos</a>
-      </div>
     </div>
   </div>
 </div>
