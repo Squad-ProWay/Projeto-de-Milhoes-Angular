@@ -24,7 +24,7 @@ export class AppComponent {
   }
 
   logout(){
-    localStorage.removeItem("userConectado")
+    localStorage.removeItem("token")
     window.location.reload()
   }
 
