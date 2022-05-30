@@ -11,18 +11,26 @@
           <a routerLink="sobre" class="nav-link active" aria-current="page">Sobre</a>
         </li>
         <li class="nav-item">
-          <a routerLink="cadhorario" class="nav-link active" aria-current="page">Agendamentos</a>
-        </li>
-        <li class="nav-item">
           <a routerLink="servicos" class="nav-link active" aria-current="page">Serviços</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="!userLogado.email" routerLink="login" class="nav-link active" aria-current="page" href="index.html">Login</a>
+          <a routerLink="cadhorario" class="nav-link active" aria-current="page">Agendamentos</a>
         </li>
+        <li class="nav-item">
+          <a *ngIf="!userLogado.email" routerLink="login" class="nav-link active" aria-current="page"
+            href="index.html">Login</a>
+        </li>
+        <li>
+          <a style="font-size:8px" id="btn-logout" (click)="logout()"><i
+              class="btn-logout material-icons" role="button">exit_to_app</i>Logout</a>
+          <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;"
+            class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
+        </li>
+
         <li class="nav-item dropdown">
-          <a *ngIf="userLogado.perfil=='ADM'" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Menu
+          <a *ngIf="userLogado.perfil=='ADM'" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a routerLink="cadservico" class="dropdown-item">Cadastro Serviços</a></li>
@@ -36,11 +44,10 @@
             <li><a routerLink="consultaHorario" class="dropdown-item">Consulta Agendamentos</a></li>
           </ul>
         </li>
+
       </ul>
     </div>
   </div>
-  <button *ngIf="userLogado.email" style="font-size:7px" id="btn-logout" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
-  <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
 </nav>
 
 

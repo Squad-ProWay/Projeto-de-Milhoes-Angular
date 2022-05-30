@@ -6,6 +6,9 @@ import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-fu
 import { CadastroHorarioComponent } from './cadastro-horario/cadastro-horario.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
+import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
+import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
 import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-funcionario.component';
 import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.component';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
@@ -17,6 +20,7 @@ import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { HomeComponent } from './home/home.component';
 import { InfoServicosComponent } from './info-servicos/info-servicos.component';
 import { LoginComponent } from './login/login.component';
+import { PageErrorComponent } from './page-error/page-error.component';
 import { SobreComponent } from './sobre/sobre.component';
 
 
@@ -33,6 +37,10 @@ const routes: Routes = [
   {
     path:'',
     component: HomeComponent
+  },
+  {
+    path:'erro',
+    component: PageErrorComponent
   },
   {
     path:'cadservico',
@@ -67,7 +75,7 @@ const routes: Routes = [
   {
     path:'cadhorario',
     component: CadastroHorarioComponent,
-    canActivate: [AuthLoginService, AuthAdmService]
+    canActivate: [AuthLoginService]
   },
   {
     path:'cadusuario',
@@ -94,6 +102,19 @@ const routes: Routes = [
   {
     path:'consultausuario',
     component: ConsultaUsuarioComponent,
+    canActivate: [AuthAdmService]
+  },
+  {
+    path:'cadastrocliente',
+    component: ClienteCadastroComponent
+  },
+  {
+    path:'consultacliente',
+    component: ClienteConsultaComponent
+  },
+  {
+    path:'editacliente/:idcliente',
+    component: ClienteEditaComponent,
     canActivate: [AuthAdmService]
   },
   {

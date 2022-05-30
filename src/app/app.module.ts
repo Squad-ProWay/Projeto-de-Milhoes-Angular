@@ -25,6 +25,9 @@ import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
 import { PageErrorComponent } from './page-error/page-error.component';
+import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
+import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
+import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,11 @@ import { PageErrorComponent } from './page-error/page-error.component';
     EditaUsuarioComponent,
     ConsultaUsuarioComponent,
     EditaHorarioComponent,
-    PageErrorComponent
+    PageErrorComponent,
+    ClienteConsultaComponent,
+    ClienteEditaComponent,
+    ClienteCadastroComponent
+    
   ],
   imports: [
     BrowserModule,
