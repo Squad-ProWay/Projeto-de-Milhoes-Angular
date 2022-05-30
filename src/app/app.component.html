@@ -21,8 +21,8 @@
             href="index.html">Login</a>
         </li>
         <li>
-          <a style="font-size:8px" id="btn-logout" (click)="logout()"><i
-              class="btn-logout material-icons" role="button">exit_to_app</i>Logout</a>
+          <button  style="font-size:7px" id="btn-logout" (click)="logout()"><i
+              class="btn-logout material-icons mt-1 p-0">exit_to_app</i></button>
           <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;"
             class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
         </li>
