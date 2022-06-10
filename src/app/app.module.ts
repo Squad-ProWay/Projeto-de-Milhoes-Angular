@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -31,6 +30,7 @@ import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.co
 import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
 import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
 import { ContatoComponent } from './contato/contato.component';
+
 
 @NgModule({
   declarations: [
