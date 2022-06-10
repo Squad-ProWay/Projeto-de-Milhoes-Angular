@@ -9,7 +9,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
@@ -30,6 +30,7 @@ import { AuthenticationService } from './authentication.service';
 import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
 import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
 import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
+import { ContatoComponent } from './contato/contato.component';
 
 @NgModule({
   declarations: [
@@ -55,14 +56,18 @@ import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.co
     PageErrorComponent,
     ClienteCadastroComponent,
     ClienteEditaComponent,
-    ClienteConsultaComponent
+    ClienteConsultaComponent,
+    ContatoComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxMaskModule
+    NgxMaskModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]
