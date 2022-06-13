@@ -8,7 +8,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
@@ -30,6 +30,10 @@ import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.co
 import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
 import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
 import { ContatoComponent } from './contato/contato.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { LoginSocialComponent } from './login-social/login-social.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -57,7 +61,8 @@ import { ContatoComponent } from './contato/contato.component';
     ClienteCadastroComponent,
     ClienteEditaComponent,
     ClienteConsultaComponent,
-    ContatoComponent
+    ContatoComponent,
+    LoginSocialComponent
 
   ],
   imports: [
@@ -67,9 +72,23 @@ import { ContatoComponent } from './contato/contato.component';
     HttpClientModule,
     NgxMaskModule,
     ReactiveFormsModule,
+    SocialLoginModule
     
   ],
-  providers: [AuthenticationService],
-  bootstrap: [AppComponent]
+  providers: [ [AuthenticationService],
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('815188041948-1toufe334ijt2c3vqu5a2de3g5bdn9he.apps.googleusercontent.com'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
+  bootstrap: [AppComponent, LoginSocialComponent],
 })
 export class AppModule { }
