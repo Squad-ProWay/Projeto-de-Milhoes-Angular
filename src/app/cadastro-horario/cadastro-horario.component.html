@@ -51,6 +51,13 @@
               ser realizado no dia</div>
           </div>
           <div class="col-12">
+            <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="funcionario" required>
+              <option *ngFor="let funcionario of funcionarios" value="{{funcionario.nome}}">{{funcionario.nome}}</option>
+            </select>
+            <div class="lbl-invalid text-danger"
+              *ngIf="selectFuncionario.invalid && (selectFuncionario.dirty || selectFuncionario.touched)">*Informe um funcionário que irá realizar o procedimento</div>
+          </div>
+          <div class="col-12">
             <textarea #formobservacao="ngModel" class="form-control shadow-none" ngModel name="observacao"
               placeholder="Observação"></textarea>
           </div>

@@ -53,6 +53,12 @@
               placeholder="Informe CEP" required>
             <div class="text-danger" *ngIf="fcep.invalid && (fcep.dirty || fcep.touched)">*Informe Endereço</div>
           </div>
+          <div class="mb-3">
+            <label class="form-label">ID do Usuário</label>
+            <input #fid_usuario="ngModel" type="text" class="form-control" ngModel name="id_usuario"
+              placeholder="Informe o id do usuário" required>
+            <div class="text-danger" *ngIf="fid_usuario.invalid && (fid_usuario.dirty || fid_usuario.touched)">*Informe Endereço</div>
+          </div>
 
           <div class="d-flex justify-content-between text-center my-4">
             <button type="reset" class="btn btn-outline-secondary ">Cancelar</button>
