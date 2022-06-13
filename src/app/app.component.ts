@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthAdmService } from './auth-adm.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,6 +13,8 @@ export class AppComponent {
   userLogado: any = {}
   administrador: boolean = false
   usuarioConectado: boolean = false
+
+  
   
   pegarPerfilUsuarioConectado(){
     let user: (string | null) = localStorage.getItem("userConectado")
@@ -30,5 +33,7 @@ export class AppComponent {
     localStorage.removeItem("token")
     window.location.reload()
   }
+
+  
 
 }
