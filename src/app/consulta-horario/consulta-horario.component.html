@@ -9,6 +9,7 @@
           <th class="fw-normal">Data</th>
           <th class="fw-normal">Horário</th>
           <th class="fw-normal">Serviço</th>
+          <th class="fw-normal">Funcionario</th>
           <th class="fw-normal">Observações</th>
           <th class="fw-normal">Edição</th>
           <th class="fw-normal">Excluir</th>
@@ -23,6 +24,7 @@
           <td> {{ hora.dia }}</td>
           <td> {{ hora.horario }}</td>
           <td> {{ hora.procedimento }}</td>
+          <td> {{ hora.funcionario }}</td>
           <td> {{ hora.observacao }}</td>
           <td> <a [routerLink]="['/horarios',hora.id]"><i class="material-icons icone-editar">mode_edit</i></a></td>
           <td> <i role="button" class="material-icons" (click)="excluir(hora.id)">delete</i></td>

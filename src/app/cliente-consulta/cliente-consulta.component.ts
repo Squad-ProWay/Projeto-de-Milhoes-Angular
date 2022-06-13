@@ -23,7 +23,7 @@ export class ClienteConsultaComponent implements OnInit {
   
   }
 
-  excluir(id:any) {
-    this.clienteService.excluir(id).subscribe( x=> {window.location.reload()})
+  excluir(id_cliente:any) {
+    this.clienteService.excluir(id_cliente).subscribe( x=> {window.location.reload()})
   }
 }
