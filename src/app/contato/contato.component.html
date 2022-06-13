@@ -22,7 +22,7 @@
                     <label for="inputSenha">Mensagem</label>
                     <textarea class="form-control mb-3" rows="3" style="width: 516px;" [formControl]="message" type="text" maxlength="256" class="text-area" placeholder="Digite sua mensagem" required></textarea>
                     <div>
-                        <button class="btn btn-warning w-100" [disabled]="isLoading" class="submit" type="submit">Enviar</button>
+                        <button class="btn btn-warning w-100" [disabled]="isLoading" type="submit">Enviar</button>
                     <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
                         <span>{{responseMessage}}</span>
                     </div>
