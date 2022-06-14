@@ -32,7 +32,6 @@ import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.co
 import { ContatoComponent } from './contato/contato.component';
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
-import { LoginSocialComponent } from './login-social/login-social.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -61,8 +60,7 @@ import { FormsModule } from '@angular/forms';
     ClienteCadastroComponent,
     ClienteEditaComponent,
     ClienteConsultaComponent,
-    ContatoComponent,
-    LoginSocialComponent
+    ContatoComponent
 
   ],
   imports: [
@@ -89,6 +87,6 @@ import { FormsModule } from '@angular/forms';
       } as SocialAuthServiceConfig,
     },
   ],
-  bootstrap: [AppComponent, LoginSocialComponent],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
