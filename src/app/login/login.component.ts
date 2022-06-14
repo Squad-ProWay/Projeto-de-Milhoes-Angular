@@ -3,7 +3,7 @@ import { SocialAuthService, GoogleLoginProvider, SocialUser } from '@abacritt/an
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { DecodeTokenService } from '../decode-token.service';
-import {  UsuarioService } from '../usuario.service'
+import {  UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -93,5 +93,24 @@ export class LoginComponent implements OnInit {
   logOut(): void {
     this.socialAuthService.signOut();
   }
+
+  checkAuthState(): boolean {
+    let flag = false;
+    this.socialAuthService.authState.subscribe({
+      next: (socialUser: SocialUser) => {
+        if (socialUser) {
+          flag = true;
+        }
+      },
+      error: (error) => {
+        console.log(error);
+      },
+      complete: () => {
+        console.log('ok!');
+      },
+    });
+    return flag;
+  }
+  
 
 }

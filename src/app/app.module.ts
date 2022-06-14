@@ -35,6 +35,8 @@ import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { FormsModule } from '@angular/forms';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +73,6 @@ import { FormsModule } from '@angular/forms';
     NgxMaskModule,
     ReactiveFormsModule,
     SocialLoginModule
-    
   ],
   providers: [ [AuthenticationService],
     {

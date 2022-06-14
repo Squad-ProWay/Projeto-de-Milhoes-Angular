@@ -99,6 +99,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "projetoCap:build:production",
+            "firebaseProject": "beautytime123",
+            "firebaseHostingSite": "beautytime123"
+          }
         }
       }
     }
