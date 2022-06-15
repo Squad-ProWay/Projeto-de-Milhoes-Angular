@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { SocialAuthService, GoogleLoginProvider, SocialUser } from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
@@ -12,11 +12,11 @@ import {  UsuarioService } from '../usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm!: FormGroup;
+  loginForm!: UntypedFormGroup;
   socialUser!: SocialUser;
   isLoggedin?: boolean;
 
-  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService, private formBuilder: FormBuilder, private socialAuthService: SocialAuthService) { }
+  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService, private formBuilder: UntypedFormBuilder, private socialAuthService: SocialAuthService) { }
 
   usuarios: any = []
 

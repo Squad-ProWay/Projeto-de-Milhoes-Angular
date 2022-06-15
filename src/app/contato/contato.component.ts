@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contato',
@@ -9,17 +9,17 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class ContatoComponent implements OnInit {
 
-  form: FormGroup;
-  nome: FormControl = new FormControl("", [Validators.required]);
-  assunto: FormControl = new FormControl("", [Validators.required]);
-  email: FormControl = new FormControl("", [Validators.required, Validators.email]);
-  mensagem: FormControl = new FormControl("", [Validators.required, Validators.maxLength(256)]);
-  honeypot: FormControl = new FormControl(""); 
+  form: UntypedFormGroup;
+  nome: UntypedFormControl = new UntypedFormControl("", [Validators.required]);
+  assunto: UntypedFormControl = new UntypedFormControl("", [Validators.required]);
+  email: UntypedFormControl = new UntypedFormControl("", [Validators.required, Validators.email]);
+  mensagem: UntypedFormControl = new UntypedFormControl("", [Validators.required, Validators.maxLength(256)]);
+  honeypot: UntypedFormControl = new UntypedFormControl(""); 
   submitted: boolean = false; 
   isLoading: boolean = false; 
   responseMessage!: string;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: UntypedFormBuilder, private http: HttpClient) {
     this.form = this.formBuilder.group({
       nome: this.nome,
       email: this.email,
