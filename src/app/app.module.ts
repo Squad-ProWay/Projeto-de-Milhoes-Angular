@@ -73,7 +73,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     NgxMaskModule,
     ReactiveFormsModule,
-    SocialLoginModule
+    SocialLoginModule,
   ],
   providers: [ [AuthenticationService],
     {
