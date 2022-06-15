@@ -113,5 +113,8 @@
       }
     }
   },
-  "defaultProject": "projetoCap"
+  "defaultProject": "projetoCap",
+  "cli": {
+    "analytics": "ed92f56d-21e5-40ec-8f85-af7a10bd8da9"
+  }
 }
