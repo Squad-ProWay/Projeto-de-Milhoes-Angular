@@ -47,10 +47,5 @@ export class AuthAdmService {
       this.userLogado = user
     }  
   }
-
-  logout(){
-    localStorage.removeItem("userConectado")
-    window.location.reload()
-  }
   
 }

@@ -44,12 +44,18 @@
           </div>
           <div class="col-12">
             <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
-              <option selected="">Selecione o Procedimento</option>
-              <option *ngFor="let servico of servicos, let i = index" value="{{servico.nome}}">{{servico.nome}}</option>
+              <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
             </select>
             <div class="lbl-invalid text-danger"
               *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
               ser realizado no dia</div>
+          </div>
+          <div class="col-12">
+            <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="funcionario" required>
+              <option *ngFor="let funcionario of funcionarios" value="{{funcionario.nome}}">{{funcionario.nome}}</option>
+            </select>
+            <div class="lbl-invalid text-danger"
+              *ngIf="selectFuncionario.invalid && (selectFuncionario.dirty || selectFuncionario.touched)">*Informe um funcionário que irá realizar o procedimento</div>
           </div>
           <div class="col-12">
             <textarea #formobservacao="ngModel" class="form-control shadow-none" ngModel name="observacao"

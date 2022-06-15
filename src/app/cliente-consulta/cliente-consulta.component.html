@@ -10,13 +10,14 @@
           <th class="fw-normal">Estado</th>
           <th class="fw-normal">CEP</th>
           <th class="fw-normal">Email</th>
+          <th class="fw-normal">ID do Usuário</th>
           <th class="fw-normal">Edição</th>
           <th class="fw-normal">Excluir</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let cli of cliente">
-          <td> {{ cli.id }}</td>
+          <td> {{ cli.id_cliente }}</td>
           <td> {{ cli.nome }}</td>
           <td> {{ cli.cpf }}</td>
           <td> {{ cli.endereco }}</td>
@@ -24,9 +25,10 @@
           <td> {{ cli.estado }}</td>
           <td> {{ cli.cep }}</td>
           <td> {{ cli.email }}</td>
-          <td> <a [routerLink]="['/editacliente',cli.id]"><i class="material-icons">mode_edit</i></a></td>
+          <td> {{ cli.id_usuario }}</td>
+          <td> <a [routerLink]="['/editacliente',cli.id_cliente]"><i class="material-icons">mode_edit</i></a></td>
           <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
-              (click)="excluir(cli.id)">delete</i></td>
+              (click)="excluir(cli.id_cliente)">delete</i></td>
             </tr>
           </tbody>
         </table>

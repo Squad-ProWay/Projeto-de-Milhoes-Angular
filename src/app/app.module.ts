@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,7 +8,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
@@ -25,9 +24,16 @@ import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
 import { PageErrorComponent } from './page-error/page-error.component';
-import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
-import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
+import { AuthLoginService } from './auth-login.service';
+import { AuthenticationService } from './authentication.service';
 import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
+import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
+import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
+import { ContatoComponent } from './contato/contato.component';
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -51,19 +57,36 @@ import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.co
     ConsultaUsuarioComponent,
     EditaHorarioComponent,
     PageErrorComponent,
-    ClienteConsultaComponent,
+    ClienteCadastroComponent,
     ClienteEditaComponent,
-    ClienteCadastroComponent
-    
+    ClienteConsultaComponent,
+    ContatoComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxMaskModule
+    NgxMaskModule,
+    ReactiveFormsModule,
+    SocialLoginModule
+    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ [AuthenticationService],
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('815188041948-1toufe334ijt2c3vqu5a2de3g5bdn9he.apps.googleusercontent.com'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FuncionariosService } from '../funcionarios.service';
 import { HorarioService } from '../horario.service';
 
 @Component({
@@ -10,9 +11,11 @@ export class ConsultaHorarioComponent implements OnInit {
 
   msg: string = ""
   horarios: any;
+  funcionario: any;
 
-  constructor(private horarioService: HorarioService) {
+  constructor(private horarioService: HorarioService, private funcionarioService: FuncionariosService) {
     this.horarioService.getAll().subscribe(x => this.horarios = x)
+    this.funcionarioService.getAll().subscribe(x => this.funcionario = x)
   }
 
   gravar(dados: any){
