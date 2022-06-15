@@ -83,7 +83,7 @@ import { FormsModule } from '@angular/forms';
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('815188041948-1toufe334ijt2c3vqu5a2de3g5bdn9he.apps.googleusercontent.com'),
+            provider: new GoogleLoginProvider('416120096567-advd270cq947uvlt8o3r0mbtms6ci609.apps.googleusercontent.com'),
           },
         ],
       } as SocialAuthServiceConfig,

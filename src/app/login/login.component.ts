@@ -1,9 +1,9 @@
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SocialAuthService, GoogleLoginProvider, SocialUser } from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { DecodeTokenService } from '../decode-token.service';
-import {  UsuarioService } from '../usuario.service';
+import {  UsuarioService } from '../usuario.service'
 
 @Component({
   selector: 'app-login',
@@ -12,11 +12,11 @@ import {  UsuarioService } from '../usuario.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm!: UntypedFormGroup;
+  loginForm!: FormGroup;
   socialUser!: SocialUser;
   isLoggedin?: boolean;
 
-  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService, private formBuilder: UntypedFormBuilder, private socialAuthService: SocialAuthService) { }
+  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService, private formBuilder: FormBuilder, private socialAuthService: SocialAuthService) { }
 
   usuarios: any = []
 
@@ -93,24 +93,5 @@ export class LoginComponent implements OnInit {
   logOut(): void {
     this.socialAuthService.signOut();
   }
-
-  checkAuthState(): boolean {
-    let flag = false;
-    this.socialAuthService.authState.subscribe({
-      next: (socialUser: SocialUser) => {
-        if (socialUser) {
-          flag = true;
-        }
-      },
-      error: (error) => {
-        console.log(error);
-      },
-      complete: () => {
-        console.log('ok!');
-      },
-    });
-    return flag;
-  }
-  
 
 }
