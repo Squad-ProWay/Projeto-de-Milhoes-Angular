@@ -10,9 +10,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class ContatoComponent implements OnInit {
 
   form: FormGroup;
-  name: FormControl = new FormControl("", [Validators.required]);
+  nome: FormControl = new FormControl("", [Validators.required]);
+  assunto: FormControl = new FormControl("", [Validators.required]);
   email: FormControl = new FormControl("", [Validators.required, Validators.email]);
-  message: FormControl = new FormControl("", [Validators.required, Validators.maxLength(256)]);
+  mensagem: FormControl = new FormControl("", [Validators.required, Validators.maxLength(256)]);
   honeypot: FormControl = new FormControl(""); 
   submitted: boolean = false; 
   isLoading: boolean = false; 
@@ -20,9 +21,10 @@ export class ContatoComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.form = this.formBuilder.group({
-      name: this.name,
+      nome: this.nome,
       email: this.email,
-      message: this.message,
+      assunto: this.assunto,
+      mensagem: this.mensagem,
       honeypot: this.honeypot
     });
   }
@@ -33,9 +35,10 @@ export class ContatoComponent implements OnInit {
     if (this.form.status == "VALID" && this.honeypot.value == "") {
       this.form.disable();
       var formData: any = new FormData();
-      formData.append("name", this.form.get("name")?.value);
+      formData.append("nome", this.form.get("nome")?.value);
       formData.append("email", this.form.get("email")?.value);
-      formData.append("message", this.form.get("message")?.value);
+      formData.append("assunto", this.form.get("assunto")?.value);
+      formData.append("mensagem", this.form.get("mensagem")?.value);
       this.isLoading = true; 
       this.submitted = false; 
       this.http.post("https://script.google.com/macros/s/AKfycbwgxpV-aeyfntxf3KwM0W_t2o_uV30zaqKe4qkbEhvLprcMycBZzX_Z3G4LW1RMiJFK/exec", formData).subscribe(

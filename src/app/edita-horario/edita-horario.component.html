@@ -33,6 +33,11 @@
     <div class="lbl-invalid" *ngIf="formprocedimento.invalid">
         *Informe o procedimento
     </div>
+    <label>Funcionário</label>
+    <input #formid_funcionario="ngModel" name="id_funcionario" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.id_funcionario" required/>
+    <div class="lbl-invalid" *ngIf="formid_funcionario.invalid">
+        *Informe o procedimento
+    </div>
     <label>Observações</label>
     <input #formobservacao="ngModel" name="observacao" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.observacao" required/>
     <div class="lbl-invalid" *ngIf="formobservacao.invalid">

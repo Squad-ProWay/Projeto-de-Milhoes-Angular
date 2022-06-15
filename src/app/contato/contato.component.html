@@ -7,20 +7,24 @@
             <form [formGroup]="form" #f="ngForm" method="post" (ngSubmit)="onSubmit()">
                 <div class="form-group mb-3">
                     <label for="inputEmail">Nome</label>
-                    <input type="text" class="form-control" [formControl]="name" placeholder="Digite seu nome" required>
+                    <input type="text" class="form-control" [formControl]="nome" placeholder="Digite seu nome" required>
                 </div>
                 <div class="form-group mb-3">
                     <label for="inputEmail">Email</label>
                     <input #femail="ngForm" type="email" class="form-control" [formControl]="email"
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="inputEmail" ngModel name="email"
-                        placeholder="Email para login" required>
+                        placeholder="Email para contato" required>
                     <div class="form-text">Nós não iremos compartilhar seu e-mail com ninguém.</div>
                     <div class="text-danger" *ngIf="femail.invalid && (femail.dirty || femail.touched)">*Informe um
                         email válido</div>
                 </div>
+                <div class="form-group mb-3">
+                    <label for="inputEmail">Assunto</label>
+                    <input type="text" class="form-control" [formControl]="assunto" placeholder="Digite o assunto" required>
+                </div>
                 <div class="mb-3">
                     <label for="inputSenha">Mensagem</label>
-                    <textarea class="form-control mb-3" rows="3" style="width: 516px;" [formControl]="message" type="text" maxlength="256" class="text-area" placeholder="Digite sua mensagem" required></textarea>
+                    <textarea class="form-control mb-3" rows="3" style="width: 516px;" [formControl]="mensagem" type="text" maxlength="256" class="text-area" placeholder="Digite sua mensagem" required></textarea>
                     <div>
                         <button class="btn btn-warning w-100" [disabled]="isLoading" type="submit">Enviar</button>
                     <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
