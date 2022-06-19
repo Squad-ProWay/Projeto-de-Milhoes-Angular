@@ -92,3 +92,12 @@ label {
 .my-float{
 	margin-top:16px;
 }
+
+.no-bullets{
+  list-style-type: none;
+  color: white;
+}
+
+.lbl-bemvindo{
+  width: 0;
+}

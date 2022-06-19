@@ -20,13 +20,13 @@
           <a routerLink="contato" class="nav-link active" aria-current="page">Contato</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="!userLogado.email" routerLink="login" class="nav-link active" aria-current="page"
-            href="index.html">Login</a>
+          <a *ngIf="usuarioConectado == false" routerLink="login" class="nav-link active" aria-current="page"
+            href="index.html"><i class="fas fa-sign-in-alt me-1"></i>Login</a>
         </li>
         <li class="nav-item dropdown">
-          <a *ngIf="administrador == true" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Menu
+          <a *ngIf="administrador == true" class="dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a routerLink="cadservico" class="dropdown-item">Cadastro Serviços</a></li>
@@ -42,16 +42,23 @@
             <li><a routerLink="consultaHorario" class="dropdown-item">Consulta Agendamentos</a></li>
           </ul>
         </li>
+        <li class="nav-item no-bullets" *ngIf="usuarioConectado == true">
+          <a routerLink="login" class="nav-link active" style="color: white;" (click)="logout()"><i
+              class="fas fa-sign-in-alt me-1"></i>Logout</a>
+        </li>
+        <li class="nav-item  no-bullets">
+          <label *ngIf="usuarioConectado == true" style="color: white;"
+            class="bg-dark lbl-bemvindo p-0">{{ "Bem vindo(a)!" }}</label>
+        </li>
       </ul>
     </div>
   </div>
-  <button *ngIf="usuarioConectado == true" style="font-size:7px" id="btn-logout" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
-  <label *ngIf="usuarioConectado == true" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a)!" }}</label>
-  <label *ngIf="usuarioConectado == false" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo"> </label>
+
 </nav>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://api.whatsapp.com/send?phone=5581996192575&text=Obrigada por entrar em contato com a Beautytime." class="float" target="_blank">
-<i class="fa fa-whatsapp my-float"></i>
+<a href="https://api.whatsapp.com/send?phone=5581996192575&text=Obrigada por entrar em contato com a Beautytime."
+  class="float" target="_blank">
+  <i class="fa fa-whatsapp my-float"></i>
 </a>
 
 <!--ROUTER-->
