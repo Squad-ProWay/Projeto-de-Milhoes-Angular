@@ -1,11 +1,12 @@
 <div class="wraper-image d-flex justify-content-center align-items-center">
-  <div class="form-wrapper border p-4 shadow bg-light">
-    <div>
-      <h3 class="fw-normal fs-4 mb-4">Formulário de Agendamento</h3>
-    </div>
+  <div class="form-wrapper border p-4 shadow bg-light my-4">
+    <div class="col-12">
+      <h3 class="mb-4"><i class="fa-solid fa-clock me-4"></i>Formulário de Agendamento</h3>
+   </div>
     <form #form="ngForm" (ngSubmit)="gravar(form.value)">
       <div class="row g-3">
         <div class="col-12">
+          <label>Nome do Cliente</label>
           <input #formnome="ngModel" type="text" class="form-control shadow-none" ngModel name="nome" required
             minlength="1" oninput="this.value = this.value.toUpperCase()" pattern=".*\s.*"
             (keypress)="omitirCharEspecial($event)" placeholder="Nome Completo">
@@ -14,6 +15,7 @@
             o nome completo</div>
         </div>
         <div class="col-md-6">
+          <label>Telefone para contato</label>
           <input #formtelefone="ngModel" type="tel" class="form-control shadow-none" ngModel name="telefone" required
             minlength="9" placeholder="Número de telefone">
           <div class="lbl-invalid text-danger"
@@ -21,6 +23,7 @@
             número de telefone válido: (xx) xxxx-xxxx</div>
         </div>
         <div class="col-md-6">
+          <label>Email</label>
           <input #formemail="ngModel" type="email" class="form-control shadow-none" ngModel name="email" required email
             placeholder="Email">
           <div class="lbl-invalid text-danger" *ngIf="formemail.invalid && (formemail.dirty || formemail.touched)">
@@ -28,6 +31,7 @@
             email</div>
         </div>
         <div class="col-md-6">
+          <label>Data para o agendamento</label>
           <input #formdia="ngModel" type="date" class="form-control shadow-none" ngModel name="dia" required
             placeholder="Data">
           <div class="lbl-invalid text-danger" *ngIf="formdia.invalid && (formdia.dirty || formdia.touched)">
@@ -35,6 +39,7 @@
             um dia</div>
         </div>
         <div class="col-md-6">
+          <label>Horário</label>
           <input #formhorario="ngModel" type="time" class="form-control shadow-none" ngModel name="horario" required
             placeholder="Horário">
           <div class="lbl-invalid text-danger"
@@ -42,14 +47,16 @@
             um horário</div>
         </div>
         <div class="col-12">
+          <label>Serviço desejado</label>
           <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
             <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
           </select>
           <div class="lbl-invalid text-danger"
             *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
             ser realizado no dia</div>
-        </div>
+          </div>
         <div class="col-12">
+          <label>Funcionário</label>
           <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="funcionario" required>
             <option *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{funcionario.id}}</option>
           </select>
@@ -58,6 +65,7 @@
             funcionário que irá realizar o procedimento</div>
         </div>
         <div class="col-12">
+          <label>Observação</label>
           <textarea #formobservacao="ngModel" class="form-control shadow-none" ngModel name="observacao"
             placeholder="Observação"></textarea>
         </div>
@@ -65,7 +73,9 @@
           <button type="button" class="btn btn-outline-secondary float-end me-2 shadow-none">Cancelar</button>
           <button type="submit" class="btn btn-warning float-end shadow-none" [disabled]="!form.valid">Marcar
             Horário</button>
-
+        </div>
+        <div class="text-center my-3" *ngIf="administrador == true" >
+          <a routerLink="/consultaHorario">Consultar horarios marcados</a>
         </div>
       </div>
     </form>

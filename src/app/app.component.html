@@ -32,7 +32,6 @@
             <li><a routerLink="cadservico" class="dropdown-item">Cadastro Serviços</a></li>
             <li><a routerLink="cadastrocliente" class="dropdown-item">Cadastro clientes</a></li>
             <li><a routerLink="cadfuncionario" class="dropdown-item">Cadastro Funcionários</a></li>
-            <li><a routerLink="cadusuario" class="dropdown-item">Cadastro Usuarios</a></li>
             <li><a routerLink="cadhorario" class="dropdown-item">Agendamentos</a></li>
             <hr>
             <li><a routerLink="consultaServico" class="dropdown-item">Consulta Serviços</a></li>
@@ -43,13 +42,9 @@
           </ul>
         </li>
         <li class="nav-item no-bullets" *ngIf="usuarioConectado == true">
-          <a routerLink="login" class="nav-link active" style="color: white;" (click)="logout()"><i
-              class="fas fa-sign-in-alt me-1"></i>Logout</a>
+          <a routerLink="login" class="nav-link active" style="color: white;" (click)="logout()">
+            <i class="fa-solid fa-right-from-bracket me-1"></i>Logout</a>
         </li>
-        <!-- <li class="nav-item  no-bullets">
-          <label *ngIf="usuarioConectado == true" style="color: white;"
-            class="bg-dark lbl-bemvindo p-0">{{ "Bem vindo(a)!" }}</label>
-        </li> -->
       </ul>
     </div>
   </div>

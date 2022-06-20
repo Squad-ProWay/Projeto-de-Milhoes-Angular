@@ -1,7 +1,6 @@
-<div class="container my-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
-            <div class="col-12">
+<div class="wraper-image d-flex justify-content-center align-items-center py-4">
+    <div class="form-wrapper border p-4 shadow bg-light">
+      <div class="col-12">
                <h3 class="mb-4"><i class="fa-solid fa-envelope me-4"></i>Contato</h3>
             </div>
             <form [formGroup]="form" #f="ngForm" method="post" (ngSubmit)="onSubmit()">
@@ -35,6 +34,6 @@
             </form>
         </div>
     </div>
-</div>
+
 
 <router-outlet></router-outlet>
