@@ -1,40 +1,43 @@
 <div class="container mt-5 mb-5">
-  <form #f="ngForm">
-    <h3>Editar Cliente</h3>
-    <label>Id</label>
-    <a class="form-control mt-2" type="text" name="id" [(ngModel)]="usuario.id">{{ usuario.id }}
-    </a>
-    <label>Nome do Funcionário </label>
-    <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
-      [(ngModel)]="usuario.nome" required />
-    <div class="lbl-invalid" *ngIf="fnome.invalid">
-      *Informe o nome do funcionário
-    </div>
-    <label>CPF</label>
-    <input #fcpf="ngModel" name="cpf" ngDefaultControl pattern="[0-9]+$" class="form-control mt-2" type="text"
-      [(ngModel)]="usuario.cpf" required />
-    <div class="lbl-invalid" *ngIf="fcpf.invalid">
-      *Informe o CPF e verifique se tem 11 dígitos.
-    </div>
-    <label>Email</label>
-    <input #femail="ngModel" name="email" ngDefaultControl class="form-control mt-2" type="email"
-      [(ngModel)]="usuario.email" required />
-    <div class="lbl-invalid" *ngIf="femail.invalid">*Informe o email</div>
-    <label>Senha</label>
-    <input #fsenha="ngModel" name="senha" ngDefaultControl class="form-control mt-2" type="text"
-      [(ngModel)]="usuario.senha" />
-    <div class="container mt-3">
-      <div>
-        <button class="btn btn-outline-success mt-1 m-1" type="submit" 
-          (click)="efetivarAlteracao()">
-          Gravar
-        </button>
-        <button routerLink="/consultaFuncionario" class="btn btn-danger mt-1 m-1">
-          Voltar
-        </button>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+      <div class="col-12">
+        <h3 class="mb-4"><i class="fa-solid fa-user me-4"></i>Editar Usuário</h3>
       </div>
+      <form #f="ngForm">
+        <label>Id</label>
+        <a class="form-control mt-2" type="text" name="id" [(ngModel)]="usuario.id">{{ usuario.id }}
+        </a>
+        <label>Nome do Funcionário </label>
+        <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="usuario.nome" required />
+        <div class="lbl-invalid" *ngIf="fnome.invalid">
+          *Informe o nome do funcionário
+        </div>
+        <label>CPF</label>
+        <input #fcpf="ngModel" name="cpf" ngDefaultControl pattern="[0-9]+$" class="form-control mt-2" type="text"
+          [(ngModel)]="usuario.cpf" required />
+        <div class="lbl-invalid" *ngIf="fcpf.invalid">
+          *Informe o CPF e verifique se tem 11 dígitos.
+        </div>
+        <label>Email</label>
+        <input #femail="ngModel" name="email" ngDefaultControl class="form-control mt-2" type="email"
+          [(ngModel)]="usuario.email" required />
+        <div class="lbl-invalid" *ngIf="femail.invalid">*Informe o email</div>
+
+        <div class="container mt-3">
+          <div>
+            <button class="btn btn-outline-success mt-1 m-1" type="submit" (click)="efetivarAlteracao()">
+              Gravar
+            </button>
+            <button routerLink="/consultaFuncionario" class="btn btn-danger mt-1 m-1">
+              Voltar
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
 </div>
 <div class="container mt-2">
   <span style="color: green">{{ msg }}</span>
