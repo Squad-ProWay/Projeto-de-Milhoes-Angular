@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
       <div class="col-12">
-        <h3 class="mb-4">Cadastro de Funcionário</h3>
+        <h3 class="mb-4"><i class="fa-solid fa-user-tie me-4"></i>Cadastro de Funcionário</h3>
       </div>
       <form #f="ngForm" (ngSubmit)="gravar(f.value)">
         <div class="form-group mb-3">
-          <label>Nome do Funcionário:</label>
+          <label>Nome do Funcionário</label>
           <input #fnome="ngModel" type="text" class="form-control" ngModel name="nome"
             placeholder="Digite o nome do funcionário" required minlength="5" />
         </div>
@@ -15,7 +15,7 @@
         </div>
 
         <div class="form-group mb-3">
-          <label>Telefone:</label>
+          <label>Telefone</label>
           <input #ftelefone="ngModel" type="text" class="form-control" ngModel name="telefone"
             placeholder="Digite o telefone" required />
           <div class="lbl-invalid text-danger" *ngIf="ftelefone.invalid && (ftelefone.dirty || ftelefone.touched)">
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="form-group mb-3">
-          <label>CPF:</label>
+          <label>CPF</label>
           <input #fcpf="ngModel" type="text" class="form-control" ngModel minlength="11" name="cpf"
             placeholder="Digite o CPF" pattern="[0-9]+$" required />
           <div class="lbl-invalid text-danger" *ngIf="fcpf.invalid && (fcpf.dirty || fcpf.touched)">*Informe o CPF e verifique se tem 11 dígitos.</div>

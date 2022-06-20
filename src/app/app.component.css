@@ -60,10 +60,7 @@ button {
   text-transform: none;
 }
 
-label {
-  width: 250px;
-  padding-right: 5px;
-}
+
 
 #btn-logout:hover {
   color: #ffc107;
@@ -89,6 +86,22 @@ label {
   z-index:100;
 }
 
+@media only screen and (max-width: 767px) {
+  .float {
+    bottom:10px;
+	  right:10px;
+  }
+}
+
 .my-float{
 	margin-top:16px;
+}
+
+.no-bullets{
+  list-style-type: none;
+  color: white;
+}
+
+.lbl-bemvindo{
+  width: 0;
 }

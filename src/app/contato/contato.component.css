@@ -1,0 +1,7 @@
+
+@media (min-width: 600px)
+{
+    .form-wrapper {
+        min-width: 600px;
+    }
+}

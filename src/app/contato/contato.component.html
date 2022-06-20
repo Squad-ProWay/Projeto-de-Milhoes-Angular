@@ -1,8 +1,7 @@
-<div class="container mt-5 pt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
-            <div class="col-12">
-                <h3 class="mb-4">CONTATO</h3>
+<div class="wraper-image d-flex justify-content-center align-items-center py-4">
+    <div class="form-wrapper border p-4 shadow bg-light">
+      <div class="col-12">
+               <h3 class="mb-4"><i class="fa-solid fa-envelope me-4"></i>Contato</h3>
             </div>
             <form [formGroup]="form" #f="ngForm" method="post" (ngSubmit)="onSubmit()">
                 <div class="form-group mb-3">
@@ -22,20 +21,19 @@
                     <label for="inputEmail">Assunto</label>
                     <input type="text" class="form-control" [formControl]="assunto" placeholder="Digite o assunto" required>
                 </div>
-                <div class="mb-3">
+                <div class="col-12 mb-3">
                     <label for="inputSenha">Mensagem</label>
-                    <textarea class="form-control mb-3" rows="3" style="width: 516px;" [formControl]="mensagem" type="text" maxlength="256" class="text-area" placeholder="Digite sua mensagem" required></textarea>
-                    <div>
-                        <button class="btn btn-warning w-100" [disabled]="isLoading" type="submit">Enviar</button>
-                    <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
-                        <span>{{responseMessage}}</span>
-                    </div>
-                    </div>
+                    <textarea class="form-control shadow-none" rows="3" [formControl]="mensagem" type="text" maxlength="256" placeholder="Digite sua mensagem" required></textarea>  
                 </div>
-                <p class="my-3 text-muted text-center">© 2022</p>
+                <div>
+                    <button class="btn btn-warning w-100" [disabled]="isLoading" type="submit">Enviar</button>  
+                </div>
+                <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+                    <span>{{responseMessage}}</span>
+                </div>
             </form>
         </div>
     </div>
-</div>
+
 
 <router-outlet></router-outlet>
