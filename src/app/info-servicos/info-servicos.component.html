@@ -3,9 +3,17 @@
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 gx-4 py-5">
     <div class="col d-flex align-items-start" *ngFor="let servico of servicos">
-      <div>
-        <h4 class="fw-bold mb-0">{{servico.nome}}</h4>
-        <p>{{servico.descricao}}</p>
+      <div class="btn btn-outline-secondary botao-amarelo mt-3">
+        <div class="h-25">
+          <h4 class="fw-bold mb-0">{{servico.nome}}</h4>
+        </div>
+        <div>
+          <p>{{servico.descricao}}</p>
+        </div>
+        <div class="col-12 mt-5 d-flex  justify-content-between">
+          <p>R${{servico.preco}}</p>
+          <p>{{servico.duracao}}</p>
+        </div>
       </div>
     </div>
   </div>

@@ -44,3 +44,7 @@ textarea:focus {
   border-color: #ffc107;
   box-shadow: 0 0 10px #ffc107;
 }
+
+.form-wrapper {
+  max-width: 1000px;
+}
