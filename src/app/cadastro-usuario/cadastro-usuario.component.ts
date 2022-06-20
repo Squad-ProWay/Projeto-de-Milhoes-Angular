@@ -11,6 +11,7 @@ export class CadastroUsuarioComponent implements OnInit {
 
   msg: string = '';
   validCpf: boolean = false;
+  validPass: boolean = false;
 
   //VALIDAR CPF
 
@@ -35,9 +36,49 @@ export class CadastroUsuarioComponent implements OnInit {
     return true;
   }
 
-  //SALVAR  
+  //VALIDAR SENHA FORTE - RULES:
+  // 1 - Letra maíuscula
+  //2 - Letra minúscula
+  //3 - Número
+  //4 - Caractere especial.
+
+  validatePass(senha: string) {
+    var retorno = false;
+    var letrasMaiusculas = /[A-Z]/;
+    var letrasMinusculas = /[a-z]/;
+    var numeros = /[0-9]/;
+    var caracteresEspeciais = /[!|@|#|$|%|^|&|*|(|)|-|_|?]/;
+    if (senha.length > 8) {
+      return retorno;
+    }
+    if (senha.length < 8) {
+      return retorno;
+    }
+    var auxMaiuscula = 0;
+    var auxMinuscula = 0;
+    var auxNumero = 0;
+    var auxEspecial = 0;
+    for (var i = 0; i < senha.length; i++) {
+      if (letrasMaiusculas.test(senha[i])) auxMaiuscula++;
+      else if (letrasMinusculas.test(senha[i])) auxMinuscula++;
+      else if (numeros.test(senha[i])) auxNumero++;
+      else if (caracteresEspeciais.test(senha[i])) auxEspecial++;
+    }
+    if (auxMaiuscula > 0) {
+      if (auxMinuscula > 0) {
+        if (auxNumero > 0) {
+          if (auxEspecial) {
+            retorno = true;
+          }
+        }
+      }
+    }
+    return retorno;
+  }
+
+  //SALVAR
   salvar(dados: any) {
-    if (this.validateCPF(dados.cpf)) {
+    if (this.validateCPF(dados.cpf) && this.validatePass(dados.senha)) {
       dados.perfil = 'USUARIO';
       this.serviceUsuario
         .gravar(dados)
@@ -45,7 +86,9 @@ export class CadastroUsuarioComponent implements OnInit {
 
     } else {
       this.validCpf = true;
+      this.validPass = true;
 
+    
     }
   }
 
