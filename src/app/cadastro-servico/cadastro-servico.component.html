@@ -15,7 +15,7 @@
         <div class="form-group mb-3">
           <label>Descrição</label>
           <input #fdescricao="ngModel" type="text" class="form-control" ngModel name="descricao"
-            placeholder="Digite descrição" required>
+            placeholder="Digite descrição" maxlength="200" required>
           <div class="lbl-invalid text-danger" *ngIf="fdescricao.invalid  && (fdescricao.dirty || fdescricao.touched)">
             *Informe a descrição</div>
         </div>

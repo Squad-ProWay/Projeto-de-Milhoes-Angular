@@ -51,7 +51,7 @@
                 </div>
                 <label>Observações</label>
                 <input #formobservacao="ngModel" name="observacao" ngDefaultControl class="form-control mt-2"
-                    type="text" [(ngModel)]="horario.observacao" required />
+                    type="text" [(ngModel)]="horario.observacao" maxlength="200" required />
                 <div class="lbl-invalid" *ngIf="formobservacao.invalid">
                     *Acrescente alguma observação
                 </div>
