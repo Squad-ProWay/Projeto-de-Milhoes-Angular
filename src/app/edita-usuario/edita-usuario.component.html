@@ -2,34 +2,72 @@
   <form #f="ngForm">
     <h3>Editar Cliente</h3>
     <label>Id</label>
-    <a class="form-control mt-2" type="text" name="id" [(ngModel)]="usuario.id">{{ usuario.id }}
+    <a class="form-control mt-2" type="text" name="id" [(ngModel)]="usuario.id"
+      >{{ usuario.id }}
     </a>
     <label>Nome do Funcionário </label>
-    <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
-      [(ngModel)]="usuario.nome" required />
+    <input
+      #fnome="ngModel"
+      name="nome"
+      ngDefaultControl
+      class="form-control mt-2"
+      type="text"
+      [(ngModel)]="usuario.nome"
+      required
+    />
     <div class="lbl-invalid" *ngIf="fnome.invalid">
       *Informe o nome do funcionário
     </div>
     <label>CPF</label>
-    <input #fcpf="ngModel" name="cpf" ngDefaultControl pattern="[0-9]+$" class="form-control mt-2" type="text"
-      [(ngModel)]="usuario.cpf" required />
+    <input
+      #fcpf="ngModel"
+      name="cpf"
+      ngDefaultControl
+      pattern="[0-9]+$"
+      class="form-control mt-2"
+      type="text"
+      minlength="14"
+      mask="000.000.000-00"
+      pattern="/^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})/"
+      [(ngModel)]="usuario.cpf"
+      required
+    />
     <div class="lbl-invalid" *ngIf="fcpf.invalid">
-      *Informe o CPF e verifique se tem 11 dígitos.
+      *Informe o CPF válido.
     </div>
     <label>Email</label>
-    <input #femail="ngModel" name="email" ngDefaultControl class="form-control mt-2" type="email"
-      [(ngModel)]="usuario.email" required />
+    <input
+      #femail="ngModel"
+      name="email"
+      ngDefaultControl
+      class="form-control mt-2"
+      type="email"
+      [(ngModel)]="usuario.email"
+      required
+    />
     <div class="lbl-invalid" *ngIf="femail.invalid">*Informe o email</div>
     <label>Senha</label>
-    <input #fsenha="ngModel" name="senha" ngDefaultControl class="form-control mt-2" type="text"
-      [(ngModel)]="usuario.senha" />
+    <input
+      #fsenha="ngModel"
+      name="senha"
+      ngDefaultControl
+      class="form-control mt-2"
+      type="text"
+      [(ngModel)]="usuario.senha"
+    />
     <div class="container mt-3">
       <div>
-        <button class="btn btn-outline-success mt-1 m-1" type="submit" 
-          (click)="efetivarAlteracao()">
+        <button
+          class="btn btn-outline-success mt-1 m-1"
+          type="submit"
+          (click)="efetivarAlteracao()"
+        >
           Gravar
         </button>
-        <button routerLink="/consultaFuncionario" class="btn btn-danger mt-1 m-1">
+        <button
+          routerLink="/consultaFuncionario"
+          class="btn btn-danger mt-1 m-1"
+        >
           Voltar
         </button>
       </div>
