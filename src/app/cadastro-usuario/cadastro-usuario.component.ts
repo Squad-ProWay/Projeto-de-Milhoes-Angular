@@ -58,6 +58,7 @@ export class CadastroUsuarioComponent implements OnInit {
     var auxMinuscula = 0;
     var auxNumero = 0;
     var auxEspecial = 0;
+    
     for (var i = 0; i < senha.length; i++) {
       if (letrasMaiusculas.test(senha[i])) auxMaiuscula++;
       else if (letrasMinusculas.test(senha[i])) auxMinuscula++;
