@@ -15,7 +15,7 @@
         <div class="form-group mb-3">
           <label>Descrição</label>
           <input #fdescricao="ngModel" type="text" class="form-control" ngModel name="descricao"
-            placeholder="Digite descrição" required>
+            placeholder="Digite descrição" maxlength="200" required>
           <div class="lbl-invalid text-danger" *ngIf="fdescricao.invalid  && (fdescricao.dirty || fdescricao.touched)">
             *Informe a descrição</div>
         </div>
@@ -32,6 +32,13 @@
             placeholder="Digite o tempo de execução em minutos" required>
           <div class="lbl-invalid text-danger" *ngIf="fduracao.invalid && (fduracao.dirty || fduracao.touched)">*Informe o
             tempo estimado (ex: 90 min)</div>
+        </div>
+        <div class="col-12">
+          <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="funcionario" required>
+            <option *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{funcionario.nome}}</option>
+          </select>
+          <div class="lbl-invalid text-danger"
+            *ngIf="selectFuncionario.invalid && (selectFuncionario.dirty || selectFuncionario.touched)">*Informe um funcionário que irá realizar o procedimento</div>
         </div>
         <div class="container mb-3">
           <h4 class="mt-3">Status do serviço</h4>

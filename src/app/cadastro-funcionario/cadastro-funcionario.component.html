@@ -64,7 +64,7 @@
         <div class="form-group mb-3">
           <label>Descrição</label>
           <textarea #fdescricao="ngModel" type="textarea" class="form-control" ngModel name="descricao"
-            placeholder="Digite descrição. Ex: No que é especialista e observações relevantes sobre o profissional"
+            placeholder="Digite descrição. Ex: No que é especialista e observações relevantes sobre o profissional" maxlength="200"
             required></textarea>
 
           <div class="lbl-invalid text-danger" *ngIf="fdescricao.invalid && (fdescricao.dirty || fdescricao.touched)">

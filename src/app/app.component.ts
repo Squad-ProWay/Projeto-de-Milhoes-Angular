@@ -9,7 +9,7 @@ import { AuthAdmService } from './auth-adm.service';
 })
 export class AppComponent {
   title = 'projetoCap';
-
+  
   userLogado: any = {}
   administrador: boolean = false
   usuarioConectado: boolean = false

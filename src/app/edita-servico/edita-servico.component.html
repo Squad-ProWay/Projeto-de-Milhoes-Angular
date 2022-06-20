@@ -1,34 +1,43 @@
-<div class="container mt-5">
-    <h3>Editar Serviço</h3>
-    <form #f="ngForm">
-    <label>Id</label>
-    <input class="form-control mt-2" type="text" [(ngModel)]="servico.id" />
-    <label>Nome do Serviço</label>
-    <input  #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="servico.nome" required>
-    <div class="lbl-invalid" *ngIf="fnome.invalid">
-        *Informe o nome do serviço
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+            <div class="col-12">
+                <h3 class="mb-4"><i class="fa-solid fa-spray-can-sparkles me-4"></i>Editar Serviço</h3>
+            </div>
+            <form #f="ngForm">
+                <label>Id</label>
+                <input class="form-control mt-2" type="text" [(ngModel)]="servico.id" />
+                <label>Nome do Serviço</label>
+                <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
+                    [(ngModel)]="servico.nome" required>
+                <div class="lbl-invalid" *ngIf="fnome.invalid">
+                    *Informe o nome do serviço
+                </div>
+                <label>Descrição</label>
+                <input #fdescricao="ngModel" name="descricao" ngDefaultControl class="form-control mt-2" type="text"
+                    [(ngModel)]="servico.descricao" maxlength="200" required />
+                <div class="lbl-invalid" *ngIf="fdescricao.invalid">
+                    *Informe a descrição
+                </div>
+                <label>Preço R$</label>
+                <input #fpreco="ngModel" name="preco" ngDefaultControl class="form-control mt-2" type="text"
+                    [(ngModel)]="servico.preco" required />
+                <div class="lbl-invalid" *ngIf="fpreco.invalid">
+                    *Informe o preço
+                </div>
+                <label>Duração</label>
+                <input #fduracao="ngModel" name="duracao" ngDefaultControl class="form-control mt-2" type="text"
+                    [(ngModel)]="servico.duracao" required />
+                <div class="lbl-invalid" *ngIf="fduracao.invalid">
+                    *Informe o tempo
+                </div>
+                <label>Status</label>
+                <input class="form-control mt-2" type="text" [(ngModel)]="servico.status" />
+                <button class="btn btn-outline-success mt-1" (click)="efetivarAlteracao()">Gravar</button>
+            </form>
+        </div>
     </div>
-    <label>Descrição</label>
-    <input  #fdescricao="ngModel" name="descricao" ngDefaultControl  class="form-control mt-2" type="text" [(ngModel)]="servico.descricao" required/>
-    <div class="lbl-invalid" *ngIf="fdescricao.invalid">
-        *Informe a descrição
-    </div>
-    <label>Preço R$</label>
-    <input #fpreco="ngModel" name="preco" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="servico.preco" required/>
-    <div class="lbl-invalid" *ngIf="fpreco.invalid">
-        *Informe o preço
-    </div>
-    <label>Duração</label>
-    <input #fduracao="ngModel" name="duracao" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="servico.duracao" required/>
-    <div class="lbl-invalid" *ngIf="fduracao.invalid">
-        *Informe o tempo
-    </div>
-    <label>Status</label>
-    <input class="form-control mt-2" type="text" [(ngModel)]="servico.status" />
-    <button class="btn btn-outline-success mt-1" (click)="efetivarAlteracao()">Gravar</button>
-    </form>
 </div>
 <div class="container mt-2">
     <span style="color: green;">{{ msg }}</span>
 </div>
- 
