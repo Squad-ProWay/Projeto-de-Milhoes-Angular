@@ -47,4 +47,5 @@ textarea:focus {
 
 .form-wrapper {
   max-width: 600px;
+  margin: 10px;
 }
