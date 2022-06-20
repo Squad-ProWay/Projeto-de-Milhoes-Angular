@@ -49,6 +49,10 @@
   <label *ngIf="usuarioConectado == true" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a)!" }}</label>
   <label *ngIf="usuarioConectado == false" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo"> </label>
 </nav>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=5581996192575&text=Obrigada por entrar em contato com a Beautytime." class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
 
 <!--ROUTER-->
 <router-outlet></router-outlet>
