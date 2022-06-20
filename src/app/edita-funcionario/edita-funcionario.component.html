@@ -28,7 +28,7 @@
                     [(ngModel)]="funcionario.servico" />
                 <label>Descrição</label>
                 <input #fdescricao="ngModel" name="descricao" ngDefaultControl class="form-control mt-2" type="text"
-                    [(ngModel)]="funcionario.descricao " required />
+                    [(ngModel)]="funcionario.descricao" maxlength="200" required />
 
                 <div class="container mt-3">
                     <div><button class="btn btn-outline-success mt-1 m-1" type="submit" [disabled]="f.invalid"

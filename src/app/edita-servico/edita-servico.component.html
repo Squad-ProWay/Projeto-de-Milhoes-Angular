@@ -15,7 +15,7 @@
                 </div>
                 <label>Descrição</label>
                 <input #fdescricao="ngModel" name="descricao" ngDefaultControl class="form-control mt-2" type="text"
-                    [(ngModel)]="servico.descricao" required />
+                    [(ngModel)]="servico.descricao" maxlength="200" required />
                 <div class="lbl-invalid" *ngIf="fdescricao.invalid">
                     *Informe a descrição
                 </div>
