@@ -12,11 +12,7 @@ import {  UsuarioService } from '../usuario.service'
 })
 export class LoginComponent implements OnInit {
 
-  loginForm!: FormGroup;
-  socialUser!: SocialUser;
-  isLoggedin?: boolean;
-
-  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService, private formBuilder: FormBuilder, private socialAuthService: SocialAuthService) { }
+  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService, private formBuilder: FormBuilder) { }
 
   usuarios: any = []
 
@@ -76,22 +72,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-    });
-    this.socialAuthService.authState.subscribe((user) => {
-      this.socialUser = user;
-      this.isLoggedin = user != null;
-      console.log(this.socialUser);
-    });
   }
-  loginWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    window.location.href = "/#";
-  }
+
   logOut(): void {
-    this.socialAuthService.signOut();
+    
   }
 
 }

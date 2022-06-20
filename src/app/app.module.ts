@@ -24,14 +24,11 @@ import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
 import { PageErrorComponent } from './page-error/page-error.component';
-import { AuthLoginService } from './auth-login.service';
 import { AuthenticationService } from './authentication.service';
 import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
 import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
 import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
 import { ContatoComponent } from './contato/contato.component';
-import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
-import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 import { FormsModule } from '@angular/forms';
 
 
@@ -73,7 +70,6 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     NgxMaskModule,
     ReactiveFormsModule,
-    SocialLoginModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent],

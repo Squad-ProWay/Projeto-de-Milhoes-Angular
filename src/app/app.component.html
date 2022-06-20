@@ -29,16 +29,18 @@
             Menu
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a routerLink="cadservico" class="dropdown-item">Cadastro Serviços</a></li>
-            <li><a routerLink="cadastrocliente" class="dropdown-item">Cadastro clientes</a></li>
-            <li><a routerLink="cadfuncionario" class="dropdown-item">Cadastro Funcionários</a></li>
+            <li><label class="dropdown-item fs-4"><i class="fa-solid fa-file-circle-plus me-3"></i>Cadastrar</label></li>
+            <li><a routerLink="cadservico" class="dropdown-item">Serviços</a></li>
+            <li><a routerLink="cadastrocliente" class="dropdown-item">Clientes</a></li>
+            <li><a routerLink="cadfuncionario" class="dropdown-item">Funcionários</a></li>
             <li><a routerLink="cadhorario" class="dropdown-item">Agendamentos</a></li>
             <hr>
-            <li><a routerLink="consultaServico" class="dropdown-item">Consulta Serviços</a></li>
-            <li><a routerLink="consultacliente" class="dropdown-item">Consulta Clientes</a></li>
-            <li><a routerLink="consultaFuncionario" class="dropdown-item">Consulta Funcionários</a></li>
-            <li><a routerLink="consultausuario" class="dropdown-item">Consulta Usuarios</a></li>
-            <li><a routerLink="consultaHorario" class="dropdown-item">Consulta Agendamentos</a></li>
+            <li><label class="dropdown-item fs-4"><i class="fa-solid fa-magnifying-glass me-3"></i>Consultar</label></li>
+            <li><a routerLink="consultaServico" class="dropdown-item">Serviços</a></li>
+            <li><a routerLink="consultacliente" class="dropdown-item">Clientes</a></li>
+            <li><a routerLink="consultaFuncionario" class="dropdown-item">Funcionários</a></li>
+            <li><a routerLink="consultausuario" class="dropdown-item">Usuarios</a></li>
+            <li><a routerLink="consultaHorario" class="dropdown-item">Agendamentos</a></li>
           </ul>
         </li>
         <li class="nav-item no-bullets" *ngIf="usuarioConectado == true">
