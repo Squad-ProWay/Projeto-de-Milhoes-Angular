@@ -75,20 +75,7 @@ import { FormsModule } from '@angular/forms';
     ReactiveFormsModule,
     SocialLoginModule,
   ],
-  providers: [ [AuthenticationService],
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('416120096567-advd270cq947uvlt8o3r0mbtms6ci609.apps.googleusercontent.com'),
-          },
-        ],
-      } as SocialAuthServiceConfig,
-    },
-  ],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
