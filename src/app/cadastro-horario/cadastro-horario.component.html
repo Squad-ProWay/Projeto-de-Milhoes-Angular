@@ -52,7 +52,7 @@
           </div>
           <div class="col-12">
             <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="funcionario" required>
-              <option *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{funcionario.id}}</option>
+              <option name="id_funcionario" *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{funcionario.nome}}</option>
             </select>
             <div class="lbl-invalid text-danger"
               *ngIf="selectFuncionario.invalid && (selectFuncionario.dirty || selectFuncionario.touched)">*Informe um funcionário que irá realizar o procedimento</div>
