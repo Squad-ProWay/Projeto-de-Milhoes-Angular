@@ -14,10 +14,10 @@
           <a routerLink="servicos" class="nav-link active" aria-current="page">Serviços</a>
         </li>
         <li class="nav-item">
-          <a routerLink="cadhorario" class="nav-link active" aria-current="page">Agendamentos</a>
+          <a routerLink="cadhorario" *ngIf="administrador == false" class="nav-link active" aria-current="page">Agendamentos</a>
         </li>
         <li class="nav-item">
-          <a routerLink="contato" class="nav-link active" aria-current="page">Contato</a>
+          <a routerLink="contato" *ngIf="administrador == false" class="nav-link active" aria-current="page">Contato</a>
         </li>
         <li class="nav-item">
           <a *ngIf="usuarioConectado == false" routerLink="login" class="nav-link active" aria-current="page"
