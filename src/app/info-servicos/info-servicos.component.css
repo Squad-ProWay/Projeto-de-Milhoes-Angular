@@ -1,0 +1,10 @@
+.botao-amarelo{
+    background-color: #f8f9fa;
+    color:#212529;
+  }
+  .botao-amarelo:hover{
+    outline-color: #212529;
+    background-color: #ffc107;
+    color:#212529;
+    cursor: default;
+  }
