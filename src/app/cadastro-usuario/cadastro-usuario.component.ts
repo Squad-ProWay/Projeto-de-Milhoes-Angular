@@ -87,8 +87,6 @@ export class CadastroUsuarioComponent implements OnInit {
     } else {
       this.validCpf = true;
       this.validPass = true;
-
-    
     }
   }
 

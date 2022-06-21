@@ -1,45 +1,48 @@
-<div class="container mt-5 pt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
-            <div class="col-12">
-                <h3 class="mb-4"><i class="fa-solid fa-user-tie me-4"></i>Editar Funcionário</h3>
-            </div>
-            <form #f="ngForm">
-                <label>Id</label>
-                <a class="form-control mt-2" type="text" [(ngModel)]="funcionario.id">{{funcionario.id}} </a>
-                <label>Nome do Funcionário </label>
-                <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
-                    [(ngModel)]="funcionario.nome" required />
-                <div class="lbl-invalid" *ngIf="fnome.invalid">
-                    *Informe o nome do funcionário
-                </div>
-                <label>Telefone</label>
-                <input #ftelefone="ngModel" name="telefone" ngDefaultControl class="form-control mt-2" type="text"
-                    [(ngModel)]="funcionario.telefone " required />
-                <div class="lbl-invalid" *ngIf="ftelefone.invalid">
-                    *Informe o telefone
-                </div>
-                <label>CPF</label>
-                <input #fcpf="ngModel" name="cpf" ngDefaultControl pattern="[0-9]+$" class="form-control mt-2"
-                    type="number" [(ngModel)]="funcionario.cpf" required />
-                <div class="lbl-invalid" *ngIf="fcpf.invalid">*Informe o CPF e verifique se tem 11 dígitos.</div>
-                <label>Servico</label>
-                <input #fservico="ngModel" name="servico" ngDefaultControl class="form-control mt-2" type="text"
-                    [(ngModel)]="funcionario.servico" />
-                <label>Descrição</label>
-                <input #fdescricao="ngModel" name="descricao" ngDefaultControl class="form-control mt-2" type="text"
-                    [(ngModel)]="funcionario.descricao" maxlength="200" required />
-
-                <div class="container mt-3">
-                    <div><button class="btn btn-outline-success mt-1 m-1" type="submit" [disabled]="f.invalid"
-                            (click)="efetivarAlteracao()">Gravar</button>
-                        <button routerLink="/consultausuario" class="btn btn-danger mt-1 m-1"> Voltar </button>
-                    </div>
-                </div>
-            </form>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+      <div class="col-12">
+        <h3 class="mb-4"><i class="fa-solid fa-user-tie me-4"></i>Editar Funcionário</h3>
+      </div>
+      <form #f="ngForm">
+        <label>Nome do Funcionário </label>
+        <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="funcionario.nome" required />
+        <div class="lbl-invalid" *ngIf="fnome.invalid">
+          *Informe o nome do funcionário
         </div>
+
+        <label>Telefone</label>
+        <input #ftelefone="ngModel" name="telefone" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="funcionario.telefone " required />
+        <div class="lbl-invalid" *ngIf="ftelefone.invalid">
+          *Informe o telefone
+        </div>
+
+        <label>CPF</label>
+        <input #fcpf="ngModel" name="cpf" ngDefaultControl pattern="[0-9]+$" class="form-control mt-2" type="number"
+          [(ngModel)]="funcionario.cpf" required />
+        <div class="lbl-invalid" *ngIf="fcpf.invalid">*Informe o CPF e verifique se tem 11 dígitos.</div>
+
+        <label>Servico</label>
+        <input #fservico="ngModel" name="servico" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="funcionario.servico" />
+
+        <label>Descrição</label>
+        <input #fdescricao="ngModel" name="descricao" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="funcionario.descricao" maxlength="200" required />
+
+
+        <div class="d-flex  justify-content-between mt-4">
+          <button routerLink="/consultaFuncionario" class="btn btn-outline-secondary float-end me-2 shadow-none"> Voltar
+          </button>
+          <button class="btn btn-warning float-end shadow-none" type="submit" [disabled]="f.invalid"
+            (click)="efetivarAlteracao()">Salvar</button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
 <div class="container mt-2">
-    <span style="color: green;">{{ msg }}</span>
+  <span style="color: green;">{{ msg }}</span>
 </div>

@@ -5,10 +5,6 @@
         <h3 class="mb-4"><i class="fa-solid fa-user me-4"></i>Editar Cliente</h3>
       </div>
       <form #f="ngForm">
-        <label>Id</label>
-        <a class="form-control mt-2" name="id_cliente" type="text" [(ngModel)]="cliente.id_cliente">{{
-          cliente.id_cliente }}
-        </a>
 
         <label>Cliente </label>
         <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
@@ -54,13 +50,11 @@
         <input #femail="ngModel" name="email" ngDefaultControl class="form-control mt-2" type="email"
           [(ngModel)]="cliente.email" required />
         <div class="lbl-invalid" *ngIf="femail.invalid">*Informe o email</div>
-        <div>
-          <button class="btn btn-outline-success mt-1 m-1" type="submit" (click)="efetivarAlteracao()">
-            Gravar
+        <div class="d-flex  justify-content-between mt-4">
+          <button routerLink="/consultacliente" class="btn btn-outline-secondary float-end me-2 shadow-none"> Voltar
           </button>
-          <button routerLink="/consultacliente" class="btn btn-danger mt-1 m-1">
-            Voltar
-          </button>
+          <button class="btn btn-warning float-end shadow-none" type="submit" [disabled]="f.invalid"
+            (click)="efetivarAlteracao()">Salvar</button>
         </div>
       </form>
     </div>
