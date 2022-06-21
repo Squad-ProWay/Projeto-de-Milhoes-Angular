@@ -1,5 +1,4 @@
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SocialAuthService, GoogleLoginProvider, SocialUser } from '@abacritt/angularx-social-login';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { DecodeTokenService } from '../decode-token.service';

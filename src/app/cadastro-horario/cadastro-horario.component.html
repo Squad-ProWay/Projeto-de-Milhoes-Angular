@@ -182,71 +182,8 @@
             </button>
           </div>
         </div>
-        <div class="col-md-6">
-          <label>Telefone para contato</label>
-          <input #formtelefone="ngModel" type="tel" class="form-control shadow-none" ngModel name="telefone" required
-            minlength="9" placeholder="Número de telefone">
-          <div class="lbl-invalid text-danger"
-            *ngIf="formtelefone.invalid && (formtelefone.dirty || formtelefone.touched)">*Informe
-            número de telefone válido: (xx) xxxx-xxxx</div>
-        </div>
-        <div class="col-md-6">
-          <label>Email</label>
-          <input #formemail="ngModel" type="email" class="form-control shadow-none" ngModel name="email" required email
-            placeholder="Email">
-          <div class="lbl-invalid text-danger" *ngIf="formemail.invalid && (formemail.dirty || formemail.touched)">
-            *Informe um
-            email</div>
-        </div>
-        <div class="col-md-6">
-          <label>Data para o agendamento</label>
-          <input #formdia="ngModel" type="date" class="form-control shadow-none" ngModel name="dia" required
-            placeholder="Data">
-          <div class="lbl-invalid text-danger" *ngIf="formdia.invalid && (formdia.dirty || formdia.touched)">
-            *Informe
-            um dia</div>
-        </div>
-        <div class="col-md-6">
-          <label>Horário</label>
-          <input #formhorario="ngModel" type="time" class="form-control shadow-none" ngModel name="horario" required
-            placeholder="Horário">
-          <div class="lbl-invalid text-danger"
-            *ngIf="formhorario.invalid && (formhorario.dirty || formhorario.touched)">*Informe
-            um horário</div>
-        </div>
-        <div class="col-12">
-          <label>Serviço desejado</label>
-          <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
-            <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
-          </select>
-          <div class="lbl-invalid text-danger"
-            *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
-            ser realizado no dia</div>
-          </div>
-        <div class="col-12">
-          <label>Funcionário</label>
-          <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="funcionario" required>
-            <option *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{funcionario.id}}</option>
-          </select>
-          <div class="lbl-invalid text-danger"
-            *ngIf="selectFuncionario.invalid && (selectFuncionario.dirty || selectFuncionario.touched)">*Informe um
-            funcionário que irá realizar o procedimento</div>
-        </div>
-        <div class="col-12">
-          <label>Observação</label>
-          <textarea #formobservacao="ngModel" class="form-control shadow-none" ngModel name="observacao"
-            placeholder="Observação" maxlength="200"></textarea>
-        </div>
-        <div class="col-12 mt-5 d-flex  justify-content-md-between">
-          <button type="button" class="btn btn-outline-secondary float-end me-2 shadow-none">Cancelar</button>
-          <button type="submit" class="btn btn-warning float-end shadow-none" [disabled]="!form.valid">Marcar
-            Horário</button>
-        </div>
-        <div class="text-center my-3" *ngIf="administrador == true" >
-          <a routerLink="/consultaHorario">Consultar horarios marcados</a>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>
 
