@@ -13,7 +13,6 @@
         <th class="fw-normal">Estado</th>
         <th class="fw-normal">CEP</th>
         <th class="fw-normal">Email</th>
-        <th class="fw-normal">ID do Usuário</th>
         <th class="fw-normal">Edição</th>
         <th class="fw-normal">Excluir</th>
       </tr>
@@ -28,7 +27,6 @@
         <td> {{ cli.estado }}</td>
         <td> {{ cli.cep }}</td>
         <td> {{ cli.email }}</td>
-        <td> {{ cli.id_usuario }}</td>
         <td> <a [routerLink]="['/editacliente',cli.id_cliente]"><i class="material-icons icone-editar">mode_edit</i></a></td>
         <td> <i role="button" class="material-icons"
             (click)="excluir(cli.id_cliente)">delete</i></td>

@@ -13,6 +13,7 @@ export class ClienteCadastroComponent implements OnInit {
   msg: string = ""
 
   salvar(dados: any){
+    console.log(dados)
     this.serviceCliente.gravar(dados).subscribe(x => window.location.reload())
  }
 
