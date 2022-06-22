@@ -78,20 +78,10 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   //SALVAR
-  salvar(dados: any) {
-    if (this.validateCPF(dados.cpf) && this.validatePass(dados.senha)) {
-      dados.perfil = 'USUARIO';
-      this.serviceUsuario
-        .gravar(dados)
-        .subscribe((x) => window.location.reload());
-
-    } else {
-      this.validCpf = true;
-      this.validPass = true;
-
-    
-    }
-  }
+  salvar(dados: any){
+    dados.perfil = "USUARIO"
+    this.serviceUsuario.gravar(dados).subscribe(x => window.location.reload())
+ }
 
   ngOnInit(): void {}
 }

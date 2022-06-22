@@ -27,10 +27,17 @@
           </div>
 
           <div class="mb-3">
-            <label class="form-label">Endereço</label>
+            <label class="form-label">CEP</label>
+            <input #fcep="ngModel" type="text" class="form-control" ngModel name="cep"
+              placeholder="Informe CEP" required>
+            <div class="text-danger" *ngIf="fcep.invalid && (fcep.dirty || fcep.touched)">*Informe CEP</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Logradouro</label>
             <input #fendereco="ngModel" type="text" class="form-control" ngModel name="endereco"
               placeholder="Informe endereço" required>
-            <div class="text-danger" *ngIf="fendereco.invalid && (fendereco.dirty || fendereco.touched)">*Informe Endereço</div>
+            <div class="text-danger" *ngIf="fendereco.invalid && (fendereco.dirty || fendereco.touched)">*Informe Logradouro</div>
           </div>
 
           <div class="mb-3">
@@ -47,17 +54,11 @@
             <div class="text-danger" *ngIf="festado.invalid && (festado.dirty || festado.touched)">*Informe Estado</div>
           </div>
 
-          <div class="mb-3">
-            <label class="form-label">CEP</label>
-            <input #fcep="ngModel" type="text" class="form-control" ngModel name="cep"
-              placeholder="Informe CEP" required>
-            <div class="text-danger" *ngIf="fcep.invalid && (fcep.dirty || fcep.touched)">*Informe Endereço</div>
-          </div>
+          
           <div class="mb-3">
             <label class="form-label">ID do Usuário</label>
             <input #fid_usuario="ngModel" type="text" class="form-control" ngModel name="id_usuario"
-              placeholder="Informe o id do usuário" required>
-            <div class="text-danger" *ngIf="fid_usuario.invalid && (fid_usuario.dirty || fid_usuario.touched)">*Informe Endereço</div>
+              placeholder="Informe o id do usuário">
           </div>
 
           <div class="d-flex justify-content-between text-center my-4">

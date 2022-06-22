@@ -35,6 +35,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +69,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxMaskModule,
     ReactiveFormsModule,
   ],
   providers: [AuthenticationService],

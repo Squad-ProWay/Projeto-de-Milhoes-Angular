@@ -1,6 +1,6 @@
 <div class="container mt-5 pt-5 mb-3">
   <div class="col-12">
-    <h3 class="mb-5"><i class="fa-solid fa-spray-can-sparkles me-4"></i>Consulta de Clientes</h3>
+    <h3 class="mb-5"><i class="fa-solid fa-users me-4"></i>Consulta de Clientes</h3>
   </div>
   <table class="table">
     <thead class="bg-dark text-light">
@@ -29,8 +29,8 @@
         <td> {{ cli.cep }}</td>
         <td> {{ cli.email }}</td>
         <td> {{ cli.id_usuario }}</td>
-        <td> <a [routerLink]="['/editacliente',cli.id_cliente]"><i class="material-icons">mode_edit</i></a></td>
-        <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
+        <td> <a [routerLink]="['/editacliente',cli.id_cliente]"><i class="material-icons icone-editar">mode_edit</i></a></td>
+        <td> <i role="button" class="material-icons"
             (click)="excluir(cli.id_cliente)">delete</i></td>
       </tr>
     </tbody>

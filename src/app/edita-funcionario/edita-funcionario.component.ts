@@ -27,7 +27,7 @@ export class EditaFuncionarioComponent implements OnInit {
     setTimeout(() => {
       window.history.back();
       
-    }, 5000);
+    }, 1000);
   }
 
 

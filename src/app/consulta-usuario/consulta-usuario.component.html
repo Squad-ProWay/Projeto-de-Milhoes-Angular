@@ -19,8 +19,8 @@
         <td> {{ user.nome }}</td>
         <td> {{ user.cpf }}</td>
         <td> {{ user.email }}</td>
-        <td> <a [routerLink]="['/editausuario',user.id]"><i class="material-icons">mode_edit</i></a></td>
-        <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
+        <td> <a [routerLink]="['/editausuario',user.id]"><i class="material-icons icone-editar">mode_edit</i></a></td>
+        <td> <i role="button" class="material-icons"
             (click)="excluir(user.id)">delete</i></td>
           </tr>
         </tbody>
