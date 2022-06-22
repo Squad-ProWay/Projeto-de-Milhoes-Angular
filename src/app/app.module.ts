@@ -68,7 +68,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxMaskModule,
+    NgxMaskModule.forRoot(),
     ReactiveFormsModule,
   ],
   providers: [AuthenticationService],

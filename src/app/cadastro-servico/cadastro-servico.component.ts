@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FuncionariosService } from '../funcionarios.service';
 import { ServicosService } from '../servicos.service';
 
 @Component({
@@ -7,8 +8,13 @@ import { ServicosService } from '../servicos.service';
   styleUrls: ['./cadastro-servico.component.css']
 })
 export class CadastroServicoComponent implements OnInit {
-
-  constructor(private serviceServico: ServicosService) { }
+  servicos:any = []
+  funcionarios:any = []
+  
+  constructor(private serviceServico: ServicosService, private serviceFuncionario: FuncionariosService) { 
+    this.serviceServico.getAll().subscribe(x => this.servicos = x)
+    this.serviceFuncionario.getAll().subscribe(x => this.funcionarios = x)
+  }
 
   gravar(dados: any){
     this.serviceServico.gravar(dados).subscribe(x => window.location.reload())
