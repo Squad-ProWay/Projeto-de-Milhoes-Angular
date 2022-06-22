@@ -5,7 +5,7 @@
         <h3 class="mb-4"><i class="fa-solid fa-user me-4"></i>Editar Usuário</h3>
       </div>
       <form #f="ngForm">
-  
+
         <label>Nome do Funcionário </label>
         <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
           [(ngModel)]="usuario.nome" required />
@@ -33,8 +33,7 @@
         </div>
       </form>
     </div>
-  </div>
-</div>
+
 <div class="container mt-2">
   <span style="color: green">{{ msg }}</span>
 </div>

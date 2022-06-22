@@ -37,7 +37,7 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   //VALIDAR SENHA FORTE - RULES:
-  // 1 - Letra maíuscula
+  //1 - Letra maíuscula
   //2 - Letra minúscula
   //3 - Número
   //4 - Caractere especial.
@@ -58,7 +58,7 @@ export class CadastroUsuarioComponent implements OnInit {
     var auxMinuscula = 0;
     var auxNumero = 0;
     var auxEspecial = 0;
-    
+
     for (var i = 0; i < senha.length; i++) {
       if (letrasMaiusculas.test(senha[i])) auxMaiuscula++;
       else if (letrasMinusculas.test(senha[i])) auxMinuscula++;
@@ -78,10 +78,18 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   //SALVAR
-  salvar(dados: any){
-    dados.perfil = "USUARIO"
-    this.serviceUsuario.gravar(dados).subscribe(x => window.location.reload())
- }
+  salvar(dados: any) {
+    if (this.validateCPF(dados.cpf) && this.validatePass(dados.senha)) {
+      dados.perfil = 'USUARIO';
+      this.serviceUsuario
+        .gravar(dados)
+        .subscribe((x) => window.location.reload());
+    } else {
+      this.validCpf = true;
+      this.validPass = true;
+
+    }
+  }
 
   ngOnInit(): void {}
 }

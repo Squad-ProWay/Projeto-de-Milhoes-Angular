@@ -2,7 +2,9 @@
   <div class="row">
     <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
       <div class="col-12">
-        <h3 class="mb-4"><i class="fa-solid fa-user-tie me-4"></i>Cadastro de Funcionário</h3>
+        <h3 class="mb-4">
+          <i class="fa-solid fa-user-tie me-4"></i>Cadastro de Funcionário
+        </h3>
       </div>
       <form #f="ngForm" (ngSubmit)="gravar(f.value)">
         <div class="form-group mb-3">
@@ -50,17 +52,16 @@
             type="text"
             class="form-control"
             ngModel
-            minlength="14"
+            maxlength="14"
             mask="000.000.000-00"
             pattern="/^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})/"
             name="cpf"
             placeholder="Digite o CPF"
-            
             required
           />
           <div
             class="lbl-invalid text-danger"
-            *ngIf="fcpf.invalid && (fcpf.dirty || fcpf.touched) || validCpf"
+            *ngIf="(fcpf.invalid && (fcpf.dirty || fcpf.touched)) || validCpf"
           >
             *Informe o CPF e verifique se tem 11 dígitos.
           </div>
@@ -142,6 +143,7 @@
             ngModel
             name="descricao"
             placeholder="Digite descrição. Ex: No que é especialista e observações relevantes sobre o profissional"
+            maxlength="200"
             required
           ></textarea>
 
