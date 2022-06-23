@@ -49,7 +49,7 @@
         <div class="col-12">
           <label>Serviço desejado</label>
           <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
-            <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
+            <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{horario.procedimento}}</option>
           </select>
           <div class="lbl-invalid text-danger"
             *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
@@ -57,8 +57,8 @@
           </div>
         <div class="col-12">
           <label>Funcionário</label>
-          <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="funcionario" required>
-            <option *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{funcionario.nome}}</option>
+          <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="nomefuncionario" required>
+            <option *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{horario.nomefuncionario}}</option>
           </select>
           <div class="lbl-invalid text-danger"
             *ngIf="selectFuncionario.invalid && (selectFuncionario.dirty || selectFuncionario.touched)">*Informe um
