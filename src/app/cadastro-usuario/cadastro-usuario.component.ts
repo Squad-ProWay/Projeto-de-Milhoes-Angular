@@ -79,11 +79,15 @@ export class CadastroUsuarioComponent implements OnInit {
 
   //SALVAR
   salvar(dados: any) {
+
+    console.log("aaaaaaaa", dados)
     if (this.validateCPF(dados.cpf) && this.validatePass(dados.senha)) {
       dados.perfil = 'USUARIO';
       this.serviceUsuario
         .gravar(dados)
         .subscribe((x) => window.location.reload());
+
+        console.log("erro")
     } else {
       this.validCpf = true;
       this.validPass = true;
