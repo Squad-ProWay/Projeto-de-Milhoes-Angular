@@ -43,7 +43,7 @@
 
         <div class="col-12">
           <label>Serviço desejado</label>
-          <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
+          <select #selectServico="ngModel" class="form-select shadow-none" name="procedimento" [(ngModel)]="horario.procedimento" required>
             <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
           </select>
           <div class="lbl-invalid text-danger"
@@ -52,7 +52,7 @@
           </div>
         <div class="col-12">
           <label>Funcionário</label>
-          <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="funcionario" required>
+          <select #selectFuncionario="ngModel" class="form-select shadow-none" name="id_funcionario" [(ngModel)]="horario.id_funcionario" required>
             <option *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{funcionario.nome}}</option>
           </select>
           <div class="lbl-invalid text-danger"

@@ -17,7 +17,6 @@ export class CadastroHorarioComponent implements OnInit {
   userLogado: any = {}
   administrador: boolean = false
 
-  
   constructor(private serviceHorario: HorarioService, private serviceServico: ServicosService, private serviceFuncionario: FuncionariosService, private AuthAdmService: AuthAdmService ) {
     this.serviceServico.getAll().subscribe(x => this.servicos = x)
     this.serviceFuncionario.getAll().subscribe(x => this.funcionarios = x)

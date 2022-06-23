@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-6">
           <label>Telefone para contato</label>
-          <input #formtelefone="ngModel" type="tel" class="form-control shadow-none" ngModel name="telefone" required
+          <input #formtelefone="ngModel" type="tel" class="form-control shadow-none" ngModel name="telefone" required mask="(00) 00000-0000"
             minlength="9" placeholder="Número de telefone">
           <div class="lbl-invalid text-danger"
             *ngIf="formtelefone.invalid && (formtelefone.dirty || formtelefone.touched)">*Informe
