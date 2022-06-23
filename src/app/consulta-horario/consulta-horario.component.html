@@ -27,7 +27,7 @@
           <td> {{ hora.dia }}</td>
           <td> {{ hora.horario }}</td>
           <td> {{ hora.procedimento }}</td>
-          <td> {{ hora.id_funcionario }}</td>
+          <td> {{ hora.nomefuncionario }}</td>
           <td> {{ hora.observacao }}</td>
           <td> <a [routerLink]="['/horarios',hora.id]"><i class="material-icons icone-editar">mode_edit</i></a></td>
           <td> <i role="button" class="material-icons" (click)="excluir(hora.id)">delete</i></td>
@@ -37,4 +37,3 @@
   </div>
 
   <router-outlet></router-outlet>
-  
