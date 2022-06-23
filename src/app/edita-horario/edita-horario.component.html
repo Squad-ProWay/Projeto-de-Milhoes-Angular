@@ -41,18 +41,24 @@
           *Informe o horário
         </div>
 
-        <label>Procedimento</label>
-        <input #formprocedimento="ngModel" name="procedimento" ngDefaultControl class="form-control mt-2" type="text"
-          [(ngModel)]="horario.procedimento" required />
-        <div class="lbl-invalid" *ngIf="formprocedimento.invalid">
-          *Informe o procedimento
-        </div>
-
-        <label>Funcionário</label>
-        <input #formid_funcionario="ngModel" name="id_funcionario" ngDefaultControl class="form-control mt-2"
-          type="text" [(ngModel)]="horario.id_funcionario" required />
-        <div class="lbl-invalid" *ngIf="formid_funcionario.invalid">
-          *Informe o procedimento
+        <div class="col-12">
+          <label>Serviço desejado</label>
+          <select #selectServico="ngModel" class="form-select shadow-none" ngModel name="procedimento" required>
+            <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
+          </select>
+          <div class="lbl-invalid text-danger"
+            *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
+            ser realizado no dia</div>
+          </div>
+        
+        <div class="col-12">
+          <label>Funcionário</label>
+          <select #selectFuncionario="ngModel" class="form-select shadow-none" ngModel name="funcionario" required>
+            <option *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{funcionario.nome}}</option>
+          </select>
+          <div class="lbl-invalid text-danger"
+            *ngIf="selectFuncionario.invalid && (selectFuncionario.dirty || selectFuncionario.touched)">*Informe um
+            funcionário que irá realizar o procedimento</div>
         </div>
 
         <label>Observações</label>
