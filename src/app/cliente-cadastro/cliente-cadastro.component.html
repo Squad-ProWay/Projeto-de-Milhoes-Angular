@@ -22,7 +22,7 @@
           <div class="mb-3">
             <label class="form-label">CPF</label>
             <input #fcpf="ngModel" type="text" class="form-control" ngModel name='cpf'             maxlength="14"
-            pattern="/^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})/" mask="000.000.000-00"
+             mask="000.000.000-00"
               placeholder="(ex: 000.000.000-00)" required>
             <div class="text-danger" *ngIf="fcpf.invalid && (fcpf.dirty || fcpf.touched)">*Informe CPF</div>
           </div>
@@ -30,7 +30,7 @@
           <div class="mb-3">
             <label class="form-label">CEP</label>
             <input #fcep="ngModel" type="text" class="form-control" ngModel name="cep"
-              placeholder="Informe CEP" required>
+              mask="00000-000" placeholder="Informe CEP" required>
             <div class="text-danger" *ngIf="fcep.invalid && (fcep.dirty || fcep.touched)">*Informe CEP</div>
           </div>
 

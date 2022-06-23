@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { ClienteService } from '../cliente.service';
 
 @Component({
@@ -6,8 +6,12 @@ import { ClienteService } from '../cliente.service';
   templateUrl: './cliente-cadastro.component.html',
   styleUrls: ['./cliente-cadastro.component.css']
 })
+
+@Injectable()
+
 export class ClienteCadastroComponent implements OnInit {
 
+  
   constructor(private serviceCliente: ClienteService) { }
 
   msg: string = ""
