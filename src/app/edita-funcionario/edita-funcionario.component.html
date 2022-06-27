@@ -25,9 +25,15 @@
           [(ngModel)]="funcionario.cpf" required />
         <div class="lbl-invalid" *ngIf="fcpf.invalid">*Informe o CPF e verifique se tem 11 dígitos.</div>
 
-        <label>Servico</label>
-        <input #fservico="ngModel" name="servico" ngDefaultControl class="form-control mt-2" type="text"
-          [(ngModel)]="funcionario.servico" />
+        <div class="col-12">
+          <label>Serviço</label>
+          <select #selectServico="ngModel" class="form-select shadow-none" name="procedimento" [(ngModel)]="funcionario.servico" required>
+            <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
+          </select>
+          <div class="lbl-invalid text-danger"
+            *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
+            ser realizado no dia</div>
+          </div>
 
         <label>Descrição</label>
         <input #fdescricao="ngModel" name="descricao" ngDefaultControl class="form-control mt-2" type="text"

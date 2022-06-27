@@ -1,6 +1,7 @@
 import { FuncionariosService } from './../funcionarios.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ServicosService } from '../servicos.service';
 
 @Component({
   selector: 'app-edita-funcionario',
@@ -9,7 +10,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditaFuncionarioComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private serviceFuncionario: FuncionariosService) { }
+  servicos:any = [] 
+  constructor(private route: ActivatedRoute, private serviceFuncionario: FuncionariosService, private serviceServico: ServicosService) { 
+    this.serviceServico.getAll().subscribe(x => this.servicos = x)
+  }
 
   funcionario: any = {}
 
