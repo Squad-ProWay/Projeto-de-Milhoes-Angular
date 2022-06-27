@@ -9,7 +9,6 @@
         <th class="fw-normal">Nome do Cliente</th>
         <th class="fw-normal">CPF</th>
         <th class="fw-normal">Email</th>
-        <th class="fw-normal">Edição</th>
         <th class="fw-normal">Excluir</th>
       </tr>
     </thead>
@@ -19,7 +18,6 @@
         <td> {{ user.nome }}</td>
         <td> {{ user.cpf }}</td>
         <td> {{ user.email }}</td>
-        <td> <a [routerLink]="['/editausuario',user.id]"><i class="material-icons icone-editar">mode_edit</i></a></td>
         <td> <i role="button" class="material-icons"
             (click)="excluir(user.id)">delete</i></td>
           </tr>
