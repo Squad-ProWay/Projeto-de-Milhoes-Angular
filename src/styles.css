@@ -5,11 +5,27 @@ body {
 
 .wraper-image {
   position: relative;
-  height: calc(100vh - 57px);
+  /* height: 100vh;*/
   background: url(../src/assets/images/bg2.jpg) no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   /* filter: blur(5px); */
 }
 
 /* .wraper-image:before {} */
+tr:nth-child(even) {
+  background-color: #ffc107;
+}
+
+.material-icons {
+  font-size: 30px;
+}
+
+.material-icons:hover {
+  color: #6f42c1;
+}
+
+.icone-editar {
+  color: #212529;
+}
