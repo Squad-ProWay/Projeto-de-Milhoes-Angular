@@ -20,7 +20,7 @@ export class AuthLoginService {
     }
 
  temUsuarioLogado(): boolean {
-   let token = this.decodeToken.decodeTokenJWT()
+  let token = this.decodeToken.decodeTokenJWT()
    return token != ''
  }
 

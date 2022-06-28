@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
   }
 
 
+
   verToken() {
     let usuario = this.decodeToken.decodeTokenJWT()
     console.log(usuario);

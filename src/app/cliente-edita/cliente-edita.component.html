@@ -21,6 +21,13 @@
           *Informe o CPF e verifique se tem 11 dígitos.
         </div>
 
+        <label>Telefone</label>
+        <input #ftelefone="ngModel" name="telefone" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="cliente.telefone" required />
+        <div class="lbl-invalid" *ngIf="ftelefone.invalid">
+          *Informe o telefone.
+        </div>
+
         <label>Endereço</label>
         <input #fendereco="ngModel" name="endereco" ngDefaultControl class="form-control mt-2" type="text"
           [(ngModel)]="cliente.endereco" required />

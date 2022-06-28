@@ -4,7 +4,7 @@
       <div class="col-12">
         <h3 class="mb-4"><i class="fas fa-sign-in-alt me-4"></i>Login</h3>
      </div>
-      <form #f="ngForm" (ngSubmit)="logar(f.value)">
+      <form #f="ngForm" (ngSubmit)="logar(f.value);">
         <div class="form-group mb-3">
           <label for="inputEmail">Email</label>
           <input #femail="ngModel" type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"

@@ -28,6 +28,13 @@
         </div>
 
         <div class="mb-3">
+          <label class="form-label">Telefone</label>
+          <input #ftelefone="ngModel" type="text" class="form-control" ngModel name="telefone" placeholder="Informe telefone"
+            required>
+          <div class="text-danger" *ngIf="ftelefone.invalid && (ftelefone.dirty || ftelefone.touched)">*Informe telefone</div>
+        </div>
+
+        <div class="mb-3">
           <label class="form-label">CEP</label>
           <input #fcep="ngModel" type="text" class="form-control" ngModel name="cep" mask="00000-000"
             placeholder="Informe CEP" required>
