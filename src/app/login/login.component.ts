@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit {
       res =>  { 
         if (res.token) {
           localStorage.setItem('token', res.token)
-          // window.location.href = "/#"
-          this.route.navigate(["home"])
+          window.location.href = "/#"
+          //this.route.navigate(["home"])
         } else {
           this.mensagem = "Usuário e/ou senha incorretos";
         }
