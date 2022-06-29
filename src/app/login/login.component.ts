@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { DecodeTokenService } from '../decode-token.service';
 import { UsuarioService } from '../usuario.service'
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { UsuarioService } from '../usuario.service'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService, private formBuilder: FormBuilder) { }
+  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService,
+     private formBuilder: FormBuilder, private route:Router) { }
 
   usuarios: any = []
   mensagem: any = []
@@ -30,15 +32,15 @@ export class LoginComponent implements OnInit {
 
   logar(form: any) {
     this.auth.logar(form.email, form.senha).subscribe(
-      token =>  { 
-        if (this.auth) {
-          localStorage.setItem('token', JSON.stringify(token))
-          window.location.href = "/#"
+      res =>  { 
+        if (res.token) {
+          localStorage.setItem('token', res.token)
+          // window.location.href = "/#"
+          this.route.navigate(["home"])
         } else {
           this.mensagem = "Usuário e/ou senha incorretos";
         }
-        
-      })
+      }, err => this.mensagem = "Falha ao conectar com o servidor")
   }
 
 

@@ -20,7 +20,7 @@
         <div class="mt-4 text-center">
           <button [disabled]="f.invalid" type="submit" class="btn btn-warning w-100">Login</button>
           <hr>
-          <div class="container mt-2">
+          <div class="container mt-2" *ngIf="mensagem.length > 0">
             <span style="color: red;">{{ mensagem }}</span>
         </div>
           <div class="container mt-3 text-center">
