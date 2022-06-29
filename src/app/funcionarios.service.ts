@@ -28,6 +28,6 @@ export class FuncionariosService {
   }
 
   excluir(idfuncionario: number) {
-    return this.http.delete(`https://app-beautydb.herokuapp.com/funcionarios${idfuncionario}`)
+    return this.http.delete(`https://app-beautydb.herokuapp.com/funcionarios/${idfuncionario}`)
   }
 }

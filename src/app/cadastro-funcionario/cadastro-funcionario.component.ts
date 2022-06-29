@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FuncionariosService } from '../funcionarios.service';
+import { ServicosService } from '../servicos.service';
 
 @Component({
   selector: 'app-cadastro-funcionario',
@@ -8,8 +10,13 @@ import { FuncionariosService } from '../funcionarios.service';
 })
 export class CadastroFuncionarioComponent implements OnInit {
 
-  constructor(private serviceFuncionario: FuncionariosService) { }
+  servicos: any = {}
+  
+  constructor(private serviceFuncionario: FuncionariosService, private route: Router, private serviceServico: ServicosService) {
+    this.serviceServico.getAll().subscribe(x => this.servicos = x)
+   }
   validCpf: boolean = false;
+  msg: string = "";
 
 
   validateCPF(cpf: string) {
@@ -34,8 +41,15 @@ export class CadastroFuncionarioComponent implements OnInit {
   }
 
   gravar(dados: any){
-    this.serviceFuncionario.gravar(dados).subscribe(x => window.location.reload())
+    this.serviceFuncionario.gravar(dados).subscribe(x => this.msg = 'Funcionário cadastrado com sucesso!')
+
+    setTimeout(() => {
+      this.route.navigate(["consultaFuncionario"])
+      
+    }, 3000);
  }
+
+
   ngOnInit(): void {
   }
 

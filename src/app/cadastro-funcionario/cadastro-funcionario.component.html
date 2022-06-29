@@ -66,74 +66,15 @@
             *Informe o CPF e verifique se tem 11 dígitos.
           </div>
         </div>
-        <div class="container mb-3">
-          <h4 class="mt-3">Serviço Prestado:</h4>
-          <div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                ngModel
-                name="servico"
-                value="pedmani"
-                checked
-              />
-              <label class="form-check-label" for="radio1">
-                Pedicure/Manicure
-              </label>
-            </div>
-            <div class="form-check" required>
-              <input
-                class="form-check-input"
-                type="radio"
-                ngModel
-                name="servico"
-                value="alongamento"
-                checked
-              />
-              <label class="form-check-label" for="radio2">
-                Alongamento de unhas
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                ngModel
-                name="servico"
-                value="pintor"
-                checked
-              />
-              <label class="form-check-label" for="radio3">
-                Pintura de Cabelos
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                ngModel
-                name="servico"
-                value="corte"
-                checked
-              />
-              <label class="form-check-label" for="radio4"> Corte </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                ngModel
-                name="servico"
-                value="quimica"
-                checked
-              />
-              <label class="form-check-label" for="radio5">
-                Processos Químicos
-              </label>
-            </div>
+        <div class="col-12">
+          <label>Serviço</label>
+          <select #selectServico="ngModel" class="form-select shadow-none" name="servico" [(ngModel)]="servicos.servico" required>
+            <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
+          </select>
+          <div class="lbl-invalid text-danger"
+            *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
+            ser realizado no dia</div>
           </div>
-        </div>
         <div class="form-group mb-3">
           <label>Descrição</label>
           <textarea
@@ -162,6 +103,9 @@
           </button>
         </div>
       </form>
+      <div class="container mt-2">
+        <span style="color: green">{{ msg }}</span>
+      </div>
       <div class="text-center my-3">
         <a routerLink="/consultaFuncionario">Consultar Funcionários</a>
       </div>
