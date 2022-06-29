@@ -4,6 +4,7 @@ import { FuncionariosService } from '../funcionarios.service';
 import { HorarioService } from '../horario.service';
 import { ServicosService } from '../servicos.service';
 import { AuthAdmService } from '../auth-adm.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cadastro-horario',
   templateUrl: './cadastro-horario.component.html',
@@ -16,8 +17,8 @@ export class CadastroHorarioComponent implements OnInit {
   funcionarios:any = []
   userLogado: any = {}
   administrador: boolean = false
-
-  constructor(private serviceHorario: HorarioService, private serviceServico: ServicosService, private serviceFuncionario: FuncionariosService, private AuthAdmService: AuthAdmService ) {
+  msg: string = ""
+  constructor(private serviceHorario: HorarioService, private serviceServico: ServicosService, private serviceFuncionario: FuncionariosService, private AuthAdmService: AuthAdmService, private route: Router ) {
     this.serviceServico.getAll().subscribe(x => this.servicos = x)
     this.serviceFuncionario.getAll().subscribe(x => this.funcionarios = x)
     this.pegarPerfilUsuarioConectado();
@@ -37,7 +38,11 @@ export class CadastroHorarioComponent implements OnInit {
   }*/
 
   gravar(dados: any){
-    this.serviceHorario.gravar(dados).subscribe(x => window.location.reload())
+    this.serviceHorario.gravar(dados).subscribe(x => this.msg = 'Agendamento realizado com sucesso!')
+    setTimeout(() => {
+      this.route.navigate(["consultaHorario"])
+      
+    }, 6000);
   }
 
   omitirCharEspecial(event: { charCode: any; }){

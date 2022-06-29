@@ -59,6 +59,9 @@
           <button [disabled]="f.invalid" type="submit" class="btn btn-warning">Cadastrar</button>
         </div>
       </form>
+      <div class="container mt-2 text-center">
+        <span style="color: green">{{ msg }}</span>
+      </div>
       <div class="text-center my-3">
         <a routerLink="/consultaServico">Consultar serviços cadastrados</a>
       </div>
