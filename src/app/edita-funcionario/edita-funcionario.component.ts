@@ -19,6 +19,7 @@ export class EditaFuncionarioComponent implements OnInit {
   }
 
   isSubmitting = false;
+  
   funcionario: any = {};
 
   msg: string = '';

@@ -17,6 +17,7 @@ export class EditaHorarioComponent implements OnInit {
   servicos: any = {}
   funcionarios: any = {}
   msg: string = ''
+  isSubmitting = false;
 
   ngOnInit(): void {
     let routeParams = this.route.snapshot.paramMap;
@@ -27,12 +28,14 @@ export class EditaHorarioComponent implements OnInit {
   }
 
   efetivarAlteracao() {
-    this.horarioService.alterar(this.horario).subscribe(x => this.msg = 'Agendamento alterado com sucesso')
- 
-    setTimeout(() => {
-      window.history.back();
-      
-    }, 1000);
+    this.isSubmitting = true;
+    this.horarioService.alterar(this.horario).subscribe(() => {
+      (this.msg = 'Agendamento alterado com sucesso'),
+        (this.isSubmitting = false),
+        setTimeout(() => {
+          this.msg = '';
+        }, 5000);
+    });
   }
 
 }
