@@ -23,17 +23,14 @@ export class AppComponent {
       this.userLogado = user
     }  
   }
-  constructor( private AuthAdmService: AuthAdmService ){
-    this.pegarPerfilUsuarioConectado();
-    this.administrador = this.AuthAdmService.ehAdministrador();
-    this.usuarioConectado = this.AuthAdmService.temUsuarioLogado();
+  constructor( private AuthAdmService: AuthAdmService){
+    this.pegarPerfilUsuarioConectado()
+    this.administrador = this.AuthAdmService.ehAdministrador()
+    this.usuarioConectado = this.AuthAdmService.temUsuarioLogado()
   }
 
   logout(){
     localStorage.removeItem("token")
     window.location.reload()
   }
-
-  
-
 }

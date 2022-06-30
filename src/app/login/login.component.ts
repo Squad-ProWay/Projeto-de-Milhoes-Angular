@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.mensagem = "Usuário e/ou senha incorretos";
         }
-      }, err => this.mensagem = "Falha ao conectar com o servidor")
+      }, err => this.mensagem = "Usuário e/ou senha incorretos")
   }
 
 
@@ -88,11 +88,5 @@ export class LoginComponent implements OnInit {
   }
 
 }
-function basicDetails(usuario: any): any {
-  throw new Error('Function not implemented.');
-}
 
-function ok(arg0: any) {
-  throw new Error('Function not implemented.');
-}
 
