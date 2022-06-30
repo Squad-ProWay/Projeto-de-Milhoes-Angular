@@ -20,7 +20,7 @@ export class UsuarioService {
 
   alterar(dados: any) {
     let url = `https://app-beautydb.herokuapp.com/usuarios/${dados.id}`
-    return this.http.put(url, dados)
+    return this.http.put(url, dados, { responseType: 'text' })
   }
   getOne(idusuario: number) {
     return this.http.get(`https://app-beautydb.herokuapp.com/usuarios/${idusuario}`)
