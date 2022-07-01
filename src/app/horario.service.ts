@@ -11,7 +11,7 @@ export class HorarioService {
 
   gravar(dados: any) {
     let url = 'https://app-beautydb.herokuapp.com/horarios'
-    return this.http.post(url, dados);
+    return this.http.post(url, dados, { responseType: 'text' });
   }
 
   getAll() {

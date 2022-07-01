@@ -13,12 +13,22 @@ export class ClienteCadastroComponent implements OnInit {
 
   
   constructor(private serviceCliente: ClienteService) { }
-
+  isSubmitting = false;
   msg: string = ""
 
   salvar(dados: any){
-    console.log(dados)
-    this.serviceCliente.gravar(dados).subscribe(x => window.location.reload())
+    this.isSubmitting = true;
+    this.serviceCliente.gravar(dados).subscribe(() => {
+      (this.msg = 'Cadastro realizado com sucesso!'),
+      (this.isSubmitting = false),
+        setTimeout(() => {
+          this.msg = ''
+        }, 5000)
+    }, err => {
+      (this.msg="Erro ao cadastrar",
+      (this.isSubmitting = false))
+    })
+
  }
 
   ngOnInit(): void {

@@ -5,7 +5,6 @@
   <table class="table">
     <thead class="bg-dark text-light">
       <tr>
-        <th class="fw-normal">Id</th>
         <th class="fw-normal">Nome do Cliente</th>
         <th class="fw-normal">CPF</th>
         <th class="fw-normal">Email</th>
@@ -14,7 +13,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of usuario">
-        <td> {{ user.id }}</td>
         <td> {{ user.nome }}</td>
         <td> {{ user.cpf }}</td>
         <td> {{ user.email }}</td>

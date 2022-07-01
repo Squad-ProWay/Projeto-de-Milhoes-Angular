@@ -18,6 +18,9 @@ export class CadastroHorarioComponent implements OnInit {
   userLogado: any = {}
   administrador: boolean = false
   msg: string = ""
+  isSubmitting = false
+  date: any
+
   constructor(private serviceHorario: HorarioService, private serviceServico: ServicosService, private serviceFuncionario: FuncionariosService, private AuthAdmService: AuthAdmService, private route: Router ) {
     this.serviceServico.getAll().subscribe(x => this.servicos = x)
     this.serviceFuncionario.getAll().subscribe(x => this.funcionarios = x)
@@ -38,11 +41,19 @@ export class CadastroHorarioComponent implements OnInit {
   }*/
 
   gravar(dados: any){
-    this.serviceHorario.gravar(dados).subscribe(x => this.msg = 'Agendamento realizado com sucesso!')
-    setTimeout(() => {
-      this.route.navigate(["consultaHorario"])
-      
-    }, 6000);
+    this.serviceHorario.gravar(dados).subscribe(  
+      () => {
+        console.log("asdasd: 1 -", dados);
+        (this.msg = 'Agendamento realizado com sucesso!'), 
+        (this.isSubmitting = false),
+        
+        console.log("asdasd: 0.5 -", dados);
+          setTimeout(() => {
+            this.msg = ''
+          }, 5000)
+          
+        console.log("asdasd: 2 -", dados);
+      })
   }
 
   omitirCharEspecial(event: { charCode: any; }){

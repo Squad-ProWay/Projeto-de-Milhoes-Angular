@@ -29,7 +29,7 @@
 
         <div class="mb-3">
           <label class="form-label">Telefone</label>
-          <input #ftelefone="ngModel" type="text" class="form-control" ngModel name="telefone" placeholder="Informe telefone"
+          <input #ftelefone="ngModel" type="text" class="form-control" ngModel name="telefone" mask="(00) 00000-0000" placeholder="Informe telefone"
             required>
           <div class="text-danger" *ngIf="ftelefone.invalid && (ftelefone.dirty || ftelefone.touched)">*Informe telefone</div>
         </div>
@@ -62,17 +62,27 @@
             required>
           <div class="text-danger" *ngIf="festado.invalid && (festado.dirty || festado.touched)">*Informe Estado</div>
         </div>
-
+        <div class="container mt-4 text-center fw-bold" *ngIf="msg.length > 17">
+          <span style="color: green;">{{ msg }}</span>
+        </div>
+        <div class="container mt-4 text-center fw-bold" *ngIf="this.msg =='Erro ao cadastrar'">
+          <span style="color: red;">{{ msg }}</span>
+        </div>
         <div class="d-flex justify-content-between text-center my-4">
           <button type="reset" class="btn btn-outline-secondary ">Cancelar</button>
-          <button [disabled]="f.invalid" type="submit" class="btn btn-warning">Cadastrar</button>
+          <button [disabled]="f.invalid" type="submit" class="btn btn-warning">
+            <div *ngIf="isSubmitting" class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <span *ngIf="!isSubmitting">
+              Cadastrar
+            </span>
+          </button>
         </div>
       </form>
       <div class="text-center mt-4">
-        <a routerLink="/consultacliente">Consulte os clientes cadastrados!</a>
-
+        <a routerLink="/consultacliente">Clique aqui para consultar todos os clientes cadastrados!</a>
       </div>
-      <label>{{msg}}</label>
     </div>
   </div>
 </div>

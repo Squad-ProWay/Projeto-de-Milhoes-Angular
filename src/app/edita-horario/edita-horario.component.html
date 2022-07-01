@@ -62,7 +62,7 @@
 
         <label>Observações</label>
         <input #formobservacao="ngModel" name="observacao" ngDefaultControl class="form-control mt-2" type="text"
-          [(ngModel)]="horario.observacao" maxlength="200" required />
+          [(ngModel)]="horario.observacao" maxlength="200" />
         <div class="lbl-invalid" *ngIf="formobservacao.invalid">
           *Acrescente alguma observação
         </div>
@@ -70,7 +70,7 @@
           <span style="color: green;">{{ msg }}</span>
         </div>
         <div class="d-flex  justify-content-between mt-4">
-          <button routerLink="/consultausuario" class="btn btn-outline-secondary float-end me-2 shadow-none"> Voltar
+          <button routerLink="/consultaHorario" class="btn btn-outline-secondary float-end me-2 shadow-none"> Voltar
           </button>
           <button class="btn btn-warning float-end shadow-none text-center" type="submit"
             [disabled]="form.invalid || isSubmitting" (click)="efetivarAlteracao()">

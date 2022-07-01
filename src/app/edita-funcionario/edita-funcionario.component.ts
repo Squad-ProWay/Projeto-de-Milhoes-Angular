@@ -19,7 +19,7 @@ export class EditaFuncionarioComponent implements OnInit {
   }
 
   isSubmitting = false;
-  
+
   funcionario: any = {};
 
   msg: string = '';
@@ -38,8 +38,8 @@ export class EditaFuncionarioComponent implements OnInit {
       (this.msg = 'Funcionário alterado com sucesso'),
         (this.isSubmitting = false),
         setTimeout(() => {
-          this.msg = '';
-        }, 5000);
-    });
+          this.msg = ''
+        }, 5000)
+    })
   }
 }

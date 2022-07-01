@@ -9,7 +9,7 @@ export class FuncionariosService {
 
   gravar(dados: any) {
     let url = 'https://app-beautydb.herokuapp.com/funcionarios';
-    return this.http.post(url, dados);
+    return this.http.post(url, dados, { responseType: 'text' });
   }
 
   getAll() {

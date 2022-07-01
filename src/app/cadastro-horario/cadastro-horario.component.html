@@ -8,7 +8,7 @@
         <div class="col-12">
           <label>Nome do Cliente</label>
           <input #formnome="ngModel" type="text" class="form-control shadow-none" ngModel name="nome" required
-            minlength="1" oninput="this.value = this.value.toUpperCase()" pattern=".*\s.*"
+            minlength="1"  pattern=".*\s.*"
             (keypress)="omitirCharEspecial($event)" placeholder="Nome Completo">
           <div class="lbl-invalid text-danger" *ngIf="formnome.invalid && (formnome.dirty || formnome.touched)">
             *Informe
@@ -69,19 +69,26 @@
           <textarea #formobservacao="ngModel" class="form-control shadow-none" ngModel name="observacao"
             placeholder="Observação" maxlength="200"></textarea>
         </div>
-        <div class="col-12 mt-5 d-flex  justify-content-md-between">
-          <button type="button" class="btn btn-outline-secondary float-end me-2 shadow-none">Cancelar</button>
-          <button type="submit" class="btn btn-warning float-end shadow-none" [disabled]="!form.valid">Marcar
-            Horário</button>
+        <div class="container mt-4 text-center fw-bold" *ngIf="msg.length > 0">
+          <span style="color: green;">{{ msg }}</span>
         </div>
+
+        <div class="d-flex justify-content-between text-center my-4">
+          <button *ngIf="administrador == false" class="btn btn-outline-secondary float-end me-2 shadow-none" routerLink="/servicos">Cancelar</button>
+          <button *ngIf="administrador == true" type="reset" class="btn btn-outline-secondary float-end me-2 shadow-none">Cancelar</button>
+          <button [disabled]="form.invalid" type="submit" class="btn btn-warning">
+            <div *ngIf="isSubmitting" class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+              <span *ngIf="!isSubmitting">Marcar Horário</span>
+          </button>
+        </div>
+
         <div class="text-center my-3" *ngIf="administrador == true" >
-          <a routerLink="/consultaHorario">Consultar horarios marcados</a>
+          <a routerLink="/consultaHorario">Clique aqui para consultar todos os horarios marcados!</a>
         </div>
       </div>
     </form>
-    <div class="container mt-2 text-center">
-      <span style="color: green">{{ msg }}</span>
-    </div>
   </div>
 </div>
 

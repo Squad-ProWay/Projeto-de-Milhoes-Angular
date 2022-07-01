@@ -5,7 +5,6 @@
   <table class="table">
     <thead class="bg-dark text-light">
       <tr>
-        <th class="fw-normal">Id</th>
         <th class="fw-normal">Cliente</th>
         <th class="fw-normal">CPF</th>
         <th class="fw-normal">Telefone</th>
@@ -20,7 +19,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let cli of cliente">
-        <td> {{ cli.id_cliente }}</td>
         <td> {{ cli.nome }}</td>
         <td> {{ cli.cpf }}</td>
         <td> {{ cli.telefone }}</td>

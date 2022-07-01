@@ -10,7 +10,7 @@ export class UsuarioService {
 
   gravar(dados: any) {
     let url = 'https://app-beautydb.herokuapp.com/usuarios'
-    return this.http.post(url, dados);
+    return this.http.post(url, dados, { responseType: 'text' });
   }
 
   getAll() {

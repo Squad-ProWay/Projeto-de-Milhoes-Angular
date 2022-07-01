@@ -17,6 +17,7 @@ export class CadastroFuncionarioComponent implements OnInit {
    }
   validCpf: boolean = false;
   msg: string = "";
+  isSubmitting = false
 
 
   validateCPF(cpf: string) {
@@ -41,12 +42,15 @@ export class CadastroFuncionarioComponent implements OnInit {
   }
 
   gravar(dados: any){
-    this.serviceFuncionario.gravar(dados).subscribe(x => this.msg = 'Funcionário cadastrado com sucesso!')
-
-    setTimeout(() => {
-      this.route.navigate(["consultaFuncionario"])
-      
-    }, 3000);
+    this.isSubmitting = true
+    this.serviceFuncionario.gravar(dados).subscribe(
+      () => {
+        (this.msg = 'Cadastro realizado com sucesso!'), 
+        (this.isSubmitting = false),
+          setTimeout(() => {
+            this.msg = ''
+          }, 5000)
+      })
  }
 
 

@@ -12,18 +12,23 @@ export class CadastroServicoComponent implements OnInit {
   servicos:any = []
   funcionarios:any = []
   msg: string = ""
-  
+  isSubmitting = false;
+
   constructor(private serviceServico: ServicosService, private serviceFuncionario: FuncionariosService, private route: Router) { 
     this.serviceServico.getAll().subscribe(x => this.servicos = x)
     this.serviceFuncionario.getAll().subscribe(x => this.funcionarios = x)
   }
 
   gravar(dados: any){
-    this.serviceServico.gravar(dados).subscribe(x => this.msg = 'Cadastro realizado com sucesso!')
-    setTimeout(() => {
-      this.route.navigate(["consultaServico"])
-      
-    }, 5000);
+    this.isSubmitting = true;
+    this.serviceServico.gravar(dados).subscribe(() => {
+      (this.msg = 'Cadastro realizado com sucesso!'), 
+      (this.isSubmitting = false),
+        setTimeout(() => {
+          this.msg = ''
+        }, 5000)
+    })
+    
   }
   
   ngOnInit(): void {

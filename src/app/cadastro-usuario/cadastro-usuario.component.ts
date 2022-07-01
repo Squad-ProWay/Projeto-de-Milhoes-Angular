@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from '../usuario.service';
 
 @Component({
@@ -7,8 +8,8 @@ import { UsuarioService } from '../usuario.service';
   styleUrls: ['./cadastro-usuario.component.css'],
 })
 export class CadastroUsuarioComponent implements OnInit {
-  constructor(private serviceUsuario: UsuarioService) {}
-
+  constructor(private serviceUsuario: UsuarioService, private route: Router) {}
+  isSubmitting = false;
   msg: string = '';
   validCpf: boolean = false;
   validPass: boolean = false;
@@ -48,10 +49,7 @@ export class CadastroUsuarioComponent implements OnInit {
     var letrasMinusculas = /[a-z]/;
     var numeros = /[0-9]/;
     var caracteresEspeciais = /[!|@|#|$|%|^|&|*|(|)|-|_|?]/;
-    if (senha.length > 8) {
-      return retorno;
-    }
-    if (senha.length < 8) {
+    if (senha.length < 6) {
       return retorno;
     }
     var auxMaiuscula = 0;
@@ -65,14 +63,8 @@ export class CadastroUsuarioComponent implements OnInit {
       else if (numeros.test(senha[i])) auxNumero++;
       else if (caracteresEspeciais.test(senha[i])) auxEspecial++;
     }
-    if (auxMaiuscula > 0) {
-      if (auxMinuscula > 0) {
-        if (auxNumero > 0) {
-          if (auxEspecial) {
-            retorno = true;
-          }
-        }
-      }
+    if (auxMaiuscula > 0 && auxMinuscula > 0 && auxNumero > 0 && auxEspecial) {
+      retorno = true;
     }
     return retorno;
   }
@@ -80,18 +72,23 @@ export class CadastroUsuarioComponent implements OnInit {
   //SALVAR
   salvar(dados: any) {
 
-    console.log("aaaaaaaa", dados)
     if (this.validateCPF(dados.cpf) && this.validatePass(dados.senha)) {
       dados.perfil = 'USUARIO';
+      this.isSubmitting = true;
       this.serviceUsuario
         .gravar(dados)
-        .subscribe((x) => window.location.reload());
-
-        console.log("erro")
+        .subscribe(() => {
+            (this.msg = `Cadastro realizado com sucesso!
+            Você será redirecionado para o Login`), 
+            (this.isSubmitting = false),
+              setTimeout(() => {
+                this.route.navigate(["login"])
+              }, 5000)
+          })
     } else {
       this.validCpf = true;
       this.validPass = true;
-
+      this.msg = "Digite um CPF válido"
     }
   }
 

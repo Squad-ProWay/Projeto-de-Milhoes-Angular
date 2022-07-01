@@ -5,7 +5,6 @@
   <table class="table">
     <thead class="bg-dark text-light">
       <tr>
-        <th class="fw-normal">Id</th>
         <th class="fw-normal">Nome do Funcionário</th>
         <th class="fw-normal">Telefone</th>
         <th class="fw-normal">CPF</th>
@@ -17,7 +16,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let func of funcionario">
-        <td> {{ func.id }}</td>
         <td> {{ func.nome }}</td>
         <td> {{ func.telefone }}</td>
         <td> {{ func.cpf }}</td>

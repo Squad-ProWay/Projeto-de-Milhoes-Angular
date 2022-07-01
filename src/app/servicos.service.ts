@@ -10,7 +10,7 @@ export class ServicosService {
 
   gravar(dados: any) {
     let url = 'https://app-beautydb.herokuapp.com/servicos'
-    return this.http.post(url, dados);
+    return this.http.post(url, dados, { responseType: 'text' });
   }
 
   getAll() {

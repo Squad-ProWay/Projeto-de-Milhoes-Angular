@@ -57,7 +57,7 @@
             maxlength="16"
             required
           />
-          <div class="text-danger" *ngIf="fcpf.invalid || validCpf && (fcpf.dirty || fcpf.touched)" >*Informe CPF válido</div>
+          <div class="text-danger" *ngIf="fcpf.invalid && (fcpf.dirty || fcpf.touched)" >*Informe CPF válido</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Senha</label>
@@ -71,8 +71,11 @@
             required
           />
           <div class="text-danger" *ngIf="fsenha.invalid  && (fsenha.dirty || fsenha.touched)">*Informe uma senha forte.
-            A senha forte deve conter no mínimo 8 digitos e letra maíuscula, minúscula, números e caracteres especiais.          </div>
+            A senha forte deve conter no mínimo 6 digitos e letra maíuscula, minúscula, números e caracteres especiais.          </div>
         </div>
+      <div class="container mt-2 fw-bold text-center" *ngIf="msg.length > 0">
+        <span style="color: green">{{ msg }}</span>
+      </div>
         <div class="d-flex justify-content-between text-center my-4">
           <button type="reset" class="btn btn-outline-secondary">
             Cancelar
@@ -84,9 +87,6 @@
       </form>
       <div class="text-center mt-4">
         <a routerLink="/login">Faça login aqui!</a>
-      </div>
-      <div class="container mt-2 text-center">
-        <span style="color: green">{{ msg }}</span>
       </div>
     </div>
   </div>
