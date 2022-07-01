@@ -76,6 +76,9 @@
       <div class="container mt-2 fw-bold text-center" *ngIf="msg.length > 0">
         <span style="color: green">{{ msg }}</span>
       </div>
+      <div class="container mt-2 fw-bold text-center" *ngIf="this.msg == 'Digite um CPF válido'">
+        <span style="color: red">{{ msg }}</span>
+      </div>
         <div class="d-flex justify-content-between text-center my-4">
           <button type="reset" class="btn btn-outline-secondary">
             Cancelar
