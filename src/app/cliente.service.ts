@@ -10,23 +10,23 @@ export class ClienteService {
 
 
   gravar(dados: any) {
-    let url = 'http://localhost:8080/clientes'
+    let url = 'https://app-beautydb.herokuapp.com/clientes'
     return this.http.post(url, dados);
   }
 
   getAll() {
-    let url = 'http://localhost:8080/clientes'
+    let url = 'https://app-beautydb.herokuapp.com/clientes'
     return this.http.get(url)
   }
 
   alterar(dados: any) {
-    let url = `http://localhost:8080/clientes/${dados.id}`
-    return this.http.put(url, dados)
+    let url = `https://app-beautydb.herokuapp.com/clientes/${dados.id_cliente}`
+    return this.http.put(url, dados, { responseType: 'text' })
   }
   getOne(idcliente: number) {
-    return this.http.get(`http://localhost:8080/clientes/${idcliente}`)
+    return this.http.get(`https://app-beautydb.herokuapp.com/clientes/${idcliente}`)
   }
   excluir(idcliente: number) {
-    return this.http.delete(`http://localhost:8080/clientes/${idcliente}`)
+    return this.http.delete(`https://app-beautydb.herokuapp.com/clientes/${idcliente}`)
   }
 }

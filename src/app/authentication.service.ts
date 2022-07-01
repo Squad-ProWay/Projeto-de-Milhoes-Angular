@@ -14,7 +14,7 @@ export class AuthenticationService {
 
 
   logar(email: string, senha: string) {
-    return this.http.post('https://app-beautydb.herokuapp.com/usuarios/login', {
+    return this.http.post<{message:string, token:string}>('https://app-beautydb.herokuapp.com/usuarios/login', {
       email: email,
       senha: senha
     })

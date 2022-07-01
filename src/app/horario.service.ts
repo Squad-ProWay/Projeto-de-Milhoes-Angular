@@ -11,7 +11,7 @@ export class HorarioService {
 
   gravar(dados: any) {
     let url = 'https://app-beautydb.herokuapp.com/horarios'
-    return this.http.post(url, dados);
+    return this.http.post(url, dados, { responseType: 'text' });
   }
 
   getAll() {
@@ -25,7 +25,7 @@ export class HorarioService {
 
   alterar(dados: any) {
     let url = `https://app-beautydb.herokuapp.com/horarios/${dados.id}`
-    return this.http.put(url, dados)
+    return this.http.put(url, dados, { responseType: 'text' })
   }
 
   excluir(idhorario: number) {

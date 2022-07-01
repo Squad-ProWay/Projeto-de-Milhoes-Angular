@@ -1,6 +1,11 @@
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
 import { DecodeTokenService } from '../decode-token.service';
+import { UsuarioService } from '../usuario.service'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -9,12 +14,15 @@ import { DecodeTokenService } from '../decode-token.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService) { }
+  constructor(private auth: AuthenticationService, private decodeToken: DecodeTokenService, private serviceUsuario: UsuarioService,
+     private formBuilder: FormBuilder, private route:Router) { }
 
   usuarios: any = []
+  mensagem: any = []
+
 
   usuarioConectado = {
-    id:0,
+    id: 0,
     nome: '',
     email: '',
     cpf: '',
@@ -24,18 +32,22 @@ export class LoginComponent implements OnInit {
 
   logar(form: any) {
     this.auth.logar(form.email, form.senha).subscribe(
-      token => {
-        localStorage.setItem('token', JSON.stringify(token))
-        window.location.href = "/#"
-      }
-
-    )
+      res =>  { 
+        if (res.token) {
+          localStorage.setItem('token', res.token)
+          window.location.href = "/#"
+          //this.route.navigate(["home"])
+        } else {
+          this.mensagem = "Usuário e/ou senha incorretos";
+        }
+      }, err => this.mensagem = "Usuário e/ou senha incorretos")
   }
+
+
 
   verToken() {
     let usuario = this.decodeToken.decodeTokenJWT()
     console.log(usuario);
-    
   }
 
   fazerLogin(dados: any) {
@@ -48,8 +60,8 @@ export class LoginComponent implements OnInit {
 
   verificarLogin(email: string, senha: string, dados: any) {
     localStorage.removeItem("UserConectado")
-    for(let i = 0; i < dados.length; i++) {
-      if(email == dados[i].email && senha == dados[i].senha) {
+    for (let i = 0; i < dados.length; i++) {
+      if (email == dados[i].email && senha == dados[i].senha) {
         this.usuarioConectado.id = dados[i].id
         this.usuarioConectado.nome = dados[i].nome
         this.usuarioConectado.email = dados[i].email
@@ -62,13 +74,19 @@ export class LoginComponent implements OnInit {
 
     window.location.reload();
   }
-  
-  
-  gravarDadosLocalStorage () {
+
+
+  gravarDadosLocalStorage() {
     localStorage.setItem("userConectado", JSON.stringify(this.usuarioConectado))
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  logOut(): void {
+
   }
 
 }
+
+

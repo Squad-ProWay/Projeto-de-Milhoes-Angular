@@ -1,8 +1,10 @@
 <div class="container mt-5 pt-5 mb-3">
+  <div class="col-12">
+    <h3 class="mb-5"><i class="fa-solid fa-spray-can-sparkles me-4"></i>Consulta de Serviços</h3>
+ </div>
     <table class="table">
         <thead class="bg-dark text-light">
           <tr>
-            <th class="fw-normal">Id</th>
             <th class="fw-normal">Nome do Serviço</th>
             <th class="fw-normal">Descrição</th>
             <th class="fw-normal">Preço R$</th>
@@ -14,7 +16,6 @@
         </thead>
         <tbody>
           <tr *ngFor="let serv of servicos">
-            <td> {{ serv.id }}</td>
             <td> {{ serv.nome }}</td>
             <td> {{ serv.descricao }}</td>
             <td> {{ serv.preco }}</td>

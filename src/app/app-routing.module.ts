@@ -13,6 +13,7 @@ import { ConsultaFuncionarioComponent } from './consulta-funcionario/consulta-fu
 import { ConsultaHorarioComponent } from './consulta-horario/consulta-horario.component';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
+import { ContatoComponent } from './contato/contato.component';
 import { EditaFuncionarioComponent } from './edita-funcionario/edita-funcionario.component';
 import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
@@ -88,6 +89,10 @@ const routes: Routes = [
   {
     path:'sobre',
     component: SobreComponent
+  },
+  {
+    path:'contato',
+    component: ContatoComponent
   },
   {
     path:'consultaHorario',

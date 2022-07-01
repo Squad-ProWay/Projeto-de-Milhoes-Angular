@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,7 +8,7 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroServicoComponent } from './cadastro-servico/cadastro-servico.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultaServicoComponent } from './consulta-servico/consulta-servico.component';
 import { EditaServicoComponent } from './edita-servico/edita-servico.component';
@@ -25,8 +24,17 @@ import { EditaUsuarioComponent } from './edita-usuario/edita-usuario.component';
 import { ConsultaUsuarioComponent } from './consulta-usuario/consulta-usuario.component';
 import { EditaHorarioComponent } from './edita-horario/edita-horario.component';
 import { PageErrorComponent } from './page-error/page-error.component';
-import { AuthLoginService } from './auth-login.service';
 import { AuthenticationService } from './authentication.service';
+import { ClienteCadastroComponent } from './cliente-cadastro/cliente-cadastro.component';
+import { ClienteEditaComponent } from './cliente-edita/cliente-edita.component';
+import { ClienteConsultaComponent } from './cliente-consulta/cliente-consulta.component';
+import { ContatoComponent } from './contato/contato.component';
+import { FormsModule } from '@angular/forms';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -49,16 +57,22 @@ import { AuthenticationService } from './authentication.service';
     EditaUsuarioComponent,
     ConsultaUsuarioComponent,
     EditaHorarioComponent,
-    PageErrorComponent
+    PageErrorComponent,
+    ClienteCadastroComponent,
+    ClienteEditaComponent,
+    ClienteConsultaComponent,
+    ContatoComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxMaskModule
+    NgxMaskModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [AuthenticationService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { FuncionariosService } from '../funcionarios.service';
 import { HorarioService } from '../horario.service';
 import { ServicosService } from '../servicos.service';
+import { AuthAdmService } from '../auth-adm.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cadastro-horario',
   templateUrl: './cadastro-horario.component.html',
@@ -11,17 +14,46 @@ import { ServicosService } from '../servicos.service';
 export class CadastroHorarioComponent implements OnInit {
   
   servicos:any = []
+  funcionarios:any = []
+  userLogado: any = {}
+  administrador: boolean = false
+  msg: string = ""
+  isSubmitting = false
+  date: any
 
-  constructor(private serviceHorario: HorarioService, private serviceServico: ServicosService) {
+  constructor(private serviceHorario: HorarioService, private serviceServico: ServicosService, private serviceFuncionario: FuncionariosService, private AuthAdmService: AuthAdmService, private route: Router ) {
     this.serviceServico.getAll().subscribe(x => this.servicos = x)
+    this.serviceFuncionario.getAll().subscribe(x => this.funcionarios = x)
+    this.pegarPerfilUsuarioConectado();
+    this.administrador = this.AuthAdmService.ehAdministrador();
   }
- 
+
+  
+  pegarPerfilUsuarioConectado(){
+    let user: (string | null) = localStorage.getItem("userConectado")
+    if(user != null){
+      user = JSON.parse(user)
+      this.userLogado = user
+    }  
+  }
   /*gravar(dados: any){
     this.serviceHorario.gravar(dados).subscribe(x => window.location.href = "/consultaHorario")
   }*/
 
   gravar(dados: any){
-    this.serviceHorario.gravar(dados).subscribe(x => window.location.reload())
+    this.serviceHorario.gravar(dados).subscribe(  
+      () => {
+        console.log("asdasd: 1 -", dados);
+        (this.msg = 'Agendamento realizado com sucesso!'), 
+        (this.isSubmitting = false),
+        
+        console.log("asdasd: 0.5 -", dados);
+          setTimeout(() => {
+            this.msg = ''
+          }, 5000)
+          
+        console.log("asdasd: 2 -", dados);
+      })
   }
 
   omitirCharEspecial(event: { charCode: any; }){

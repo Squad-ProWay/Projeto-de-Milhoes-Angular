@@ -60,10 +60,7 @@ button {
   text-transform: none;
 }
 
-label {
-  width: 250px;
-  padding-right: 5px;
-}
+
 
 #btn-logout:hover {
   color: #ffc107;
@@ -72,4 +69,39 @@ label {
 .dropdown-menu>li>a:hover {
   background-image: none;
   background-color: #ffc107;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+@media only screen and (max-width: 767px) {
+  .float {
+    bottom:10px;
+	  right:10px;
+  }
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+.no-bullets{
+  list-style-type: none;
+  color: white;
+}
+
+.lbl-bemvindo{
+  width: 0;
 }

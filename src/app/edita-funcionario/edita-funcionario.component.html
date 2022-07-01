@@ -1,41 +1,61 @@
-<div class="container mt-5 mb-5">
-    <form #f="ngForm">
-        <h3>Editar Funcionário</h3>
-        <label>Id</label>
-        <a class="form-control mt-2" type="text" [(ngModel)]="funcionario.id">{{funcionario.id}} </a>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+      <div class="col-12">
+        <h3 class="mb-4"><i class="fa-solid fa-user-tie me-4"></i>Editar Funcionário</h3>
+      </div>
+      <form #f="ngForm">
         <label>Nome do Funcionário </label>
         <input #fnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
-            [(ngModel)]="funcionario.nome" required />
+          [(ngModel)]="funcionario.nome" required />
         <div class="lbl-invalid" *ngIf="fnome.invalid">
-            *Informe o nome do funcionário
+          *Informe o nome do funcionário
         </div>
+
         <label>Telefone</label>
         <input #ftelefone="ngModel" name="telefone" ngDefaultControl class="form-control mt-2" type="text"
-            [(ngModel)]="funcionario.telefone " required />
+          [(ngModel)]="funcionario.telefone " required />
         <div class="lbl-invalid" *ngIf="ftelefone.invalid">
-            *Informe o telefone
+          *Informe o telefone
         </div>
+
         <label>CPF</label>
         <input #fcpf="ngModel" name="cpf" ngDefaultControl pattern="[0-9]+$" class="form-control mt-2" type="number"
-            [(ngModel)]="funcionario.cpf" required />
+          [(ngModel)]="funcionario.cpf" required />
         <div class="lbl-invalid" *ngIf="fcpf.invalid">*Informe o CPF e verifique se tem 11 dígitos.</div>
-        <label>Servico</label>
-        <input #fservico="ngModel" name="servico" ngDefaultControl class="form-control mt-2" type="text"
-            [(ngModel)]="funcionario.servico" />
+
+        <div class="col-12">
+          <label>Serviço</label>
+          <select #selectServico="ngModel" class="form-select shadow-none" name="procedimento"
+            [(ngModel)]="funcionario.servico" required>
+            <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
+          </select>
+          <div class="lbl-invalid text-danger"
+            *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
+            ser realizado no dia</div>
+        </div>
+
         <label>Descrição</label>
         <input #fdescricao="ngModel" name="descricao" ngDefaultControl class="form-control mt-2" type="text"
-            [(ngModel)]="funcionario.descricao " required />
+          [(ngModel)]="funcionario.descricao" maxlength="200" required />
 
-        <div class="container mt-3">
-            <div><button class="btn btn-outline-success mt-1 m-1" type="submit" [disabled]="f.invalid"
-                    (click)="efetivarAlteracao()">Gravar</button>
-                <button routerLink="/consultausuario" class="btn btn-danger mt-1 m-1"> Voltar </button>
+      <div class="container mt-4 text-center fw-bold" *ngIf="msg.length > 0">
+        <span style="color: green;">{{ msg }}</span>
+      </div>
+        <div class="d-flex  justify-content-between mt-4">
+          <button routerLink="/consultaFuncionario" class="btn btn-outline-secondary float-end me-2 shadow-none"> Voltar
+          </button>
+          <button class="btn btn-warning float-end shadow-none text-center" type="submit"
+            [disabled]="f.invalid || isSubmitting" (click)="efetivarAlteracao()">
+            <div *ngIf="isSubmitting" class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
             </div>
-
-
+            <span *ngIf="!isSubmitting">
+              Salvar
+            </span>
+          </button>
         </div>
-    </form>
-</div>
-<div class="container mt-2">
-    <span style="color: green;">{{ msg }}</span>
+      </form>
+    </div>
+  </div>
 </div>

@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand px-3" href="#">BEAUTYTIME</a>
+    <a class="navbar-brand pr-3" href="#">BEAUTYTIME</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,59 +14,55 @@
           <a routerLink="servicos" class="nav-link active" aria-current="page">Serviços</a>
         </li>
         <li class="nav-item">
-          <a routerLink="cadhorario" class="nav-link active" aria-current="page">Agendamentos</a>
+          <a routerLink="cadhorario" *ngIf="administrador == false" class="nav-link active" aria-current="page">Agendamentos</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="!userLogado.email" routerLink="login" class="nav-link active" aria-current="page"
-            href="index.html">Login</a>
+          <a routerLink="contato" *ngIf="administrador == false" class="nav-link active" aria-current="page">Contato</a>
         </li>
-        <li>
-          <button  style="font-size:7px" id="btn-logout" (click)="logout()"><i
-              class="btn-logout material-icons mt-1 p-0">exit_to_app</i></button>
-          <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;"
-            class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
+        <li class="nav-item">
+          <a *ngIf="usuarioConectado == false" routerLink="login" class="nav-link active" aria-current="page"
+            href="index.html"><i class="fas fa-sign-in-alt me-1"></i>Login</a>
         </li>
-
         <li class="nav-item dropdown">
-<<<<<<< HEAD
-          <a *ngIf="administrador == true" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Menu
-=======
-          <a *ngIf="userLogado.perfil=='ADM'" class=" dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown"
+          <a *ngIf="administrador == true" class="dropcolor nav-link dropdown-toggle" href="#" id="navbarDropdown"
             role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Menu
->>>>>>> b0599a40ec6908ca65f4332a3ec1ab3d046f68c8
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a routerLink="cadservico" class="dropdown-item">Cadastro Serviços</a></li>
-            <li><a routerLink="cadfuncionario" class="dropdown-item">Cadastro Funcionários</a></li>
-            <li><a routerLink="cadusuario" class="dropdown-item">Cadastro Clientes</a></li>
+            <li><label class="dropdown-item fs-4"><i class="fa-solid fa-file-circle-plus me-3"></i>Cadastrar</label></li>
+            <li><a routerLink="cadservico" class="dropdown-item">Serviços</a></li>
+            <li><a routerLink="cadastrocliente" class="dropdown-item">Clientes</a></li>
+            <li><a routerLink="cadfuncionario" class="dropdown-item">Funcionários</a></li>
             <li><a routerLink="cadhorario" class="dropdown-item">Agendamentos</a></li>
             <hr>
-            <li><a routerLink="consultaServico" class="dropdown-item">Consulta Serviços</a></li>
-            <li><a routerLink="consultaFuncionario" class="dropdown-item">Consulta Funcionários</a></li>
-            <li><a routerLink="consultausuario" class="dropdown-item">Consulta Clientes</a></li>
-            <li><a routerLink="consultaHorario" class="dropdown-item">Consulta Agendamentos</a></li>
+            <li><label class="dropdown-item fs-4"><i class="fa-solid fa-magnifying-glass me-3"></i>Consultar</label></li>
+            <li><a routerLink="consultaServico" class="dropdown-item">Serviços</a></li>
+            <li><a routerLink="consultacliente" class="dropdown-item">Clientes</a></li>
+            <li><a routerLink="consultaFuncionario" class="dropdown-item">Funcionários</a></li>
+            <li><a routerLink="consultausuario" class="dropdown-item">Usuarios</a></li>
+            <li><a routerLink="consultaHorario" class="dropdown-item">Agendamentos</a></li>
           </ul>
         </li>
-
+        <li class="nav-item no-bullets" *ngIf="usuarioConectado == true">
+          <a routerLink="home" class="nav-link active" style="color: white;" (click)="logout()">
+            <i class="fa-solid fa-right-from-bracket me-1"></i>Logout</a>
+        </li>
       </ul>
     </div>
   </div>
-<<<<<<< HEAD
-  <button *ngIf="usuarioConectado == true" style="font-size:7px" id="btn-logout" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
-  <label *ngIf="usuarioConectado == true" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a)!" }}</label>
-  <label *ngIf="usuarioConectado == false" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo"> </label>
-=======
 
-  <button style="font-size:7px" id="btn-logout" (click)="logout()"><i class="btn-logout material-icons">exit_to_app</i>Logout</button>
-  <label *ngIf="userLogado.email" style="color: white; margin-left: 6px;" class="bg-dark lbl-bemvindo">{{ "Bem vindo(a), " + userLogado.nome + "!" }}</label>
->>>>>>> b0599a40ec6908ca65f4332a3ec1ab3d046f68c8
 </nav>
-
-
-
+<a *ngIf="administrador == false" href="https://api.whatsapp.com/send?phone=5581996192575&text=Gostaria de obter informações e/ou ajuda da BEAUTYTIME."
+  class="float" target="_blank">
+  <i class="fa fa-whatsapp my-float"></i>
+</a>
 
 <!--ROUTER-->
 <router-outlet></router-outlet>
+
+
+
+
+<nav></nav>
+
+<content>

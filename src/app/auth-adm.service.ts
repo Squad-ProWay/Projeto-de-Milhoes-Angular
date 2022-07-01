@@ -35,8 +35,11 @@ export class AuthAdmService {
   }
 
   ehAdministrador(){
+    //decodificando o token
     let token =  JSON.stringify(this.decodeToken.decodeTokenJWT())
+    //transforma o token decodificado  em um objeto
     let ob = JSON.parse(token)
+    //verifica se o perfil é igual a "ADM"
     return ob.perfil == "ADM"
   }
 

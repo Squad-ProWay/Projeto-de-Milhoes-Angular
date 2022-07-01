@@ -1,34 +1,36 @@
 <div class="container mt-5 pt-5 mb-3">
-    <table class="table">
-      <thead class="bg-dark text-light">
-        <tr>
-          <th class="fw-normal">Id</th>
-          <th class="fw-normal">Cliente</th>
-          <th class="fw-normal">CPF</th>
-          <th class="fw-normal">Endereço</th>
-          <th class="fw-normal">Cidade</th>
-          <th class="fw-normal">Estado</th>
-          <th class="fw-normal">CEP</th>
-          <th class="fw-normal">Email</th>
-          <th class="fw-normal">Edição</th>
-          <th class="fw-normal">Excluir</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let cli of cliente">
-          <td> {{ cli.id }}</td>
-          <td> {{ cli.nome }}</td>
-          <td> {{ cli.cpf }}</td>
-          <td> {{ cli.endereco }}</td>
-          <td> {{ cli.cidade }}</td>
-          <td> {{ cli.estado }}</td>
-          <td> {{ cli.cep }}</td>
-          <td> {{ cli.email }}</td>
-          <td> <a [routerLink]="['/editacliente',cli.id]"><i class="material-icons">mode_edit</i></a></td>
-          <td> <i role="button" class="material-icons" style="font-size:30px;color:red; cursor: pointer;"
-              (click)="excluir(cli.id)">delete</i></td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="col-12">
+    <h3 class="mb-5"><i class="fa-solid fa-users me-4"></i>Consulta de Clientes</h3>
   </div>
-  
+  <table class="table">
+    <thead class="bg-dark text-light">
+      <tr>
+        <th class="fw-normal">Cliente</th>
+        <th class="fw-normal">CPF</th>
+        <th class="fw-normal">Telefone</th>
+        <th class="fw-normal">Endereço</th>
+        <th class="fw-normal">Cidade</th>
+        <th class="fw-normal">Estado</th>
+        <th class="fw-normal">CEP</th>
+        <th class="fw-normal">Email</th>
+        <th class="fw-normal">Edição</th>
+        <th class="fw-normal">Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cli of cliente">
+        <td> {{ cli.nome }}</td>
+        <td> {{ cli.cpf }}</td>
+        <td> {{ cli.telefone }}</td>
+        <td> {{ cli.endereco }}</td>
+        <td> {{ cli.cidade }}</td>
+        <td> {{ cli.estado }}</td>
+        <td> {{ cli.cep }}</td>
+        <td> {{ cli.email }}</td>
+        <td> <a [routerLink]="['/editacliente',cli.id_cliente]"><i class="material-icons icone-editar">mode_edit</i></a></td>
+        <td> <i role="button" class="material-icons"
+            (click)="excluir(cli.id_cliente)">delete</i></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,39 @@
+<div class="wraper-image d-flex justify-content-center align-items-center py-4">
+    <div class="form-wrapper border p-4 shadow bg-light">
+      <div class="col-12">
+               <h3 class="mb-4"><i class="fa-solid fa-envelope me-4"></i>Contato</h3>
+            </div>
+            <form [formGroup]="form" #f="ngForm" method="post" (ngSubmit)="onSubmit()">
+                <div class="form-group mb-3">
+                    <label for="inputEmail">Nome</label>
+                    <input type="text" class="form-control" [formControl]="nome" placeholder="Digite seu nome" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="inputEmail">Email</label>
+                    <input #femail="ngForm" type="email" class="form-control" [formControl]="email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="inputEmail" ngModel name="email"
+                        placeholder="Email para contato" required>
+                    <div class="form-text">Nós não iremos compartilhar seu e-mail com ninguém.</div>
+                    <div class="text-danger" *ngIf="femail.invalid && (femail.dirty || femail.touched)">*Informe um
+                        email válido</div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="inputEmail">Assunto</label>
+                    <input type="text" class="form-control" [formControl]="assunto" placeholder="Digite o assunto" required>
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="inputSenha">Mensagem</label>
+                    <textarea class="form-control shadow-none" rows="3" [formControl]="mensagem" type="text" maxlength="256" placeholder="Digite sua mensagem" required></textarea>  
+                </div>
+                <div>
+                    <button class="btn btn-warning w-100" [disabled]="isLoading" type="submit">Enviar</button>  
+                </div>
+                <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+                    <span>{{responseMessage}}</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+<router-outlet></router-outlet>

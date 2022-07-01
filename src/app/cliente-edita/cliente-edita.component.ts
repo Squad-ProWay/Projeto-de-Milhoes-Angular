@@ -12,7 +12,7 @@ export class ClienteEditaComponent implements OnInit {
   constructor(private route: ActivatedRoute, private serviceCliente: ClienteService) { }
 
   cliente: any = {}
-
+  isSubmitting = false;
   msg: string = ''
 
   ngOnInit(): void {
@@ -22,12 +22,14 @@ export class ClienteEditaComponent implements OnInit {
   }
 
   efetivarAlteracao() {
-    this.serviceCliente.alterar(this.cliente).subscribe(x => this.msg = 'Cliente alterado com sucesso')
- 
-    setTimeout(() => {
-      window.history.back();
-      
-    }, 5000);
+    this.isSubmitting = true;
+    this.serviceCliente.alterar(this.cliente).subscribe(() => {
+      (this.msg = 'Cliente alterado com sucesso'),
+        (this.isSubmitting = false),
+        setTimeout(() => {
+          this.msg = ''
+        }, 5000)
+    })
   }
 
 }

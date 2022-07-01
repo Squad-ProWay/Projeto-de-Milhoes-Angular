@@ -10,7 +10,7 @@ export class ServicosService {
 
   gravar(dados: any) {
     let url = 'https://app-beautydb.herokuapp.com/servicos'
-    return this.http.post(url, dados);
+    return this.http.post(url, dados, { responseType: 'text' });
   }
 
   getAll() {
@@ -24,7 +24,7 @@ export class ServicosService {
 
   alterar(dados: any) {
     let url = `https://app-beautydb.herokuapp.com/servicos/${dados.id}`
-    return this.http.put(url, dados)
+    return this.http.put(url, dados, { responseType: 'text' })
   }
 
   excluir(idservico: number) {

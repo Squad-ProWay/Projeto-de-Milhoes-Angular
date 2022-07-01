@@ -1,47 +1,88 @@
-<div class="container mt-5">
-    <h3>Editar Serviço</h3>
-    <form #form="ngForm">
-    <label>Id</label>
-    <input class="form-control mt-2" type="text" [(ngModel)]="horario.id" />
-    <label>Nome</label>
-    <input  #formnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.nome" required>
-    <div class="lbl-invalid" *ngIf="formnome.invalid">
-        *Informe o nome
+<div class="container mt-5 pt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 border p-4 shadow bg-light">
+      <div class="col-12">
+        <h3 class="mb-4"><i class="fa-solid fa-clock me-4"></i>Editar agendamento</h3>
+      </div>
+      <form #form="ngForm">
+
+        <label>Nome</label>
+        <input #formnome="ngModel" name="nome" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="horario.nome" required>
+        <div class="lbl-invalid" *ngIf="formnome.invalid">
+          *Informe o nome
+        </div>
+
+        <label>Telefone</label>
+        <input #formtelefone="ngModel" name="telefone" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="horario.telefone" required />
+        <div class="lbl-invalid" *ngIf="formtelefone.invalid">
+          *Informe o telefone
+        </div>
+
+        <label>Email</label>
+        <input #formemail="ngModel" name="email" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="horario.email" required />
+        <div class="lbl-invalid" *ngIf="formemail.invalid">
+          *Informe o email
+        </div>
+
+        <label>Data</label>
+        <input #formdia="ngModel" name="dia" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="horario.dia" required />
+        <div class="lbl-invalid" *ngIf="formdia.invalid">
+          *Informe a data
+        </div>
+
+        <label>Horário</label>
+        <input #formhorario="ngModel" name="horario" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="horario.horario" required />
+        <div class="lbl-invalid" *ngIf="formhorario.invalid">
+          *Informe o horário
+        </div>
+
+        <div class="col-12">
+          <label>Serviço desejado</label>
+          <select #selectServico="ngModel" class="form-select shadow-none" name="procedimento" [(ngModel)]="horario.procedimento" required>
+            <option *ngFor="let servico of servicos" value="{{servico.nome}}">{{servico.nome}}</option>
+          </select>
+          <div class="lbl-invalid text-danger"
+            *ngIf="selectServico.invalid && (selectServico.dirty || selectServico.touched)">*Informe um procedimento a
+            ser realizado no dia</div>
+          </div>
+        <div class="col-12">
+          <label>Funcionário</label>
+          <select #selectFuncionario="ngModel" class="form-select shadow-none" name="id_funcionario" [(ngModel)]="horario.id_funcionario" required>
+            <option *ngFor="let funcionario of funcionarios" value="{{funcionario.id}}">{{funcionario.nome}}</option>
+          </select>
+          <div class="lbl-invalid text-danger"
+            *ngIf="selectFuncionario.invalid && (selectFuncionario.dirty || selectFuncionario.touched)">*Informe um
+            funcionário que irá realizar o procedimento</div>
+        </div>
+
+        <label>Observações</label>
+        <input #formobservacao="ngModel" name="observacao" ngDefaultControl class="form-control mt-2" type="text"
+          [(ngModel)]="horario.observacao" maxlength="200" />
+        <div class="lbl-invalid" *ngIf="formobservacao.invalid">
+          *Acrescente alguma observação
+        </div>
+        <div class="container mt-4 text-center fw-bold" *ngIf="msg.length > 0">
+          <span style="color: green;">{{ msg }}</span>
+        </div>
+        <div class="d-flex  justify-content-between mt-4">
+          <button routerLink="/consultaHorario" class="btn btn-outline-secondary float-end me-2 shadow-none"> Voltar
+          </button>
+          <button class="btn btn-warning float-end shadow-none text-center" type="submit"
+            [disabled]="form.invalid || isSubmitting" (click)="efetivarAlteracao()">
+            <div *ngIf="isSubmitting" class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <span *ngIf="!isSubmitting">
+              Salvar
+            </span>
+          </button>
+        </div>
+      </form>
     </div>
-    <label>Telefone</label>
-    <input  #formtelefone="ngModel" name="telefone" ngDefaultControl  class="form-control mt-2" type="text" [(ngModel)]="horario.telefone" required/>
-    <div class="lbl-invalid" *ngIf="formtelefone.invalid">
-        *Informe o telefone
-    </div>
-    <label>Email</label>
-    <input #formemail="ngModel" name="email" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.email" required/>
-    <div class="lbl-invalid" *ngIf="formemail.invalid">
-        *Informe o email
-    </div>
-    <label>Data</label>
-    <input #formdia="ngModel" name="dia" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.dia" required/>
-    <div class="lbl-invalid" *ngIf="formdia.invalid">
-        *Informe a data
-    </div>
-    <label>Horário</label>
-    <input #formhorario="ngModel" name="horario" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.horario" required/>
-    <div class="lbl-invalid" *ngIf="formhorario.invalid">
-        *Informe o horário
-    </div>
-    <label>Procedimento</label>
-    <input #formprocedimento="ngModel" name="procedimento" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.procedimento" required/>
-    <div class="lbl-invalid" *ngIf="formprocedimento.invalid">
-        *Informe o procedimento
-    </div>
-    <label>Observações</label>
-    <input #formobservacao="ngModel" name="observacao" ngDefaultControl class="form-control mt-2" type="text" [(ngModel)]="horario.observacao" required/>
-    <div class="lbl-invalid" *ngIf="formobservacao.invalid">
-        *Acrescente alguma observação
-    </div>    
-    <button class="btn btn-outline-success mt-1" (click)="efetivarAlteracao()">Gravar</button>
-    </form>
+  </div>
 </div>
-<div class="container mt-2">
-    <span style="color: green;">{{ msg }}</span>
-</div>
- 
