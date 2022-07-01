@@ -86,9 +86,7 @@ export class CadastroUsuarioComponent implements OnInit {
               }, 5000)
           })
     } else {
-      this.validCpf = true;
-      this.validPass = true;
-      this.msg = "CPF ou senha inválidos"
+      this.msg = "Senha fraca"
     }
   }
 
